@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Bloques de Código</title>
+   <title>Movimientos del Gato</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Bloques de Código</h1>
+      <h1>Movimientos del Gato</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,241 +21,70 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Descripción De Los Bloques De Flujo</h2>
-      <h4>Iniciar</h4>
+      <h2>Juego</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Gato</h4>
       <p class="texto">
-         Siempre debe colocarse al principio de la cadena de programa. Pulse sobre él para iniciar la cadena de 
-         programa que ha escrito.
+         Será nuestro personaje que se movera por la pantalla para iniciarnos en el movimiento de los objetos.
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-1.png" width="40%" alt=""></p>
-      <h4>Iniciar Al Recibir Un Mensaje</h4>
+      <h4>Escenario</h4>
       <p class="texto">
-         Siempre debe colocarse al principio de la cadena de programa. Esperará al mensaje correcto y, entonces, 
-         iniciará la cadena de programa que ha escrito.
+         Usaremos el fondo Xy-grid para explicar las coordenadas del escenario. Y luego le dejaremos que elija cualquier otro escenario para hacer su juego.
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-2.png" width="40%" alt=""></p>
-      <h4>Enviar Mensaje</h4>
+
+      <h3>Como hacerlo</h3>
       <p class="texto">
-         Envía un mensaje al panel de programación. Se activará cada bloque Iniciar al recibir un mensaje con el 
-         mismo mensaje. El mensaje puede constar de textos o números.
+         Primero pondremos al gato en el centro de la pantalla X = 0 e Y = 0, apuntando hacia la derecha.<br>
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-3.png" width="40%" alt=""></p>
-      <h4>Esperar</h4>
-      <p class="texto">
-         Utilice este bloque para decirle al programa que espere a que ocurra algo. Puede esperar un periodo de 
-         tiempo determinado o la entrada de un sensor. Este bloque siempre necesita una entrada para que funcione 
-         correctamente.
+      <p class="img_centrada"><img src="img/juego1/1-3.png" width="40%" alt=""></p>
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-4.png" width="40%" alt=""></p>
-      <h4>Repetir</h4>
-      <p class="texto">
-         Utilizar este bloque para repetir acciones. Los bloques colocados dentro del bloque Repetir entrarán en bucle. 
-         También puede llamarse “bloque bucle”. El bucle puede repetirse para siempre, durante un periodo de tiempo 
-         determinado o hasta que ocurra algo.
+      <p class="texto">    
+         Moveremos pasos hasta que llegue al borde de la derecha pero sin pasarse.<br>
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-5.png" width="40%" alt=""></p>
-      <h4>Iniciar Al Pulsar Un Tecla</h4>
-      <p class="texto">
-         Siempre debe colocarse al principio de la cadena de programa. Pulse sobre él o en la letra correcta del 
-         teclado para iniciar la cadena de programa que ha escrito. Todas las cadenas de programa con la misma letra 
-         se iniciarán al mismo tiempo. Para cambiar la letra de activación, mantenga pulsado el bloque para acceder 
-         al teclado.
+      <p class="nota">
+         En los pasos poner siempre valores que terminen en 0 porque luego es más facil cuando más adelante implementemos el bucle "Repetir".
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-6.png" width="40%" alt=""></p>
-      <h2>Descripción De Los Bloques De Motor De Salida</h2>
-      <h4>Activación De Motor En Un Sentido</h4>
-      <p class="texto">
-         Prepara el motor para girar el eje en el sentido mostrado e inicia el motor. Toque el bloque para cambiar 
-         rápidamente la dirección de rotación.
+
+      <p class="texto">    
+         Después apuntaremos a la izquierda.<br>
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-7.png" width="40%" alt=""></p>
-      <h4>Activación De Motor En Otro Sentido</h4>
-      <p class="texto">
-         Ajusta el motor para girar el eje en el sentido mostrado e inicia el motor. Toque el bloque para cambiar 
-         rápidamente la dirección de rotación.
+      <p class="nota">
+         Cuidado porque el gato se pondrá boca abajo ya que estamos cambiando su orientación. Para evitar esto y que solo se dé la vuelta, tendríamos
+          que cambiar el estilo de rotación a "Izquierda/Derecha".
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-8.png" width="40%" alt=""></p>
-      <h4>Potencia Del Motor</h4>
-      <p class="texto">
-         Ajusta la potencia del motor al nivel especificado e inicia el motor. El nivel puede ajustarse con una entrada 
-         numérica de 0 a 10.
+      <p class="img_centrada"><img src="img/juego1/1-4.png" width="40%" alt=""></p><br>
+    
+      <p class="texto">    
+         Haremos que se mueva hacia la izquierda hasta llegar al borde y volveremos apuntar a la derecha y el gato tendrá que moverse hasta el centro X= 0 e Y = 0.<br>
+         Haremos que apunte hacia arriba y que se mueva sin pasarse del borde y apuntamos hacia abajo y que mueva pasos hasta el otro extremos sin pasarse del borde.<br>
+         Y por último apuntamos hacia arriba y movemos pasos hasta que llegue de nuevo al centro.<br>
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-9.png" width="40%" alt=""></p>
-      <h4>Activación De Motor Durante...</h4>
-      <p class="texto">
-         Inicia el motor durante un periodo de tiempo especificado en segundos. El periodo de tiempo puede establecerse 
-         con una entrada numérica, utilizando números enteros o decimales.
+
+      <p class="texto">    
+         Si lo ejecutamos parece que no hace nada y eso es porque nuestro ojos son más lentos que el ordenador. Para ver lo que realmente esta haciendo
+         el gato pondremos un bloque de "esperar 1 segundo" antes de cada apuntar.<br>
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-10.png" width="40%" alt=""></p>
-      <h4>Desactivación De Motor</h4>
-      <p class="texto">
-         Detiene cualquier movimiento del motor.
+      <p class="img_centrada"><img src="img/juego1/1-5.png" width="40%" alt=""></p><br>
+
+      <p class="texto">    
+         Nos faltaria que el gato se moviese mediante disfraces y que antes de cambiar de dirección se oiga el sonido "Miau" que tiene asociado al gato.<br>
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-11.png" width="40%" alt=""></p>
-      <h2>Descripción De Los Bloques De Luz Y Sonido</h2>
-      <h4>Cambiar La Luz</h4>
-      <p class="texto">
-         Enciende el LED del hub inteligente en un color determinado. El color puede cambiarse con una entrada numérica 
-         entre 0 y 10. Para apagar el LED utilizaremos el valor 0. 
+
+      <p class="texto">    
+         Utilizaremos un nuevo bloque "Repetir". Esta en Control. Es un bucle que repetira un número de veces los bloques que pongamos en su interior. Le 
+         dejaremos que repita solo 10 veces. Meteremos dentro del repetir los pasos y le quitamos un 0 para que su multiplicación sean los pasos que queremos hacer.
+         Y el esperar le ponemos menos para que sea mas rápido.<br>
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-12.png" width="40%" alt=""></p>
-      <h4>Reproducir Sonido</h4>
-      <p class="texto">
-         Reproduce un sonido. El sonido se elige en una lista disponible dentro del software. Puede elegir un sonido 
-         mediante una entrada numérica. Elija el número de sonido 0 para reproducir un sonido que haya grabado usted 
-         mismo.
+      <p class="img_centrada"><img src="img/juego1/1-6.png" width="40%" alt=""></p><br>
+
+
+      <p class="texto">    
+         Pondremos el sonido "Miau" antes del "Repetir" y el cambio de disfraz dentro del "Repetir".<br>
       </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-13.png" width="40%" alt=""></p>
-      <h2>Descripción De Los Bloques De Pantalla De Salida</h2>
-      <h4>Mostrar Imagen De Fondo</h4>
-      <p class="texto">
-         Utilice este bloque para mostrar una imagen elegida de una lista disponible dentro del software. Puede 
-         establecer la imagen con una entrada numérica.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-14.png" width="40%" alt=""></p>
-      <h4>Activar Pantalla</h4>
-      <p class="texto">
-         Utilice este bloque para abrir el área de visualización en la pantalla del software. Aparecerán números 
-         o texto en el área de visualización.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-15.png" width="40%" alt=""></p>
-      <h4>Sumar A Pantalla</h4>
-      <p class="texto">
-         Suma una cantidad al número que se muestra actualmente en la pantalla. Introduzca el número que desee sumar. 
-         Toque el bloque para cambiar la operación matemática.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-16.png" width="40%" alt=""></p>
-      <h4>Restar De Pantalla</h4>
-      <p class="texto">
-         Resta una cantidad del número que se muestra actualmente en la pantalla. Introduzca el número que desee 
-         restar. Toque el bloque para cambiar la operación matemática.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-17.png" width="40%" alt=""></p>
-      <h4>Multiplicar Por Pantalla</h4>
-      <p class="texto">
-         Multiplica el número mostrado en pantalla por un número especificado. Introduzca el número por el que desee 
-         multiplicar. Toque el bloque para cambiar la operación matemática.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-18.png" width="40%" alt=""></p>
-      <h4>Dividir Entre Pantalla</h4>
-      <p class="texto">
-         Divide el número mostrado en pantalla entre un número especificado. Introduzca el número entre el que desee 
-         dividir. Toque el bloque para cambiar la operación matemática.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-19.png" width="40%" alt=""></p>
-      <h4>Cerrar Pantalla</h4>
-      <p class="texto">
-         Utilice este bloque para cerrar el área de visualización en la pantalla del software. Toque el bloque para 
-         cambiar el tamaño.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-20.png" width="40%" alt=""></p>
-      <h4>Mostrar Pantalla Completa</h4>
-      <p class="texto">
-         Utilice este bloque para ajustar el área de visualización en pantalla completa. Toque el bloque para cambiar 
-         el tamaño.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-21.png" width="40%" alt=""></p>
-      <h4>Mostrar Tamaño Mediano De Pantalla</h4>
-      <p class="texto">
-         Utilice este bloque para ajustar el área de visualización en tamaño intermedio. Toque el bloque para cambiar 
-         el tamaño.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-22.png" width="40%" alt=""></p>
-      <h2>Descripción De Las Entradas De Cambio Del Sensor</h2>
-      <h4>Cualquier Cambio De Distancia</h4>
-      <p class="texto">
-         Introduce el modo del sensor de movimiento “Cualquier cambio de distancia” en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-23.png" width="40%" alt=""></p>
-      <h4>Cambio De Distancia Más Cerca</h4>
-      <p class="texto">
-         Introduce el modo del sensor de movimiento “disminuir la distancia entre el sensor y un objeto” en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-24.png" width="40%" alt=""></p>
-      <h4>Cambio De Distancia Más Lejos</h4>
-      <p class="texto">
-         Introduce el modo del sensor de movimiento “incrementar la distancia entre el sensor y un objeto” en un 
-         bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-25.png" width="40%" alt=""></p>
-      <h4>Agitar</h4>
-      <p class="texto">
-         Introduce el modo del sensor de inclinación “Agitar” en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-26.png" width="40%" alt=""></p>
-      <h4>Inclinación Hacia Abajo</h4>
-      <p class="texto">
-         Introduce el modo del sensor de inclinación “Inclinación hacia abajo” en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-27.png" width="40%" alt=""></p>
-      <h4>Inclinación Hacia Arriba</h4>
-      <p class="texto">
-         Introduce el modo del sensor de inclinación “Inclinación hacia arriba” en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-28.png" width="40%" alt=""></p>
-      <h4>Inclinación En Un Sentido</h4>
-      <p class="texto">
-         Introduce el modo del sensor de inclinación “Inclinación en un sentido” en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-29.png" width="40%" alt=""></p>
-      <h4>Inclinación En Otro Sentido</h4>
-      <p class="texto">
-         Introduce el modo del sensor de inclinación “Inclinación en otro sentido” en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-30.png" width="40%" alt=""></p>
-      <h4>Sensor De Inclinación Sin Inclinación</h4>
-      <p class="texto">
-         Introduce el modo del sensor de inclinación “Sin inclinación” (o posición horizontal) en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-31.png" width="40%" alt=""></p>
-      <h4>Cambio De Nivel De Sonido </h4>
-      <p class="texto">
-         Introduce el modo del sensor de sonido (del dispositivo) “cambiar nivel de sonido” en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-32.png" width="40%" alt=""></p>
-      <h2>Descripción De Entradas Numéricas Y De Texto</h2>
-      <h4>Entrada De Sensor De Inclinación</h4>
-      <p class="texto">
-         Introduce el valor numérico generado por el sensor de inclinación (0, 3, 5, 7 o 9) en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-33.png" width="40%" alt=""></p>
-      <h4>Entrada De Sensor De Movimiento</h4>
-      <p class="texto">
-         Introduce el valor detectado por el sensor de movimiento (de 0 a 10) en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-34.png" width="40%" alt=""></p>
-      <h4>Entrada De Sensor De Sonido</h4>
-      <p class="texto">
-         Introduce el valor detectado por el sensor de sonido (de 0 a 10) en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-35.png" width="40%" alt=""></p>
-      <h4>Entrada Numérica</h4>
-      <p class="texto">
-         Introduce un valor numérico en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-36.png" width="40%" alt=""></p>
-       <h4>Entrada De Texto</h4>
-      <p class="texto">
-         Introduce un valor de texto en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-37.png" width="40%" alt=""></p>
-      <h4>Entrada De Pantalla</h4>
-      <p class="texto">
-         Introduce un valor numérico mostrado en el área de visualización en un bloque.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-38.png" width="40%" alt=""></p>
-      <h4>Entrada Aleatoria</h4>
-      <p class="texto">
-         Introduce un valor aleatorio en un bloque. El rango de número lo determina el bloque al que se acopla.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-39.png" width="40%" alt=""></p>
-      <h2>Descripción Del Bloque De Documentación</h2>
-      <h4>Cuadro De Texto</h4>
-      <p class="texto">
-         Utilice el cuadro de texto para insertar comentarios en un programa. Este no es un bloque de programa.
-      </p>
-      <p class="img_centrada"><img src="img/introduccion2/intro-40.png" width="40%" alt=""></p>
-      <a class="texto volver" href="indexwedo.html">Volver al índice</a>
+
+      <p class="img_centrada"><img src="img/juego1/1-7.png" width="40%" alt=""></p><br>
+      
+      <a class="texto volver" href="indexscratch.html">Volver al índice</a>
    </div>
    <div id="pie">
       <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
