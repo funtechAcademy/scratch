@@ -33,60 +33,36 @@
       
       <h4>Escenario</h4>
       <p class="texto">
-         Usaremos el fondo Xy-grid para explicar las coordenadas del escenario. Y luego le dejaremos que elija cualquier otro escenario para hacer su juego.
+          Habrá como mínimo dos escenarios.
       </p>
 
       <h3>Como hacerlo</h3>
       <p class="texto">
-         Primero pondremos al gato en el centro de la pantalla X = 0 e Y = 0, apuntando hacia la derecha.<br>
+         Posicionaremos el tren en la parte de la izquierda y tendrá 3 disfraces. El tren se movera hacia la derecha.<br> 
       </p>
-      <p class="img_centrada"><img src="img/juego1/1-3.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego3/3-1.png" width="40%" alt=""></p><br>
+
+      <p class="texto">
+         Cambiaremos de disfraz pero lo haremos en otro bloque ya que al poner un esperar podria afectar al movimiento del tren.
       </p>
-      <p class="texto">    
-         Moveremos pasos hasta que llegue al borde de la derecha pero sin pasarse.<br>
+      <p class="img_centrada"><img src="img/juego3/3-2.png" width="40%" alt=""></p><br>   
+
+      <p class="texto">  
+         Y cuando casi el tren ya no se vea cambiaremos el escenario y volveremos a posicionar el tren en la izquierda. Pondremos el bloque de repetir
+         para que el tren se mueva poco a poco. El detener lo pondremos para que se detenga todo incluso el sonido.<br>
       </p>
+      <p class="img_centrada"><img src="img/juego3/3-3.png" width="40%" alt=""></p><br>   
+
+      <p class="texto">
+         Pondremos el sonido de la locomotora vapor.waw ó el sonido de la flauta ó incluso los dos a la vez.<br>
+      </p>
+      <p class="img_centrada"><img src="img/juego3/3-4.png" width="40%" alt=""></p><br>  
+
+     
       <p class="nota">
-         En los pasos poner siempre valores que terminen en 0 porque luego es más facil cuando más adelante implementemos el bucle "Repetir".
+         Para que eso este continuamente funcionando podremos poner un bloque de "Por Siempre" que englobe a todo el bloque de movimiento.
       </p>
 
-      <p class="texto">    
-         Después apuntaremos a la izquierda.<br>
-      </p>
-      <p class="nota">
-         Cuidado porque el gato se pondrá boca abajo ya que estamos cambiando su orientación. Para evitar esto y que solo se dé la vuelta, tendríamos
-          que cambiar el estilo de rotación a "Izquierda/Derecha".
-      </p>
-      <p class="img_centrada"><img src="img/juego1/1-4.png" width="40%" alt=""></p><br>
-    
-      <p class="texto">    
-         Haremos que se mueva hacia la izquierda hasta llegar al borde y volveremos apuntar a la derecha y el gato tendrá que moverse hasta el centro X= 0 e Y = 0.<br>
-         Haremos que apunte hacia arriba y que se mueva sin pasarse del borde y apuntamos hacia abajo y que mueva pasos hasta el otro extremos sin pasarse del borde.<br>
-         Y por último apuntamos hacia arriba y movemos pasos hasta que llegue de nuevo al centro.<br>
-      </p>
-
-      <p class="texto">    
-         Si lo ejecutamos parece que no hace nada y eso es porque nuestro ojos son más lentos que el ordenador. Para ver lo que realmente esta haciendo
-         el gato pondremos un bloque de "esperar 1 segundo" antes de cada apuntar.<br>
-      </p>
-      <p class="img_centrada"><img src="img/juego1/1-5.png" width="40%" alt=""></p><br>
-
-      <p class="texto">    
-         Nos faltaria que el gato se moviese mediante disfraces y que antes de cambiar de dirección se oiga el sonido "Miau" que tiene asociado al gato.<br>
-      </p>
-
-      <p class="texto">    
-         Utilizaremos un nuevo bloque "Repetir". Esta en Control. Es un bucle que repetira un número de veces los bloques que pongamos en su interior. Le 
-         dejaremos que repita solo 10 veces. Meteremos dentro del repetir los pasos y le quitamos un 0 para que su multiplicación sean los pasos que queremos hacer.
-         Y el esperar le ponemos menos para que sea mas rápido.<br>
-      </p>
-      <p class="img_centrada"><img src="img/juego1/1-6.png" width="40%" alt=""></p><br>
-
-
-      <p class="texto">    
-         Pondremos el sonido "Miau" antes del "Repetir" y el cambio de disfraz dentro del "Repetir".<br>
-      </p>
-
-      <p class="img_centrada"><img src="img/juego1/1-7.png" width="40%" alt=""></p><br>
       
       <a class="texto volver" href="indexscratch.html">Volver al índice</a>
    </div>
