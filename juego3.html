@@ -11,7 +11,6 @@
    <script src="js/scripts.js"></script>
    <title>Acuario</title>
 </head>
-
 <body>
    <div id="cabecera">
       <h1>Acuario</h1>
@@ -22,56 +21,77 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Juego</h2>
+      <h2>Acuario</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Peces</h4>
       <p class="texto">
-         Cogeremos a los peces de la biblioteca de Objetos de Scratch.
+         Cogeremos varios peces o animales del mar de la biblioteca de objetos.
       </p>
-      
-      <h4>Escenario</h4>
+      <h4>Escenarios</h4>
       <p class="texto">
-          Lo cogeremos de la biblioteca de Escenario de Scratch del mar.
+          También lo cogeremos de la biblioteca de escenarios y será el fondo del mar "Underwater1".
       </p>
-
-      <h3>Como hacerlo</h3>
+      <h3>Paso a Paso</h3>
       <p class="texto">
-         Tendremos varios peces, cangrejos, pulpos.... y los posicionaremos en nuestro escenario. Se moveran y rebotaran cuando toquen un borde.
-         A cada personaje le daremos una velocidad de movimiento diferente.
-         <br> 
+         Tendremos varios peces, cangrejos, pulpos.... y los posicionaremos en nuestro escenario en cualquier zona. 
+         <br><br>
+         Haremos que se muevan de izquierda a derecha. En lugar de hacer que cambien de dirección cuando lleguen al 
+         final, utilizaremos el bloque "Si Toca un Borde, Rebotar" que lo hace automáticamente.
       </p>
-      <p class="img_centrada"><img src="img/juego3/3-1.png" width="40%" alt=""></p>
-      <br>
-
-      <p class="texto">
-         Podemos hacer que los peces hagan un giro de 180 grados con un número aleatorio. 
-      </p>
-      <p class="img_centrada"><img src="img/juego3/3-2.png" width="40%" alt=""></p>
-      <br>   
-
       <p class="nota">
-         Vamos a simular el 3D ya que el Scratch en una herramienta para hacer juegos en 2D. Para ello usaremos el bloque de "capas".
+         Es recomendable siempre posicionar cada uno de los personajes (objetos) de nuestro juego al principio de la 
+         programación de cada uno de ellos.
       </p>
-     
       <p class="texto">
-         Dibujaremos dos objetos que sean unas algas y las posicionaremos.
+         Cada pez lo posicionaremos en un lugar de nuestro acuario y le diremos que apunte en una dirección en concreta 
+         (unos para un lado y otros para el otro). Además, le daremos una velocidad de movimiento (pasos) diferente a 
+         cada uno.
       </p>
-      <p class="img_centrada"><img src="img/juego3/3-3.png" width="40%" alt=""></p>
+      <p class="nota">
+         Recordamos que para que no se giren los objetos cuando cambian de dirección, le cambiaremos el "Estilo de 
+         Rotación" a "Izquierda/Derecha".
+      </p>
+      <p class="img_centrada"><img src="img/juego3/3-1.png" width="35%" alt=""></p>
+      <p class="texto">
+         Ahora, para darle mayor realismo, en lugar de que los peces vayan hasta el final continuamente, añadiremos 
+         que, de vez en cuando, el pez haga un giro de 180 grados y de la vuelta en cualquier sitio del 
+         acuario. Para ello utilizaremos la instrucción "Número Aleatorio".
+      </p>
+      <p class="img_centrada"><img src="img/juego3/3-2.png" width="50%" alt=""></p>
+      <p class="texto">
+         Dibujaremos dos objetos nuevos que imiten a unas algas del fondo marino y las posicionaremos e nuestro 
+         escenario.
+      </p>
+      <p class="img_centrada"><img src="img/juego3/3-3.png" width="60%" alt=""></p>
       <br>  
-
-      <p class="nota">
-         Es recomendable siempre posicionar los personajes antes de comenzar con su progrmación.
+      <p class="texto">
+         Aunque Scratch en una herramienta para hacer juegos en 2D, vamos a simular la profundidad del fondo del mar.
+         <br><br>
+         Para ello usaremos el bloque "Ir a Capa", que en algunos objetos pondremos que vaya a la capa delantera y en 
+         otros a la trasera.
+         <br><br>
+         El código de los peces quedará de la siguiente forma.
       </p>
-      <p class="img_centrada"><img src="img/juego3/3-4.png" width="40%" alt=""></p>
-      <br>  
-
-      <p class="nota">
-         Y en cada personaje pondremos que se ponga en una capa delantera o trasera como queramos. 
+      <p class="img_centrada"><img src="img/juego3/3-4.png" width="50%" alt=""></p>
+      <p class="texto">
+         Este código estará igual en todos los peces, salvo la posición inicial de cada pez, su dirección inicial y la 
+         capa a la que les mandaremos.
+         <br><br>
+         Por último, como el fondo que hemos elegido tiene tres escenarios distintos, pondremos que vaya cambiando de 
+         fondo cada segundo para darle otro toque más realista.
       </p>
-      <p class="img_centrada"><img src="img/juego3/3-5.png" width="40%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego3/3-5.png" width="20%" alt=""></p>
 
-      
-      <a class="texto volver" href="indexscratch.html">Volver al índice</a>
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego3/3-6.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/3-Acuario.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="indexiniciales.html">Volver al índice</a>
    </div>
    <div id="pie">
       <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
