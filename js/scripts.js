@@ -9,4 +9,3 @@ setTimeout(() => {
     document.getElementById("pageloader").classList.add("dimissloader");
     console.log("holamundo");
 }, 1000);
-

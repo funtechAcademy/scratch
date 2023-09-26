@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>El Trenecito</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>El Trenecito</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>El Trenecito</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Tren</h4>
+      <p class="texto">
+         Será el personaje que se moverá cambiando de disfraces y cambiando de escenario. Lo podemos descargar de este 
+         <a href="sprites/juego2/Tren.zip" download="Tren"> link</a>. Es un archivo comprimido con 3 objetos. Lo 
+         descargaremos y lo descomprimimos en el directorio del alumno.
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+          Habrá como mínimo dos escenarios y los cogeremos del repositorio de Scratch.
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         El juego consiste en hacer que nuestro tren viaje por distintos escenarios.
+         <br><br>
+         Primero borraremos el objeto del gato y añadiremos los tres objetos descargados del tren.
+         <br><br>
+         El primero será nuestro objeto definitivo y le añadiremos el disfraz del segundo objeto y del tercero, 
+         quedando el primer objeto con los tres disfraces distintos.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-1.gif" width="60%" alt=""></p>
+      <p class="texto">
+         Una vez echo esto, borraremos los objetos que se han quedado con un solo disfraz y añadiremos un par de 
+         escenarios por donde marchará nuestro tren.
+         <br><br>
+         Posicionaremos el tren en la parte inferior izquierda apuntando hacia la derecha y pondremos el fondo que 
+         queramos que aparezca en primer lugar.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-2.png" width="25%" alt=""></p>
+      <p class="texto">
+         Se moverá el tren hacia la derecha mediante "Mover Pasos" de 10 en 10 y dentro de un bucle con las 
+         suficientes repeticiones como para que llegue al final de la pantalla.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-3.png" width="25%" alt=""></p>
+      <p class="texto">
+         Por otro lado, cambiaremos de disfraz, pero lo haremos en otro bloque ya que al poner un esperar podría
+         afectar al movimiento del tren.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-4.png" width="25%" alt=""></p>   
+      <p class="texto">  
+         Cuando el tren esté en la parte de la izquierda y casi no se vea, cambiaremos el escenario y volveremos a 
+         posicionar el tren en la izquierda, en la posición inicial. Volveremos a mover el tren hacia la derecha de la 
+         misma forma que con el anterior escenario
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-5.png" width="25%" alt=""></p>   
+      <p class="texto">
+         Añadiremos el sonido de la locomotora que podemos descargar desde 
+         <a href="sprites/juego2/locomotora.wav" download="Sonido Locomotora">aquí</a> (botón derecho/guardar enlace 
+         como), añadiéndoselo al objeto tren. 
+         <br><br>
+         También crearemos un sonido con la flauta que simule el silbato del tren. Podemos añadir cualquiera de los 
+         dos o incluso los dos juntos para darle mayor realismo.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-6.png" width="80%" alt=""></p>  
+      <p class="nota">
+         Para que nuestro programa esté continuamente funcionando, podemos poner un bloque "Por Siempre" que englobe 
+         todo el código para que el tren esté en continuo movimiento.
+      </p>
+      <p class="texto">  
+         Con todos los cambios, quedará de la siguiente manera.
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-7.png" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego2/2-8.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Ahora podemos añadirle todos los fondos que queramos para que el tren no pare de viajar. Podemos cambiar el 
+         cambio de escenario de uno en concreto por "Siguiente Fondo".
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/2-ElTrenecito.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="indexiniciales.html">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
