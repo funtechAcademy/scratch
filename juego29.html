@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Aventura Espacial</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Aventura Espacial</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Aventura Espacial</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Nave, bala arriba, bala abajo, asteroide y un botón de play.
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Necesitamos dos, el escenario starts y escenario portada.
+      </p>
+      
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         El juego consiste en ir destruyendo asterioides que apareceran por la derecha de distinto tamaño.
+      </p>
+      <p class="texto">
+         Pondremos el escenario portada y el botón de play. Crearemos también una variable "empezar" para que mientras este 
+         igual a 0 no se podrá jugar.
+      </p>
+      <p class="img_centrada"><img src="img/juego29/29-1.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego29/29-2.png" width="20%" alt=""></p>
+
+      <p class="texto">
+         Cuando demos al botón de Play lo esconderemos y cambiaremos el fondo a escenario start.
+      </p>
+      <p class="img_centrada"><img src="img/juego29/29-3.png" width="20%" alt=""></p>
+      <p class="texto">
+         Si la variable "empezar" este igual a 1 se podrá jugar.
+      </p>
+      <p class="img_centrada"><img src="img/juego29/29-4.png" width="20%" alt=""></p>
+
+      <p class="nota ">
+         También se podría hacer en vez de crear una variable usar el bloque "detener" llamandoló con un "enviar y recibir".
+      </p>
+    
+      <p class="texto">
+         La nave nada más empezar el juego la posicionamos, le ponemos el disfraz "Nave1", la escondemos y crearemos una variable
+         "puntos" que la esconderemos también y la inicializamos a 0. Y nos falta una última variable "NaveKo" que la inicializamos a 0 y 
+         cuando la destruyan le pondremos a 1.
+      </p>
+      <p class="img_centrada"><img src="img/juego29/29-5.png" width="20%" alt=""></p>
+      <p class="texto">
+         Cuando comienza el juego haremos cambio de disfraz de la nave siempre que las variables "empezar" será igual a 1 y "NaveOK" será 0 ya que todavía
+         no la han destruido.
+      </p>
+      <p class="img_centrada"><img src="img/juego29/29-6.png" width="20%" alt=""></p>
+      <p class="texto">
+        El movimiento de la nave serán con las cuatro flechas pero comprobaremos en que posición se encuentra antes de dejar darle a la flecha. No podrá
+        pasar de la "X > 0" cuando le demos a la tecla derecha. 
+      </p>
+      <p class="img_centrada"><img src="img/juego29/29-7.png" width="20%" alt=""></p>
+      <p class="texto">
+         Guardaremos continuamente la "posición en x" y "posición en y" en dos variables "bala arriba x" y "bala arriba y".
+      </p>
+      <p class="img_centrada"><img src="img/juego29/29-8.png" width="20%" alt=""></p>
+      <p class="texto">
+        Cuando "empezar" y "NaveKo" es igual a 1 ha empezado el juego y han destruido a la nave asi que cambiamos el disfraz de la nave a 
+        explosión y se terminará el juego.
+      </p>
+      <p class="img_centrada"><img src="img/juego29/29-9.png" width="45%" alt=""></p>
+      <p class="nota">
+         Podemos hacer que la nave tenga 3 vidas, con varios disfraces de que está destruida la nave. Y un Game Over.
+       </p>
+      <p class="texto">
+        El "recibir terminar juego" detendrá otros programas del objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego29/29-10.png" width="45%" alt=""></p>
+      <p class="texto">
+        La Bala Arriba dispará al presionar el espacio. Posicionara la bala en las variable de "bala arriba x" y "bala arriba y". 
+        La Y la subiriamos un poco para que este centrado.
+       </p>
+       <p class="img_centrada"><img src="img/juego29/29-11.png" width="45%" alt=""></p>
+       <p class="texto">
+         Nada más dar al espacio haremos un repetir y la moveremos hasta que llegue a una determinada posición y la escondemos.
+       </p>
+       <p class="img_centrada"><img src="img/juego29/29-12.png" width="45%" alt=""></p>
+       <p class="texto">
+        La Bala Abajo hará exactamente lo mismo que la Bala Arriba pero la Y la posicionamos un poco más abajo. Y haremos un sonido.
+       </p>
+       <p class="img_centrada"><img src="img/juego29/29-13.png" width="45%" alt=""></p>
+       <p class="texto">
+        La Bala Abajo también tendrá un "recibir terminar juego" al igual que el Asteroide.
+       </p> 
+       <p class="texto">
+         El Asteroide tendrá clones.
+       </p>
+       <p class="img_centrada"><img src="img/juego29/29-14.png" width="45%" alt=""></p>
+       <p class="nota">
+         El original siempre se esconde y el que se muestra es el clon ya que será el clon quien se mueva.
+       </p>
+       <p class="texto">
+         El Asteroide se posicionara en la misma X de la derecha pero tendra en la Y un número aleatorio.
+       </p>
+       <p class="img_centrada"><img src="img/juego29/29-15.png" width="45%" alt=""></p>s
+      <p class="texto"> 
+        El Asterioide se moverá hacia la izquierda com el bloque de "sumar a x" hasta que llegue a una determinada posición de X.
+      </p>
+      <p class="img_centrada"><img src="img/juego29/29-16.png" width="45%" alt=""></p>
+      <p class="texto"> 
+         Dentro del repetir pondremos el bloque de si tocamos a la Nave. Hacemos un desvanecer y la variable "NaveKo" la ponemos a 1 
+         para que termine el juego. Y se elimina el clon
+       </p>
+       <p class="img_centrada"><img src="img/juego29/29-17.png" width="45%" alt=""></p>
+       <p class="texto"> 
+         Dentro del repetir pondremos otro bloque para si el Asteroide toca a la Bala arriba y Bala abajo sumariamos "puntos", cambiamos disfraz a
+         explosión y hacemos otro efecto de desvanecer. Y se elimina el clon.
+       </p>
+       <p class="img_centrada"><img src="img/juego29/29-18.png" width="45%" alt=""></p>
+       <p class="texto"> 
+         Cuando termina el repetir también eliminaremos el clon por si no ha tocado ni el Asteroide ni la Nsave.
+       </p>
+       <p class="img_centrada"><img src="img/juego29/29-19.png" width="45%" alt=""></p>
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego13/4-6.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/4-GatoVeloz.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="indexiniciales.html">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
