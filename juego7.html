@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Número Aleatorio Gato Y Pintar</title>
+   <title>A Pintar</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Número Aleatorio Gato Y Pintar</h1>
+      <h1>A Pintar</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,7 +21,7 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Número Aleatorio Gato Y Pintar</h2>
+      <h2>A Pintar</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
@@ -29,60 +29,76 @@
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         No necesitamos ninguno. 
+         No necesitamos ningún escenario. 
       </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que el personaje se movera aleatoriamente continuamente y utilizara la extensión de lápiz para ir dibujando una
-         línea. El color y el grosor del lápiz cambiará antes de modificar su dirección y mover pasos.  
+         El juego consiste en que el personaje elegido se movera por la pantalla pintando su rastro aleatoriamente y 
+         con distinto grosor y color dependiendo de la dirección.
+         <br><br>
+         Utilizaremos los bloques de Lápiz. Para añadirlos a nuestros bloques de código, iremos a la esquina 
+         inferior izquierda de la pantalla y pincharemos en el bloque azul de añadir extensión. Aparecerá una 
+         pantalla con todas las extensiones posibles.
+         <br><br>
+         Pincharemos en "Lápiz" y seguidamente aparecerá el nuevo grupo de bloques en la pantalla principal de 
+         Scratch.
       </p>
-      <p class="img_centrada"><img src="img/juego7/7-1.png" width="20%" alt=""></p>
-      <p class="img_centrada"><img src="img/juego7/7-2.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego7/7-1.png" width="70%" alt=""></p>
       <p class="nota">
-         La Extensión del Lapiz está en la parte inferior izquierda de Scratch.
-       </p>
-      <p class="texto">
-        Seleccionamos el personaje que queramos y lo p6sosicionamos en el centro del escenario. Y lo ponemos mirando hacia la derecha para que se quede
-        bien posicionado.
+         Nota: De esta forma podemos añadir cualquiera de las extensiones de Scratch
       </p>
-      <p class="img_centrada"><img src="img/juego7/7-3.png" width="20%" alt=""></p>
       <p class="texto">
-         Borramos todo para limpiar todas las líneas el escenario por si hubieramos ejecutado anteriormente.
-       </p>
-       <p class="img_centrada"><img src="img/juego7/7-4.png" width="20%" alt=""></p>
-       <p class="texto">
-         Usamos "bajar lápiz" para que pintar.
-       </p>
-       <p class="img_centrada"><img src="img/juego7/7-5.png" width="20%" alt=""></p>
-      <p class="texto">
-         Creamos una variable que se llame "resultado" donde guardaremos un número a la que se dirigira el personaje mediante un 
-         bloque de "número aleatorio" entre 1 y 4. 
+         Lo primero que haremos será seleccionar el personaje que queramos y lo pososicionamos en el centro del 
+         escenario.
+         <br><br>
+         Lo orientaremos hacia la derecha y haremos un bucle que repetirá las instrucciones hasta que toque un borde.
       </p>
-      <p class="img_centrada"><img src="img/juego7/7-6.png" width="45%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego7/7-2.png" width="35%" alt=""></p>
       <p class="texto">
-       Si el resultado es 1 cambiaremos el color, el tamaño del lapiz. Y apuntará a la derecha y moverá pasos. Pondremos un "esperar" para
-       que no lo pinte muy rápido.
+         Añadimos a nuestro código los bloques necesarios para empezar a pintar, que serán "Borrar Todo" para empezar 
+         con la pantalla limpia, y "Bajar Lápiz" para empezar a pintar.
+         <br><br>
+         El objeto se moverá automáticamente hacia cualquier lado (derecha, izquierda, arriba o abajo). Para que esta 
+         dirección sea aleatoria, elegiremos esta dirección mediante un "Número Aleatorio" entre 1 y 4 para darle un 
+         valor a cada lado. Este valor lo guardaremos en una variable que podemos llamar "Direccion". Lo haremos 
+         dentro del bucle ya que lo tiene que hacer antes de cada movimiento.
       </p>
-      <p class="img_centrada"><img src="img/juego7/7-7.png" width="45%" alt=""></p>
+       <p class="img_centrada"><img src="img/juego7/7-3.png" width="50%" alt=""></p>
+      <p class="nota">
+         Nota: El nombre de las variables lo pondremos en relación al contenido que va a almacenar. Evitaremos los 
+         acentos ya que hay lenguajes de programación que no los admiten.
+      </p>
+      <p class="nota">
+         Recordar: El cálculo de la dirección aleatoria lo volveremos a utilizar en posterores juegos.
+      </p>
       <p class="texto">
-         Tenemos que hacer que lo haga por siempre para que el personaje se mueva. Le pondremos un "por siempre".
-       </p>
-       <p class="img_centrada"><img src="img/juego7/7-8.png" width="45%" alt=""></p>
-
-       <p class="texto">
-         Una vez que veamos que funciona correctamente vamos a sustituir el "por siempre" por el "repetir hasta que" el personaje toque
-         el borde.
-       </p>
-       <p class="img_centrada"><img src="img/juego7/7-9.png" width="45%" alt=""></p>
+         Dependiendo del valor de la dirección, pintaremos en una dirección o en otra con un grosor distinto.
+         <br><br>
+         Añadiremos dos nuevos bloques de lapiz, "Fijar Color de Lápiz" para darle un color y "Fijar Tamaño del 
+         Lápiz" para definir el grosor.
+         <br><br>
+         A continuación, apuntaremos en la dirección que nos indique la variable y moveremos pasos (para que se vea 
+         bien el efecto, pondríamos 20 pasos).
+         <br><br>
+         Para ver bien el efecto de pintado, pondremos un bloque "Esperar".
+         <br><br>
+         El código definitivo quedará así.
+      </p>
+      <p class="img_centrada"><img src="img/juego7/7-4.png" width="45%" alt=""></p>
+      <p class="nota">
+         Podemos optimizar el código de la parte que hacemos para cada dirección, sacando al final del bucle lo que 
+         se repite.
+      </p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
+      <p class="img_centrada"><img src="img/juego7/7-5.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/899902222/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/905645796/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/4-GatoVeloz.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/7-APintar.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="indexiniciales.html">Volver al índice</a>
