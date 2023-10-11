@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Bicho En El Plato</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Bicho En El Plato</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Bicho En El Plato</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Mariquita, Fruta, Basura, Reloj y Frutas.
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Necesitamos dos, el escenario click y escenario juego. 
+      </p>
+      
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         El juego consiste en que la mariquita tiene que coger las frutas que apareceran aleatoriamente en el
+         escenario. Acumulando puntos y tendrá un tiempo determinado para poder recoger la fruta.
+      </p>
+      <p class="texto">
+         Pondremos el escenario click y la mariquita en el centro. en el lateral del escenario tendremos que poner los siguientes sprites:
+         Frutas, Basura y Reloj. Cada uno tendrá su variable de: Puntos, Borrar y Tiempo.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-1.png" width="20%" alt=""></p>
+     
+      <p class="texto">
+         Nada más darle a la bandera verde inicializaremos las variables y cambiamos al escenario click. Tenemos otra variable "Game Over"
+          la inicializamos a 1 (el juego no funciona). Hacemos un "enviar jugar" para inicializar el juego para quitar efectos gráficos, borrar las
+          lineas si se ha jugado antes, esconder objetos...
+       </p>
+      <p class="img_centrada"><img src="img/juego30/30-2.png" width="20%" alt=""></p>
+      <p class="texto">
+         Al hacer el click en el escenario y si la variable "Game Over" es 1 la pondremos a 0 para que no se pueda volver dar click al escenario. 
+         "enviar Empezar" y cambiamos al "Escenario Juego".
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-3.png" width="20%" alt=""></p>
+      <p class="texto ">
+         La mariquita como siempre la colocamos en el centro del plato y mirando hacia arriba.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-4.png" width="20%" alt=""></p>
+      <p class="texto">
+         Antes de empezar a mover a la mariquita necesitamos saber si estamos jugando o no. Para ello tenemos la variable "Game Over" y si
+         está a 0 me dejara mover la mariquita.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-5.png" width="20%" alt=""></p>
+      <p class="texto">
+         El movimiento de la mariquita con las flechas la meteremos dentro del "Game Over" si es igual a 0.
+      </p>
+      <p class="texto">
+         La mariquita se movera dentro de unos rangos. Ya que en la parte de la izquierda tenemos la sección de puntos, basura y tiempo y no
+         podrá acceder a esa parte. Lo haremos comprobando continuamente su "posición en x" ó "posición en y". Y cuando estemos en ese rango le dejaremos
+         que el jugador pueda dar a la tecla correspondiente.
+      </p>
+      <p class="texto">
+         La flecha derecha se podrá pulsar siempre que la "posición en x" de la mariquita sea menor de 230. Apuntara hacia la derecha, movera pasos y
+         cambiara de disfraz.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-6.png" width="20%" alt=""></p>
+      <p class="texto">
+         La flecha izquierda se podrá pulsar siempre que la "posición en x" de la mariquita sea mayor de -160. Apuntara hacia la izquierda, movera pasos y
+         cambiara de disfraz.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-7.png" width="20%" alt=""></p>
+      <p class="texto">
+         La flecha arriba se podrá pulsar siempre que la "posición en y" de la mariquita sea menor de 170. Apuntara hacia la arriba, movera pasos y
+         cambiara de disfraz.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-8.png" width="20%" alt=""></p>
+      <p class="texto">
+         La flecha abajo se podrá pulsar siempre que la "posición en y" de la mariquita sea mayor de -170. Apuntara hacia abajo, movera pasos y
+         cambiara de disfraz.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-9.png" width="20%" alt=""></p>
+      <p class="texto">
+         La mariquita tendrá "recibir jugar" donde pondremos que dibuje una linea de color azul y tendrá un tamaño de lapiz para poder dibujar
+         la linea que aparece en el juego.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-10.png" width="20%" alt=""></p>
+
+      <p class="texto">
+         Si el color de la cabeza de color gris toca el color azul de la línea "enviar Parar Juego" haremos un efecto "Ghost".
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-11.png" width="20%" alt=""></p>
+      <p class="texto">
+         Y si toca una fruta sumara puntos, sonora un sonido y haremos un "enviar fruta" que ira a la fruta y hara ciertas cosas que veremos más adelante.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-12.png" width="20%" alt=""></p>
+      <p class="texto">
+        Comenzaremos con la fruta. Tenemos en "al recibir Coger fruta" posicionamos la frura con un número aleatorio tanto en "X" como en "Y". Y cambiariamos
+        el disfraz también aleatoriamente.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-13.png" width="20%" alt=""></p>
+      <p class="texto">
+         En la Fruta tendremos también un "al recibir Empezar" para llamar de nuevo al "enviar Coger fruta"<div class=""></div>
+       </p>
+       <p class="img_centrada"><img src="img/juego30/30-14.png" width="20%" alt=""></p>
+       
+       <p class="texto">
+         También haremos que la fruta se mueva un poco hacia arriba y hacia abajo.
+       </p>
+       <p class="img_centrada"><img src="img/juego30/30-15.png" width="20%" alt=""></p>
+       
+       <p class="texto">
+         Y pondremos el mismo bloque de "al recibir Parar juego" que tiene la mariquita para que haga el efecto.
+       </p>
+       <p class="texto">
+        Comenzamos con la Basura. Al empezar la inicializamos a 3 y le ponemos el disfraz.
+       </p>
+       <p class="img_centrada"><img src="img/juego30/30-16.png" width="20%" alt=""></p>
+       <p class="texto">
+         Y cuando hacemos un click en la Basura cambiaremos su disfraz, haremos un sonido, borraremos las lineas dibujadas y quitaremos a su 
+         contador 1.
+        </p>
+        <p class="img_centrada"><img src="img/juego30/30-17.png" width="20%" alt=""></p>
+        <p class="texto">
+         Solo nos faltaria poner el reloj. que Empezara con 15 segundos para poder coger la frua.
+        </p>
+        <p class="img_centrada"><img src="img/juego30/30-18.png" width="20%" alt=""></p>
+        <p class="texto">
+         Cuando el tiempo sea mayor que 5 sonara un sonido pero cuando sea menor que 5 sonara otro sonido. Y cuando el Tiempo sea 0
+         el juego se parara.
+        </p>
+        <p class="img_centrada"><img src="img/juego30/30-19.png" width="20%" alt=""></p>
+        <p class="texto">
+         Faltaria poner el Sprite Fruta que solo se mostrara para que debajo aparezcan los Puntos..
+        </p>
+        
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego13/4-6.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/4-GatoVeloz.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="indexiniciales.html">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
