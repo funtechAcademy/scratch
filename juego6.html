@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Estrella Y Sol</title>
+   <title>Rebota</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Estrella Y Sol</h1>
+      <h1>Rebota</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,59 +21,69 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Estrella Y Sol</h2>
+      <h2>Rebota</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Nosotros hemos seleccionado la estrella y el sol de la biblioteca del Scratch pero si se quiere se puede seleccionar otros
-         personajes.
+         Necesitamos dos personajes de la biblioteca del Scratch.
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Como mímino necesitamos dos escenarios de la biblioteca pero podemos tener más. 
+         Como mímino necesitamos dos escenarios de la biblioteca pero podemos tener todos los que queramos. 
       </p>
-      <p class="img_centrada"><img src="img/juego6/6-1.png" width="20%" alt=""></p>
       <h3>Paso a Paso</h3>
-    s  <p class="texto">
-         El juego consiste en que la estrella se moverá continuamente con una dirección dada al principio de forma aleatoria y si toca
-         el sol cambiara al siguiente escenario. 
+      <p class="texto">
+         El juego consiste en que nosotros manejaremos un objeto con los cursores por la pantalla y habrá otro objeto 
+         que se irá moviendo automáticamente por toda la pantalla.
+         <br><br>
+         Posicionamos el objeto que se va a mover automáticamente por toda pantalla en el cetro. Antes de iniciar el 
+         movimiento, apuntaremos a una posición aleatoria para que cada vez el objeto empiece a moverse hacia una 
+         dirección distinta. 
+         <br><br>
+         una vez orientado en una dirección, lo moveremos por la pantalla, teniendo en cuenta que si toca un borde 
+         rebote para que no pare nunca de moverse.
       </p>
+      <p class="img_centrada"><img src="img/juego6/6-1.png" width="50%" alt=""></p>
       <p class="texto">
-        La estrella la posicionamos en el centro. Y apuntaremos en una dirección aleatoria. 
+         El otro objeto, el que moveremos con los cursores, lo posicionaremos en cualquier sitio de la pantalla 
+         (podría ser aleatorio tanto la x como la y).
+         <br><br>
+         Una vez posicionado, controlaremos que si pulsamos alguno de los cursores, apunte en esa dirección y se 
+         mueva unos pasos.
       </p>
-      <p class="img_centrada"><img src="img/juego6/6-2.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego6/6-2.png" width="45%" alt=""></p>
       <p class="texto">
-         Se movera y si toca un borde rebotará.
-       </p>
-       <p class="img_centrada"><img src="img/juego6/6-3.png" width="20%" alt=""></p>
-      <p class="texto">
-         El sol lo posicionaremos y lo moveremos con la flechas hacia la derecha, izquierda, arriba y abajo. También lo mostraremos
-         por si estuviese escondida.
+         Añadiremos algo de emoción al juego. Si el objeto que se mueve, toca a nuestro objeto, desencadenará un 
+         cambio de escenario. Además, cada vez que esto ocurra, haremos un sonido que añadiremos a nuestro objeto 
+         desde la biblioteca de sonidos. Aprovecharemos también el choque de objetos para practicar los efectos 
+         gráficos, cambiando el color de nuestro objeto.
       </p>
-      <p class="img_centrada"><img src="img/juego6/6-4.png" width="45%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego6/6-3.png" width="40%" alt=""></p>
       <p class="texto">
-        Si el sol toca a la estrella hara un cambio de escenario. También pondremos un sonido y cambiaremos de color al sol.
+         Si ejecutamos lo que hemos hecho, observamos que si se tocan, hace un cambio de escenario continuamente 
+         hasta que dejande tocarse.
+         <br><br>
+         Para solucionarlo, lo que tenemos que hacer es esconder nuestro objeto, esperar un tiempo y volver a 
+         mostrarlo. Así le dará tiempo a la estrella a atravesarlo y solo tocarlo una vez.
       </p>
-      <p class="img_centrada"><img src="img/juego6/6-5.png" width="45%" alt=""></p>
-      <p class="texto">
-         Si ejecutamos observamos que si se tocan hace un cambio de escenario continuamente. Asi que lo solucionaremos escondiendo el sol
-         un poco y volviendo a mostrarlo al cabo de unos segundos para que a la estrella le de tiempo a pasar y asi no le tocará.
-       </p>
-       <p class="img_centrada"><img src="img/juego6/6-6.png" width="45%" alt=""></p>
-
-       <p class="nota"> 
-         Podemos hacer una variable de Vidas para que cuando se toquen le quiten vidas al sol y que cuando llegue a 0 se acabe el juego 
-         poniendo un escenario de "Game Over" que hará el alumno.   
+      <p class="img_centrada"><img src="img/juego6/6-4.png" width="40%" alt=""></p>
+      <p class="nota"> 
+         Podemos hacer una variable de vidas para que cada vez que se toquen, nos quite una vida. Le daremos una 
+         valor inicial con el número de vidas y cuando llegue a 0 se acabará el juego.
+         <br><br>
+         También podemos añadir que cuando llegue a 0 vidas, aparezca un nuevo escenario de "Game Over" que no 
+         aparecerá antes en los cambios de escenario.   
       </p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
+      <p class="img_centrada"><img src="img/juego6/6-5.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/899902222/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/905199905/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/4-GatoVeloz.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/6-Rebota.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="indexiniciales.html">Volver al índice</a>

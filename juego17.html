@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Gato Pilla Al Ratón</title>
+   <title>Que Te Pillo</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Gato Pilla Al Ratón</h1>
+      <h1>Que Te Pillo</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,61 +21,105 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Gato Pilla Al Ratón</h2>
+      <h2>Que Te Pillo</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Seleccionamos varios personajes de la biblioteca del Scratch que estárán en un solo objeto dentro de disfraces. Una flecha que 
-         mire hacia la derecha y otra hacia la izquierda. Un botón para comenzar el juego. Y un ratón que será el que intente escaparse de nuestro
-         personaje.
+         Necesitamos mínimo cuatro objetos distintos para seleccionar el personaje de juego y un ratón que será el 
+         que intente escaparse de nuestro personaje. Los elegiremos de la bibloteca de Scratch. También buscaremos en 
+         la biblioteca una flecha a la derecha, otra a la izquierda y un botón de inicio del juego.
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         No necesitamos ninguno. 
+         No necesitamos ningún escenario. 
       </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en seleccionar el personaje de los diferentes disfraces que tiene bien hacia delante o hacia atrás. 
-         Daremos a un botón para comenzar a jugar. Y nuestro personaje tendrá que perseguir al ratón. 
+         El juego consiste en seleccionar el personaje mediante las flechas de entre los que nos aparecerán y al 
+         pinchar en el botón empezará el juego en el que nuestro personaje tendrá que perseguir al ratón. 
+         <br><br>
+         Primero, añadimos los cuatro personajes y tenemos que agruparlos en uno solo. Para ello, copiamos un disfraz 
+         de cada objeto al primer objeto. Una vez hecho esto, borramos los objetos que sobren, quedándonos con el 
+         objeto que tiene todos los disfraces.
       </p>
+      <p class="img_centrada"><img src="img/juego17/17-1.png" width="70%" alt=""></p>
+      <p class="texto">
+         Al objeto botón le pondremos el texto "Jugar" en el medio.
+      </p>
+      <p class="img_centrada"><img src="img/juego17/17-2.png" width="10%" alt=""></p>
+      <p class="texto">
+         Lo primero, como siempre, será posicionar todos los objetos que aparecerán al empezar el juego. En el centro 
+         el personaje con los 4 disfraces (con el disfraz que queramos que empiece el juego, y a cada lado la flecha 
+         a la derecha y la flecha a la izquierda. El botón de jugar lo pondremos en la esquina inferior derecha, por
+         ejemplo.
+      </p>
+      <p class="img_centrada"><img src="img/juego17/17-3.png" width="60%" alt=""></p>
+      <p class="texto">
+         Si pinchamos en la flecha derecha, cambiaremos el disfraz del personaje hacia adelante y si lo hacemos en la 
+         flecha izquierda, lo hará hacia atrás.
+         <br><br>
+         Para que desde un objeto podamos interactuar con otro objeto, lo podemos hacer enviando "Mensajes". Si un 
+         objeto envía un mensaje "X", todo objeto que tenga el bloque de control "Al Recibir X" ejecutará la pila 
+         de bloques que tenga asociada esta etiqueta.
+         <br><br>
+         Por ejemplo, si al pinchar en la flecha a la derecha enviamos el mensaje "Siguiente Disfraz" y en el 
+         personaje tenemos el bloque de control "Al Recibir Siguiente Disfraz", ejecutará todo lo que tengamos 
+         asociado a ese bloque.
+      </p>
+      <p class="img_centrada"><img src="img/juego17/17-4.png" width="50%" alt=""></p>
+      <p class="texto">
+         Para cambiar el disfraz hacia adelante enviaremos el mensaje "Siguiente Disfraz" desde la flecha derecha y 
+         para cambiar el disfraz hacia atrás enviaremos el mensaje "Anterior Disfraz" desde la flecha izquierda.
+         <br><br>
+         El código en las flechas quedaría así.
+      </p>
+      <p class="img_centrada"><img src="img/juego17/17-5.png" width="50%" alt=""></p>
+      <p class="texto">
+         En nuestro objeto tendremos que poner dos bloques de control "Al Recibir" uno para recibir el mensaje 
+         "Siguiente Disfraz" y otro para recibir "Anterior Disfraz".
+         <br><br>
+         En el mensaje "Siguiente Disfraz" pondremos el bloque "Siguiente Disfraz".
+         <br><br>
+         Para el mensaje "Anterior Disfraz" no existe un bloque "Anterior Disfraz", con lo que tendremos que simularlo.
+      </p>
+      <p class="img_centrada"><img src="img/juego17/17-6.png" width="40%" alt=""></p>
+      <p class="texto">
+         En el botón, al pinchar en el objeto, haremos dos cosas. Primero tendremos que esconder todos los objetos 
+         que sobran cuando empecemos a jugar. Para ello, mandaremos un mensaje "Esconder" y en cada objeto que 
+         queramos esconder, recibiremos el mensaje "Esconder" y pondremos un bloque "Esconder".
+         <br><br>
+         También haremos empezar el juego, con lo que enviaremos también otro mensaje "Jugar". Este mensaje lo 
+         recibirá el objeto ratón y más adelante veremos como lo programamos.
+      </p>
+      <p class="img_centrada"><img src="img/juego17/17-7.png" width="20%" alt=""></p>
+      <p class="texto">
+         En el objeto ratón, al recibir el mensaje "Jugar", posicionaremos el raton, lo mostraremos y haremos que nos 
+         persiga mediante el bloque "Apuntar Hacia" y el bloque "Ir A".
+      </p>
+      <p class="img_centrada"><img src="img/juego17/17-8.png" width="27%" alt=""></p>
+      <p class="texto">
+         Lo último que nos queda programar será manejar nuestro personaje cuando empiece el juego.
+         <br><br>
+         Lo que haremos será dentro de un bloque "Por Siempre", apuntar hacia el puntero del ratón y mover pasos y 
+         controlar que si nos toca el ratón, esconder el ratón mediante un mensaje, mostraremos un mensaje que diga 
+         que nos ha atrapado y detener el juego.
+         <br><br>
+         Nuestro personaje quedará de la siguiente manera.
+      </p>
+      <p class="img_centrada"><img src="img/juego17/17-9.png" width="35%" alt=""></p>
       <p class="nota">
-         Lo primero será posicionar todos los objetos en su sitio con X e Y. 
-       </p>
-      <p class="img_centrada"><img src="img/juego17/17-1.png" width="20%" alt=""></p>
-      <p class="texto">
-         Si le damos a la flecha derecha tenemos que hacer un enviar para que nos haga un "siguiente disfraz" en nuestro personaje.
-       </p>
-       <p class="img_centrada"><img src="img/juego17/17-2.png" width="20%" alt=""></p>
-       <p class="texto">
-         Si le damos a la flecha izquierda tenemos que hacer un enviar para que nos haga un "disfraz  anterior" en nuestro personaje
-       </p>
-       <p class="img_centrada"><img src="img/juego17/17-3.png" width="20%" alt=""></p>
-       <p class="texto">
-         Y daremos al botón de jugar para que comience el juego. Tendremos que esconder el botón y las flechas. El personaje se puede quedar visible
-         para que empiece el juego.
+         Podemos añadirle al juego vidas de nuestro personaje y una pantalla final de "Game Over"
       </p>
-      <p class="img_centrada"><img src="img/juego17/17-4.png" width="45%" alt=""></p>
-      <p class="texto">
-         En nuestro personaje el recibir los mensajes de las flechas lo tendremos de la siguiente manera.
-      </p>
-      <p class="img_centrada"><img src="img/juego17/17-5.png" width="45%" alt=""></p>
-      <p class="texto">
-       El personaje apuntara al ratón y movera pasos. Y cuando toque al ratón pondrá un mensaje.
-      </p>
-      <p class="img_centrada"><img src="img/juego17/17-6.png" width="45%" alt=""></p>
-      <p class="nota">
-         En todos los juegos podemos hacer vidas y/o puntos y un game over si vemos que el alumno lo necesita.
-       </p>
-      
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
+      <p class="img_centrada"><img src="img/juego17/17-10.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/899902222/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/4-GatoVeloz.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/17-QueTePillo.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="indexiniciales.html">Volver al índice</a>
