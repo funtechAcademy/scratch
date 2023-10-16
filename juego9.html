@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Preguntas - Calculadora Con Profesor</title>
+   <title>Calculamos</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Preguntas - Calculadora Con Profesor</h1>
+      <h1>Calculamos</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,57 +21,60 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Preguntas - Calculadora Con Profesor</h2>
+      <h2>Calculamos</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Necesitaremos al Profesor, Suma, Resta, Multiplicación y División.
+         Necesitaremos al profesor y los símbolos de sumar, restar, multiplicar y dividir.
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         No será necesario ninguno.
+         Pondremos el un escenario con una pizarra donde ubicaremos al profe y los símbolos.
       </p>      
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/9-Calculamos.zip" download="Calculamos"> link</a>. Es un archivo comprimido con 5 objetos y 
+         1 escenario. Lo descargaremos y lo descomprimimos en el directorio del alumno.
+      </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que el Profesor nos preguntará como nos llamamos y nos pedirá dos números y luego tendremos que hacer
-         un click en el resto de los objetos para saber el resultado de la suma, resta, multiplicación y división.
+         El juego consiste en que el profesor nos preguntará como nos llamamos y nos pedirá dos números. Después 
+         tendremos que hacer un click en cualquiera de las operaciones y nos dará el resultado.
       </p>
-      <p class="img_centrada"><img src="img/juego9/9-1.png" width="45%" alt=""></p>
       <p class="texto">
-        El Profesor lo posicionaremos como siempre en el centro del escenario. Posicion X/Y a 0.
-        <br>
-        Usaremos el bloque de "preguntar ¿Como te llamas?".
-        <br>
-        Al ejecutar el juego nos apaecerá una linea en blanco para rellenar. La respuesta se guardará en una variable de "respuesta" 
-        y la mostraremos en el escenario mediante un bloque "decir". Necesitaremos otro bloque de "unir" ya que pondremos que el Profesor
-        nos conteste "Hola " "respuesta". Dejaremos un espacio en "Hola " para que no se junte con la respuesta.
-        <br>
-        De la misma forma diremos que nos escriba el primer número y lo guardaremos en una variable y luego le pediremos el segundo número guardandolo
-        también en otra variable. Ya que para hacer las operaciones necesitaremos como minimo dos números.
-        <br>
-        Cuando tengamos las dos variables rellenas con esos números que hemos pedido le diremos que acontinuación tiene que hacer click en
-        los objetos de las operaciones.
+         Lo primero que haremos será posicionar al profesor cerca de la pizarra a la derecha del escenario.
+         <br><br>
+         Usaremos el bloque de "Preguntar Y Esperar" para preguntar "¿Cómo te llamas?" y mostraremos la respuesta 
+         introducida mediante el bloque "Respuesta" y el bloque "Decir Duante Segundos". Se mostrará "Hola" más el 
+         nombre introducido.
+         <br><br>
+         Pediremos también que introduzcan dos números  que guardaremos en dos variables "Numero1" y "Numero2".
+         <br><br>
+         A continuación, solicitaremos que nos tienen que hacer click en la operación que se quiera realizar con esos 
+         dos números.
       </p>
-     
+      <p class="img_centrada"><img src="img/juego9/9-1.png" width="50%" alt=""></p>  
       <p class="texto">
-        Objeto Suma lo primero es posicionar en el escenario el objeto ya continuación usaremos el bloque "decir". Usaremos tambien el bloque de
-      "unir" y por último la operación que necesitemos, en este caso en operadores seleccionamos la suma.
+         Ahora añadiremos los 4 objetos de las operaciones matemáticas en la zona de abajo. Posicionaremos cada uno 
+         de ellos y los reduciremos para que quepan bien debajo de la pizarra.
+         <br><br>
+         Usaremos el bloque "Decir" para mostrar el resultado. Mostraremos el mensaje dependiendo de la operación 
+         uniéndolo al resultado.
       </p>
-    
+      <p class="img_centrada"><img src="img/juego9/9-2.png" width="55%" alt=""></p>  
       <p class="texto">
-        Esto mismo haremos con el resto de los objetos de Resta, Multiplicación y División.
+         Esto mismo lo haremos en el resto de los objetos.
       </p>
-    
-      <p class="texto">
+      <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego9/9.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego9/9-3.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/900645475/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/908486973/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/8-CogeLaManzana.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/9-Calculamos.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
