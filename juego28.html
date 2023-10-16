@@ -27,7 +27,7 @@
       <p class="texto">
          Para este juego vamos a necesitar a nuestro jugador con la cesta, la manzana roja y la amarilla, la bomba, 
          la línea de tierra y el objeto para las vidas. Para la presentación y la pantalla de inicio, la estrella, el 
-         titulo del juego y el boton para empezar a jugar. 
+         titulo del juego y el botón para empezar a jugar. 
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
@@ -58,7 +58,7 @@
       </p>
       <p class="img_centrada"><img src="img/juego28/28-1.png" width="20%" alt=""></p>
       <p class="texto">
-         El recolector se moverá con las flechas izquierda y derecha, moviendonos en el eje X. Esta vez, moveremos el 
+         El recolector se moverá con las flechas izquierda y derecha, moviéndonos en el eje X. Esta vez, moveremos el 
          objeto mediante las coordenadas con el bloque "Sumar A X" y no con el bloque "Mover Pasos".
       </p>
       <p class="img_centrada"><img src="img/juego28/28-2.png" width="45%" alt=""></p>
@@ -67,12 +67,12 @@
       </p>  
       <p class="img_centrada"><img src="img/juego28/28-3.png" width="45%" alt=""></p>
       <p class="texto">
-         En este objeto también le daremos un valor inical (inicializar) a las variables globales que vamos a 
+         En este objeto también le daremos un valor inicial (inicializar) a las variables globales que vamos a 
          necesitar a lo largo del juego. Necesitaremos una para las vidas y otra para los puntos.
       </p>
       <p class="img_centrada"><img src="img/juego28/28-4.png" width="25%" alt=""></p>
       <p class="texto">
-         Ahora programaremos las manzanas, que serán clones. Iran saliendo de la parte superior pero en el eje x la 
+         Ahora programaremos las manzanas, que serán clones. Irán saliendo de la parte superior pero en el eje x la 
          posición será aleatoria para que puedan aparecer por cualquier lado. Irá bajando disminuyendo la coordenada 
          "Y". Aparecerá una manzana cada segundo.
       </p>
@@ -80,7 +80,7 @@
       <p class="texto">
          La manzana al caer irá girando poco a poco.
          <br><br>
-         Pondremos en la parte inferior el objeto "Linea de Tierra" para que cuando toque este objeto, suene el 
+         Pondremos en la parte inferior el objeto "Línea de Tierra" para que cuando toque este objeto, suene el 
          sonido "Sonido Fallo" y le quitará una vida. Al quitarle la vida enviaremos un mensaje "Quitar Vida" que 
          utilizaremos más adelante. Tendremos también que eliminar el clon en lugar de esconderlo.
          <br><br>
@@ -94,7 +94,7 @@
       </p>
       <p class="texto">
          En cuanto a la bomba, tiene dos disfraces, la propia bomba y la explosión. Aparecerán como las manzanas, en 
-         forma de clones. En este caso, al tocar la linea de tierra sonará un sonido y se eliminará el clon.
+         forma de clones. En este caso, al tocar la línea de tierra sonará un sonido y se eliminará el clon.
          <br><br>
          Y si toca la cesta sonará la explosión y se terminará el juego. La forma más sencilla de que termine el 
          juego es quitarle todas las vidas. Aquí también enviaremos un mensaje "Game Over" que también utilizaremos 
@@ -119,7 +119,7 @@
       </p>
       <p class="img_centrada"><img src="img/juego28/28-9.png" width="30%" alt=""></p>
       <p class="texto">
-         Ahora es cuando programamaremos el mensaje "Game Over" y lo haremos dentro de nuestro jugador recolector de 
+         Ahora es cuando programaremos el mensaje "Game Over" y lo haremos dentro de nuestro jugador recolector de 
          manzanas.
         <br><br>
          Al terminarse el juego, cambiaremos el escenario al de "Game Over" y esconderemos todos los objetos. También 
@@ -140,7 +140,7 @@
          Ya tenemos prácticamente terminado el juego. Ahora vamos a ponerle una pantalla de inicio.
          <br><br>
          Comenzaremos poniendo el escenario Intro y colocamos el objeto "Estrella" en el centro. La pondremos muy 
-         pequeña e iremos cambiando su tamaño hasta llegar al 100%. Pondremos un saonido y después la volveremos a 
+         pequeña e iremos cambiando su tamaño hasta llegar al 100%. Pondremos un sonido y después la volveremos a 
          hacer pequeña. Al final enviaremos un mensaje de iniciar el juego ("Jugar") para que aparezca una nueva 
          pantalla para iniciar el juego.
       </p>
@@ -164,7 +164,7 @@
       <p class="img_centrada"><img src="img/juego28/28-14.png" width="40%" alt=""></p>
       <p class="texto">
          El último objeto que pondremos será el botón de inicio del juego. Posicionaremos el objeto y meteremos en un 
-         bucle darle un tamaño y ver si estamos con el ratón por enciam del objeto.
+         bucle darle un tamaño y ver si estamos con el ratón por encima del objeto.
          <br><br>
          Si estamos encima, igual que en el título, lo haremos un poco más grande y cuando deje de estar encima lo 
          dejaremos como estaba.
