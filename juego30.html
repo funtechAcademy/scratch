@@ -13,7 +13,7 @@
 </head>
 <body>
    <div id="cabecera">
-      <h1>Bicho En El Plato</h1>
+      <h1>Bicho En<br>El Plato</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -25,133 +25,134 @@
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Mariquita, Fruta, Basura, Reloj y Frutas.
+         Los objetos necesarios para este juego serán, un bicho (en nuestro caso pondremos una mariquita), distintas
+         frutas que nos iremos comiendo, un cubo de basura, un reloj y una imagen de frutas.
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Necesitamos dos, el escenario click y escenario juego. 
+         Para este juego necesitaremos dos escenarios, el escenario inicial (tendremos que pinchar en él para iniciar
+         el juego) y el escenario del juego.
       </p>
-      
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este
+         <a href="sprites/30-BichoEnElPlato.zip" download="Bicho En El Plato"> link</a>. Es un archivo comprimido
+         con 5 objetos, 2 escenarios y un sonido. Lo descargaremos y lo descomprimimos en el directorio del alumno.
+      </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que la mariquita tiene que coger las frutas que apareceran aleatoriamente en el
-         escenario. Acumulando puntos y tendrá un tiempo determinado para poder recoger la fruta.
+         El juego consiste en que el bicho tiene que ir cogiendo las frutas que van apareciendo aleatoriamente por la 
+         pantalla. Irá acumulando puntos y tendrá un tiempo determinado para poder recoger la fruta. Además, ira 
+         dejando su rastro y no podrá chocarse contra él.
+         <br><br>
+         Primeramente prepararemos la pantalla incial. Colocaremos el escenario inicial y el bicho en el centro del 
+         mismo. En el lateral del escenario tendremos que poner la imagen de la fruta, el cubo de basura y el reloj.
+         <br><br>
+         Cada objeto del lateral tendrá una variable asociada que mostraremos bajo el objeto, "Puntos" bajo la fruta,
+         "Vidas" pago el cubo de basura y "Tiempo" bajo el reloj. Además crearemos otra variable más, que llamaremos 
+         "Jugando" que nos indicará si estamos jugando o no.
       </p>
+      <p class="img_centrada"><img src="img/juego30/30-1.png" width="60%" alt=""></p>
       <p class="texto">
-         Pondremos el escenario click y la mariquita en el centro. en el lateral del escenario tendremos que poner los siguientes sprites:
-         Frutas, Basura y Reloj. Cada uno tendrá su variable de: Puntos, Borrar y Tiempo.
+         En el escenario, crearemos un evento "Al Hacer Click En El Escenario" que nos permitirá iniciar el juego. 
+         Para ello, si el juego no está en marcha, activaremos la variable "Jugando", cambiaremos el escenario al 
+         "Escenario Juego" y mandaremos el mensaje "Empezar", que hará que todos los objetos empiecen el juego.
       </p>
-      <p class="img_centrada"><img src="img/juego30/30-1.png" width="20%" alt=""></p>
-     
+      <p class="img_centrada"><img src="img/juego30/30-2.png" width="30%" alt=""></p>
       <p class="texto">
-         Nada más darle a la bandera verde inicializaremos las variables y cambiamos al escenario click. Tenemos otra variable "Game Over"
-          la inicializamos a 1 (el juego no funciona). Hacemos un "enviar jugar" para inicializar el juego para quitar efectos gráficos, borrar las
-          lineas si se ha jugado antes, esconder objetos...
-       </p>
-      <p class="img_centrada"><img src="img/juego30/30-2.png" width="20%" alt=""></p>
-      <p class="texto">
-         Al hacer el click en el escenario y si la variable "Game Over" es 1 la pondremos a 0 para que no se pueda volver dar click al escenario. 
-         "enviar Empezar" y cambiamos al "Escenario Juego".
+         Después programaremos el bicho. Crearemos un nuevo bloque que llamaremos "Inicializar Juego" que tendrá todo 
+         lo necesario para inicializar nuestro juego. Creamos un bloque ya que lo llamaremos desde varios sitios y 
+         así no duplicamos código.
+         <br><br>
+         Vamos a "Mis bloques" y pinchamos en "Crear un bloque". Aparecerá la ventana de configuración del bloque. En 
+         esta ocasión sólo le daremos un nombre.
       </p>
-      <p class="img_centrada"><img src="img/juego30/30-3.png" width="20%" alt=""></p>
-      <p class="texto ">
-         La mariquita como siempre la colocamos en el centro del plato y mirando hacia arriba.
-      </p>
-      <p class="img_centrada"><img src="img/juego30/30-4.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego30/30-3.png" width="60%" alt=""></p>
       <p class="texto">
-         Antes de empezar a mover a la mariquita necesitamos saber si estamos jugando o no. Para ello tenemos la variable "Game Over" y si
-         está a 0 me dejara mover la mariquita.
+         En el bloque le damos un valor inicial a las variables, posicionamos el 
+         bicho, borramos la pantalla y preparamos el lápiz.
       </p>
-      <p class="img_centrada"><img src="img/juego30/30-5.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego30/30-4.png" width="25%" alt=""></p>
       <p class="texto">
-         El movimiento de la mariquita con las flechas la meteremos dentro del "Game Over" si es igual a 0.
+         Este bloque "Inicializar Juego" lo llamaremos cuando iniciemos el juego, además de poner el escenario 
+         inicial y marcar la variable como que todavía no estamos jugando.
       </p>
+      <p class="img_centrada"><img src="img/juego30/30-5.png" width="27%" alt=""></p>
       <p class="texto">
-         La mariquita se movera dentro de unos rangos. Ya que en la parte de la izquierda tenemos la sección de puntos, basura y tiempo y no
-         podrá acceder a esa parte. Lo haremos comprobando continuamente su "posición en x" ó "posición en y". Y cuando estemos en ese rango le dejaremos
-         que el jugador pueda dar a la tecla correspondiente.
+         Haremos el movimiento del bicho, que será mediante los cursores. Lo haremos dentro de una etiqueta de 
+         control "Empezar", donde también llamaremos a nuestro bloque de inicalizar para poner todo en su sitio antes 
+         de comenzar el juego.
+         <br><br>
+         Sólo lo moveremos si estamos jugando y solo nos moveremos dentro del plato con lo que tendremos que acotar 
+         los movimientos. 
+         <br><br>
+         El bicho tendrá al menos dos disfraces con distinto movimiento que iremos intercambiando al moverse para 
+         darle mayor realismo.
       </p>
+      <p class="img_centrada"><img src="img/juego30/30-6.png" width="45%" alt=""></p>
       <p class="texto">
-         La flecha derecha se podrá pulsar siempre que la "posición en x" de la mariquita sea menor de 230. Apuntara hacia la derecha, movera pasos y
-         cambiara de disfraz.
+         Ahora controlaremos que cuando el bicho toque el rastro que va dejando, el juego termine mandando un mensaje 
+         "Parar Juego" que añadiremos a todos los objetos para hacer que paren. 
       </p>
-      <p class="img_centrada"><img src="img/juego30/30-6.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego30/30-7.png" width="38%" alt=""></p>
       <p class="texto">
-         La flecha izquierda se podrá pulsar siempre que la "posición en x" de la mariquita sea mayor de -160. Apuntara hacia la izquierda, movera pasos y
-         cambiara de disfraz.
+         En el propio bicho, el mensaje "Parar Juego" lo programaremos para que haga un efecto de desvanecer en el 
+         objeto. Haremos también un sonido de fin de juego que añadiremos al objeto de los objetos descargados, 
+         cambiaremos la variable para indicar que ya no estamos jugando y cambiamos el escenario al escenario inicial.
       </p>
-      <p class="img_centrada"><img src="img/juego30/30-7.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego30/30-8.png" width="33%" alt=""></p>
       <p class="texto">
-         La flecha arriba se podrá pulsar siempre que la "posición en y" de la mariquita sea menor de 170. Apuntara hacia la arriba, movera pasos y
-         cambiara de disfraz.
+         Ahora programaremos las frutas que van apareciendo. Cuando recibamos el mensaje empezar, prepararemos la 
+         fruta para mostrarla y enviaremos un mensaje de "Mostrar Fruta".
+         <br><br>
+         En el mensaje "Mostrar Fruta", primero la esconderemos para prepararla, la colocaremos en una posición 
+         aleatoria dentro del plato, le pondremos un disfraz aleatorio y la mostraremos.
       </p>
-      <p class="img_centrada"><img src="img/juego30/30-8.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego30/30-9.png" width="65%" alt=""></p>
       <p class="texto">
-         La flecha abajo se podrá pulsar siempre que la "posición en y" de la mariquita sea mayor de -170. Apuntara hacia abajo, movera pasos y
-         cambiara de disfraz.
+         Ahora haremos un efecto en la fruta para que parezca que está flotando. Lo que haremos será un movimiento 
+         para arriba y para abajo del objeto.
       </p>
-      <p class="img_centrada"><img src="img/juego30/30-9.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego30/30-10.png" width="32%" alt=""></p>
       <p class="texto">
-         La mariquita tendrá "recibir jugar" donde pondremos que dibuje una linea de color azul y tendrá un tamaño de lapiz para poder dibujar
-         la linea que aparece en el juego.
+         Finalmente en este objeto, al recibir "Parar Juego", desvaneceremos el objeto igual que el bicho.
+         <br><br>
+         Lo que nos queda con la fruta es programar que el bicho se la coma. Para ello, en el bicho, controlaremos 
+         donde hacemos que no pueda tocar su rastro, que si tocamos la fruta, haremos un sonido, sumaremos un punto y 
+         llamaremos al mensaje "Mostrar Fruta" para que aparezca otra en otro sitio del plato.
       </p>
-      <p class="img_centrada"><img src="img/juego30/30-10.png" width="20%" alt=""></p>
-
+      <p class="img_centrada"><img src="img/juego30/30-11.png" width="40%" alt=""></p>
       <p class="texto">
-         Si el color de la cabeza de color gris toca el color azul de la línea "enviar Parar Juego" haremos un efecto "Ghost".
+         Vamos a programar el cubo de la basura. Su funcionamiento es que cuando se pincha en el cubo, limpiamos la 
+         pantalla y le quitamos una vida. Solo limpiará la pantalla mientras tenga vidas.
+         <br><br>
+         Al recibir el mensaje "Empezar", pondremos 3 vidas y pondremos el primer disfraz del cubo. 
+         <br><br>
+         Después, al hacer click en el objeto, si estamos jugando y tenemos vidas, haremos un sonido, le quitaremos 
+         una vida, borraremos todo y por un momento cambiaremos el disfraz y volveremos a poner el inicial.
       </p>
-      <p class="img_centrada"><img src="img/juego30/30-11.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego30/30-12.png" width="50%" alt=""></p>
       <p class="texto">
-         Y si toca una fruta sumara puntos, sonora un sonido y haremos un "enviar fruta" que ira a la fruta y hara ciertas cosas que veremos más adelante.
+         Por último, vamos a programar el reloj. Al empezar, lo que haremos será poner el reloj a 15 para que lo 
+         muestre. 
+         <br><br>
+         Cuando recibamos el mensaje "Mostrar Fruta", que será cuando volvamos a colocar una fruta en el plato, 
+         pondremos de nuevo el reloj a 15 segundos, y lo que haremos mientras estemos jugando y nos quede tiempo será
+         ir quitando segundo a segundo del tiempo y hacer sonar un sonido de reloj cuando quedan más de 5 segundos y 
+         otro más alarmante quando queden 5 segundos o menos.
+         <br><br>
+         Cuando se acaben los segundos, mandaremos un mensaje de "Parar Juego".
       </p>
-      <p class="img_centrada"><img src="img/juego30/30-12.png" width="20%" alt=""></p>
-      <p class="texto">
-        Comenzaremos con la fruta. Tenemos en "al recibir Coger fruta" posicionamos la frura con un número aleatorio tanto en "X" como en "Y". Y cambiariamos
-        el disfraz también aleatoriamente.
-      </p>
-      <p class="img_centrada"><img src="img/juego30/30-13.png" width="20%" alt=""></p>
-      <p class="texto">
-         En la Fruta tendremos también un "al recibir Empezar" para llamar de nuevo al "enviar Coger fruta"<div class=""></div>
-       </p>
-       <p class="img_centrada"><img src="img/juego30/30-14.png" width="20%" alt=""></p>
-       
-       <p class="texto">
-         También haremos que la fruta se mueva un poco hacia arriba y hacia abajo.
-       </p>
-       <p class="img_centrada"><img src="img/juego30/30-15.png" width="20%" alt=""></p>
-       
-       <p class="texto">
-         Y pondremos el mismo bloque de "al recibir Parar juego" que tiene la mariquita para que haga el efecto.
-       </p>
-       <p class="texto">
-        Comenzamos con la Basura. Al empezar la inicializamos a 3 y le ponemos el disfraz.
-       </p>
-       <p class="img_centrada"><img src="img/juego30/30-16.png" width="20%" alt=""></p>
-       <p class="texto">
-         Y cuando hacemos un click en la Basura cambiaremos su disfraz, haremos un sonido, borraremos las lineas dibujadas y quitaremos a su 
-         contador 1.
-        </p>
-        <p class="img_centrada"><img src="img/juego30/30-17.png" width="20%" alt=""></p>
-        <p class="texto">
-         Solo nos faltaria poner el reloj. que Empezara con 15 segundos para poder coger la frua.
-        </p>
-        <p class="img_centrada"><img src="img/juego30/30-18.png" width="20%" alt=""></p>
-        <p class="texto">
-         Cuando el tiempo sea mayor que 5 sonara un sonido pero cuando sea menor que 5 sonara otro sonido. Y cuando el Tiempo sea 0
-         el juego se parara.
-        </p>
-        <p class="img_centrada"><img src="img/juego30/30-19.png" width="20%" alt=""></p>
-        <p class="texto">
-         Faltaria poner el Sprite Fruta que solo se mostrara para que debajo aparezcan los Puntos..
-        </p>
-        
+      <p class="img_centrada"><img src="img/juego30/30-13.png" width="32%" alt=""></p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego13/4-6.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego30/30-14.gif" width="60%" alt=""></p>  
       <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/909648744/editor" target="_blank">aquí</a>.
+         <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/4-GatoVeloz.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/30-BichoEnElPlato.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
