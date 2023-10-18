@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Pez Comilón</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Pez Comilón</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Pez Comilón</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Necesitamos dos peces. El pez comilón que seguira al puntero del ratón y el pececito naranja que lo moveremos y aparecera en distintas posiciones
+         y lo giraremos con un número aleatorio para que parezca que se mueve como los de verdad.
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Usaremos el escenario debajo del mar o podemos dibujar nosotros el nuestro,
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         El juego consiste en que el pez comilón perseguirá a los pececitos y se los ira comiendo. Tendremos una variable de puntos que sumaremos cuando 
+         comamos un pez. Y aleatoriamente aparecera un pez que le cambiaremos con efecto gráfico el color y nos quitará vidas. Tendremos 3 vidas.
+      </p>
+      <p class="img_centrada"><img src="img/juego19/19-1.png" width="70%" alt=""></p>
+      <p class="texto">
+         El pez comilón tendrá dos disfraces de boca abierta y cerrada. Empezaremos el juego con boca abierta y lo posicionamos.
+         <br>
+         El pez apuntará hacia y se deslizara al puntero del ratón continuamente.
+         <br>
+         Y pondremos un "al recibir Comer" para cuando nos comamos al pececito y abra y cierre la boca varias veces poniendo también un sonido.
+      </p>
+
+      <p class="texto">
+         El pececito tendrá clones. Antes de crear el clon haremos un efecto gráfico de color para que ese pez nos quite vidas y no puntos como el resto.
+         <br>
+         Al comenzar como clon lo situaremos con un número aleatorio en X/Y pero dentro de un rango que veamos al pez.
+         <br>
+         Moveremos pasos y haremos un girar con un número aleatorio para que parezca un pez (más o menos). Y también podrá rebotar si toca un borde.
+         <br>
+         Si el color de la boca del pez toca el pececito que sea naranja sumara puntos y si toca el del otro color nos quitara vidas. Cuando las vidas 
+         sean 0 se terminará el juego. (Se podrá poner un Game Over).
+      </p>
+           
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego19/19-.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/19-.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
