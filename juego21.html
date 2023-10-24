@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>¡A Volar!</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>¡A Volar!</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>¡A Volar!</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Necesitamos un objeto que será el que se moverá con las flechas arriba-abajo-izquierda-derecha. Edificios que se moverán de derecha a izquierda 
+         continuamente. Unas nubes que haremos clones y cambiaran su posición aleatoriamente la Y, su velocidad y su disfraz. Y un corazón que 
+         aparecera a la derecha pero en un número aleatorio en Y. 
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Usaremos dos escenarios que lo seleccionaremos de la biblioteca ó que lo dibuje el alumno.
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         El juego consiste en que nuestro personaje se moverá con las 4 flechas arriba-abajo-izquierda-derecha e ira recogiendo corazones y puntuaremos. 
+         Para dar sensación de movimiento pondremos unos edificios y nubes que iran hacia la izquierda.
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-1.png" width="70%" alt=""></p>
+      <p class="texto">
+         Nuestro personaje lo situaremos en la parte de la izquierda y siempre mirara hacia la derecha. Lo posicionaremos y lo pondremos que este en 
+         una capa delantera para que los edificios y las nubes aparezcan por detras del personaje. Y también tendremos que inicializar lo puntos.
+      </p>
+
+      <p class="texto">
+         El personaje lo moveremos con las flechas. Usaremos "sumar x" y "sumar y". Y si toca un borde rebotará.
+      </p>
+
+      <p class="texto">
+         Los edificios saldrán de la parte de la derecha, cambiaremos de disfraz e ira hacia la izquierda continuamente.
+         <br>
+         Cuando termine el edificio su recorrido o al comenzar cambiaremos de escenario. 
+      </p>          
+
+      <p class="texto">
+       Las nubes serán clones y las crearemos cuando pase un número aleatorio de segundos.
+       <br>
+       Pondremos una variable de "Velocidad" para que se muevan unas más deprisa que otras. 
+       <br>
+       Cambiamos el disfraz de la nube con un número aleatorio.
+       <br>
+       Y hacemos un repetir hasta que toquemos el borde y usaremos "suma a x Velocidad".
+       <br> 
+       Y cuando termine el repetir "eliminar este clon".
+      </p>
+
+      <p class="texto">
+         Los corazones se crearan en la parte de la derecha. La misma posicion x pero en Y haremos un número aleatorio. Y cambiaremos de disfraces.
+         <br>
+         Se moveran con un repetir y usando "sumar a x -??". Cuando termine el repetir volvera a generar otro corazón.
+         <br>
+         Cuando el corazón toque al gato sumaremos 1 punto. Haremos un sonido y lo escondemos.
+         <br>
+         Se podría hacer clones para que tuviesemos varios corazones a la vez en el escenario.
+        </p>
+
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/21-.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
