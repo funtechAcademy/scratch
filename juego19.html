@@ -25,48 +25,93 @@
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Necesitamos dos peces. El pez comilón que seguira al puntero del ratón y el pececito naranja que lo moveremos y aparecera en distintas posiciones
-         y lo giraremos con un número aleatorio para que parezca que se mueve como los de verdad.
+         Para este juego necesitaremos un pez grande que será nuestro personaje y un pez pequeño, del cual haremos 
+         clones y será la comida de nuestro pez grande.
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Usaremos el escenario debajo del mar o podemos dibujar nosotros el nuestro,
+         Usaremos un escenario del fondo del mar de la biblioteca de Scratch.
+      </p>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/19-PezComilon.zip" download="Pez Comilon"> link</a>. Es un archivo comprimido con 2 
+         objetos. Lo descargaremos y lo descomprimimos en el directorio del alumno.
       </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que el pez comilón perseguirá a los pececitos y se los ira comiendo. Tendremos una variable de puntos que sumaremos cuando 
-         comamos un pez. Y aleatoriamente aparecera un pez que le cambiaremos con efecto gráfico el color y nos quitará vidas. Tendremos 3 vidas.
+         El juego consiste en que el pez comilón perseguirá a los pececitos que van apareciendo en la pantalla y se 
+         los ira comiendo, dándonos puntos por ello. Aleatoriamente aparecerá un pez al que le cambiaremos el color 
+         con efectos y en lugar de darnos puntos, nos quitará una vida.
+         <br><br>
+         Empezaremos colocando el pez protagonista en el centro de la pantalla. Le pondremos el disfraz con la boca 
+         cerrada al empezar, ya que el de la boca abierta solo lo mostraremos cuando se vaya a comer un pez.
+         <br><br>
+         Para el movimiento, tan solo apuntaremos al puntero del ratón y lo deslizaremos hacia él.
       </p>
-      <p class="img_centrada"><img src="img/juego19/19-1.png" width="70%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego19/19-1.png" width="35%" alt=""></p>
       <p class="texto">
-         El pez comilón tendrá dos disfraces de boca abierta y cerrada. Empezaremos el juego con boca abierta y lo posicionamos.
-         <br>
-         El pez apuntará hacia y se deslizara al puntero del ratón continuamente.
-         <br>
-         Y pondremos un "al recibir Comer" para cuando nos comamos al pececito y abra y cierre la boca varias veces poniendo también un sonido.
+         Programaremos ahora el pez pequeño. Empezaremos a programarlo sin clones y ver que funciona correctamente.
+         <br><br>
+         Empezaremos por crear una variable para contabilizar los puntos y la inicializaremos a "0". Colocaremos a 
+         nuestro pez en la pantalla de una forma aleatoria y lo mostraremos.
+         <br><br>
+         Para el movimiento, lo haremos en la dirección en la que está y le daremos un pequeño giro para darle mayor 
+         realismo. Además añadiremos el bloque "Si Toca Un Borde, Rebotar" para que no se nos cuele por los laterales 
+         de la pantalla.
+         <br><br>
+         Haremos un control para que si nos toca el pez grande con la boca, sume un punto, y vuelva a poner el pez en 
+         otra posición aleatoria de la pantalla. También llamaremos a un mensaje "Comer" que programaremos después en 
+         el pez grande.
       </p>
-
+      <p class="img_centrada"><img src="img/juego19/19-2.png" width="65%" alt=""></p>
       <p class="texto">
-         El pececito tendrá clones. Antes de crear el clon haremos un efecto gráfico de color para que ese pez nos quite vidas y no puntos como el resto.
-         <br>
-         Al comenzar como clon lo situaremos con un número aleatorio en X/Y pero dentro de un rango que veamos al pez.
-         <br>
-         Moveremos pasos y haremos un girar con un número aleatorio para que parezca un pez (más o menos). Y también podrá rebotar si toca un borde.
-         <br>
-         Si el color de la boca del pez toca el pececito que sea naranja sumara puntos y si toca el del otro color nos quitara vidas. Cuando las vidas 
-         sean 0 se terminará el juego. (Se podrá poner un Game Over).
+         Programaremos en el pez grande, el mensaje "Comer". Lo que haremos será hacer un sonido de comerse el pez y 
+         abrir y cerrar la boca.
       </p>
-           
+      <p class="img_centrada"><img src="img/juego19/19-3.png" width="30%" alt=""></p>
+      <p class="texto">
+         Ahora programaremos los clones del pez pequeño. Lo que dejaremos en el bloque de "Al Hacer Click En La 
+         Bandera" será la inicialización de las variables, donde crearemos otra nueva para guardar las vidas. También 
+         ocultaremos el objeto principal.
+      </p>
+      <p class="nota">
+         Siempre que utilicemos clones, el objeto principal lo esconderemos y trabajaremos únicamente con los clones.
+      </p>
+      <p class="texto">
+         Ahora haremos un bucle donde cada 2 segundos crearemos un clon
+      </p>
+      <p class="img_centrada"><img src="img/juego19/19-4.png" width="25%" alt=""></p>
+      <p class="texto">
+         El resto, lo moveremos a un bloque "Al Empezar Como Clon". 
+         <br><br>
+         En este bloque, añadiremos un nuevo control para que de vez en cuando, le demos un efecto de color al pez y 
+         ese pez en lugar de sumar puntos, nos quitará una vida.
+         <br><br>
+         Dentro del bucle, también añadiremos el control para cuando nos comamos el pez de otro color. Cuando hagamos 
+         esto, le quitaremos una vida, mandaremos el mensaje "Comer" y eliminaremos el clón. Haremos también un 
+         control para que cuando el pez se quede sin vidas, detenga el juego.
+         <br><br>
+         También cambiaremos que cuando el pez grande se coma al pequeño, en lugar de ocultarlo y recolocarlo, 
+         eliminaremos el clon.
+      </p>
+      <p class="nota">
+         La diferencia entre eliminar un objeto y eliminar un clon es que para un objeto pondremos el bloque 
+         "Esconder" y en un clon pondremos "Eliminar Este Clon".
+      </p>
+      <p class="img_centrada"><img src="img/juego19/19-5.png" width="65%" alt=""></p>
+      <p class="nota">
+         Podremos añadirle una pantalla final de Game Over cuando nos quedemos sin vidas.
+      </p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego19/19-.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego19/19-6.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/911583638/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/19-.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/19-PezComilon.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>

@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Laberinto Con Rotación</title>
+   <title>Laberinto</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Laberinto Con Rotación</h1>
+      <h1>Laberinto</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,68 +21,107 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Laberinto Con Rotación</h2>
+      <h2>Laberinto</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Necesitamos una pelota que es la que moveremos con las flechas, dos personajes más que los necesitaremos cuando hagamos el segundo
-         laberinto que se moverán constantemente de arriba-abajo y una especie de muro que rotara también constantemente en el segundo laberinto.
-         Y también haremos otro objeto que sea un game over que lo dibujaremos y usaremos la opción de Texto.
+         Necesitamos una pelota que es la que moveremos con los cursores, dos personajes más que los necesitaremos 
+         cuando hagamos el segundo nivel y que se moverán para intentar atraparnos. También necesitamos una puerta que 
+         estará rotando continuamente en el segundo laberinto. 
+         <br><br>
+         Estos los cogeremos de la biblioteca de objetos. Necesitaremos un último objeto que dibujaremos a mano con 
+         la opción de texto y que pondrá "Game Over".
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Necesitaremos dos Escenarios que serán los laberintos por donde la pelota tendrá que moverse. Los tendrá que dibujar el alumno y que tenga
-         una especie de botón de otro color que sea la salida al segundo laberinto y el segundo laberinto tendrá otra especie de botón de otro color
-         distinto al primer laberinto para terminar el juego. El primer laberinto será facil y en el segundo añadiremos los dos personajes que se
-         mueven de arriba-abajo y el muro que rotará. 
+         Necesitaremos dos escenarios que serán los laberintos por donde la pelota tendrá que moverse. Los 
+         dibujaremos y tendrán una zona de color al final del laberinto que será en el primero el paso al segundo y 
+         en el segundo el fin del juego. Serán de distinto color en cada laberinto.
+         <br><br>
+         El primer laberinto será más fácil que el segundo.
       </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que la pelota la moveremos con la flechas en las cuatro direcciones. Pero no podrá atravesar los muros de los escenarios 
-         en ninguno de los escenarios. En el segundo escenario la pelota tendrá 3 vidas y si toca a los objetos que están moviendose le quitara 1 vida
-         y volverá a su posición inicial del segundo laberinto. 
+         El juego consiste en que la pelota la moveremos con los cursores en las cuatro direcciones y tendremos que 
+         llegar al final del laberinto. No se podrán atravesar los muros. En el segundo escenario !cuidado¡ Si te 
+         tocan los bichos, te quitan una vida y vuelves al inicio del laberinto.
+         <br><br>
+         Primero haremos los laberintos, que nos pueden quedar de la siguiente forma.
       </p>
-      <p class="img_centrada"><img src="img/juego18/18-1.png" width="70%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego18/18-1.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego18/18-2.png" width="60%" alt=""></p>
       <p class="texto">
-         Pondremos el primer laberinto que será lo más sencillo posible, ya que en este laberinto solo comprobaremos que la pelota no pueda atravesar
-         las paredes.
+         El primer laberinto será muy sencillo y lo único que controlaremos será que no pueda atravesar las paredes 
+         de color.
+         <br><br>
+         Empezaremos a programar la pelota, que será el personaje del juego. 
+         <br><br>
+         Crearemos la variable "Vidas" y le daremos un valor de 3. Al empezar en el nivel 1, esconderemos todos los 
+         objetos que aparezcan en el nivel 2 mediante un mensaje "Esconder".
+         <br><br>
+         Pondremos el primer laberinto, posicionaremos la pelota en el lugar de inicio y controlaremos el movimiento 
+         mediante los cursores.
       </p>
-      <p class="texto">
-         La pelota la posicionaremos en la parte de arriba a la izquierda. La moveremos con las cuatro flechas (arriba-abajo-izquierda-derecha).
-         <br>
-         Cuando la pelota choque con el color que el laberinto tenga tendremos que hacer que rebote. Existe un "rebotar si toca borde" pero para que
-         no atraviese los muros tendremos que mover pasos en negativo.
-         <br>
-         Si la pelota toca el color verde (salida del primer laberinto) ira al segundo laberinto y volveremos a posicionar nuestra pelota.
-         <br>
-         Y si la pelota toca el color rojo (salida del segungo laberinto) o ya no tengo vidas aparecer el Game Over.
-         <br> Y por último si la pelota toca los objetos que tenemos en movimiento en el segundo laberinto quitara 1 vida y volvera a su posición
-         inicial del segundo laberinto.
-      </p>
-     
       <p class="nota">
-         Si el alumno da a varias teclas a la vez esto no funcionará bien. Pero de momento no nos centraremos en eso.
+         Si el alumno da a varias teclas a la vez, puede que atraviese los muros, pero de momento no nos centraremos 
+         en eso.
       </p>
-
+      <p class="img_centrada"><img src="img/juego18/18-3.png" width="42%" alt=""></p>
       <p class="texto">
-         Dos de los personajes del segundo laberinto se deslizarán de una posición a otra constantemente. Para ello mandaremos un "enviar MOVER" cuando
-         cambiemos al segundo laberinto.
+         Cuando la pelota choque con los bordes o con las paredes del laberinto, tendrá que rebotar. Para ello, 
+         pondremos el bloque "Si Toca Un Borde , Rebotar" que nos servirá para los bordes, pero para el laberinto 
+         tendremos que hacer que si toca el color de las paredes, retroceda los pasos que hemos andado.
+         <br><br>
+         También añadiremos para el primer laberinto, que si toca la zona de llegada, que será de otro color distinto 
+         (en nuestro caso de color verde), cambiaremos el escenario al segundo laberinto y posicionaremos la pelota 
+         en el punto de partida de este segundo nivel.
+         <br><br>
+         Además, mandaremos un mensaje "Mover" para mostrar los objetos del segundo nivel y empezar a moverlos.
       </p>
-
+      <p class="img_centrada"><img src="img/juego18/18-4.png" width="52%" alt=""></p>
       <p class="texto">
-         Y el tercer personaje rotará constantemente y también quitara vidas si toca a la pelota.
+         Una vez estemos en el segundo nivel, programaremos también el la pelota que si toca la zona de llegada, (en 
+         nuestro caso de color rojo), terminaremos el juego, ocultando todos los objetos y mostrando el objeto "Game 
+         Over" que hemos creado.
+         <br><br>
+         También mostraremos el objeto "Game Over" cuando nos quedemos sin vidas.
       </p>
-           
+      <p class="img_centrada"><img src="img/juego18/18-5.png" width="52%" alt=""></p>
+      <p class="texto">
+         Por último, si la pelota toca los objetos que tenemos en movimiento en el segundo laberinto, quitara 1 vida 
+         y moveremos la pelota a su posición inicial.
+      </p>
+      <p class="img_centrada"><img src="img/juego18/18-6.png" width="70%" alt=""></p>
+      <p class="texto">
+         Los bichos los programaremos simplemente para que se muevan de una posición a otra.
+      </p>
+      <p class="img_centrada"><img src="img/juego18/18-7.png" width="32%" alt=""></p>
+      <p class="texto">
+         La puerta la programaremos para que vaya girando poco a poco y continuamente.
+      </p>
+      <p class="img_centrada"><img src="img/juego18/18-8.png" width="20%" alt=""></p>
+      <p class="texto">
+         Y el objeto "Game Over" lo único que tendrá será posicionarlo en la posición que queramos mostrarlo.
+      </p>
+      <p class="img_centrada"><img src="img/juego18/18-9.png" width="22%" alt=""></p>
+      <p class="nota">
+         Podemos añadirle al juego que las dos casillas de final de los laberintos sean del mismo color.
+         <br><br>
+         Además, podemos añadir que al tocar los muros, en lugar de retroceder (rebotar) vuelva a la posición inicial 
+         para hacer más complicado el juego.
+         <br><br>
+         Por último podemos añadirle más laberintos con distintas dificultades.
+      </p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego18/18-.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego18/18-10.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/910984180/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/18-.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/18-Laberinto.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
