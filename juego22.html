@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Juego Recreativo</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Juego Recreativo</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Juego Recreativo</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Necesitamos poner una Jostick para comenzar el movimiento de los objetos. He subido un sprite con algunos disfraces pero el alumno
+         podrá seleccionar los que quiera de la biblioteca. Tenemos que tener 3 objetos con disfraces. Y tendremos también cinco botones de colores 
+         para cambiar los escenarios.
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Usaremos los Escenarios Rojo, Azul..... que dependera del color cuando seleccionamos los botones del escenario.
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         El juego consiste en que haremos click en el Jostick y comenzara a moverse el primer objeto, cuando termine hara el segundo y cuando termine 
+         hara el tercero y si los tres tienen el mismo disfraz puntuaremos.
+      </p>
+      <p class="img_centrada"><img src="img/juego22/22-1.png" width="70%" alt=""></p>
+      <p class="texto">
+         Nada más empezar ponemos uno de los escenarios de colores.
+      </p>
+
+      <p class="texto">
+         Posicionaremos los botones de colores.
+         <br>
+         Si hacemos un click sobre el botón cambiará de disfraz dejándolo de nuevo con anterior disfraz y cambiará el escenario al color que
+         se ha pulsado. 
+      </p>
+
+      <p class="texto">
+         El Joystick lo posicionamos y ponemos el disfraz "Joystick derecha".
+         <br>
+         Si hacemos un click sobre el Joystick lo deslizaremos hacia la izquierda, se cambia el disfraz y se vuelve a dejar el "Joystick derecha". 
+         <br>
+         Y hacemos un "enviar Objeto1" ara que comience a moverse el objeto.
+      </p>          
+
+      <p class="nota"> 
+         Para que funcione correctamente el juego y sume puntos el alumno tendrá que poner los 3 objetos con sus disfraces en el mismo orden. Ya
+         que al comprobar el resultado de los disfraces lo haremos por "número de disfraz". Se podría hacer también por el nombre del disfraz y no 
+         haría falta ponerlos ordenados. 
+         <br>
+         Se intentará por parte del profesor que sea el alumno el que saque el problema para resolverlo. Si no le dariamos pistas para poder solucionarlo.  
+      </p>
+
+      <p class="texto"> 
+        El Objeto1 tendrá un "al recibir Objeto1" y haremos un repetir con un número aleatorio. 
+        <br>
+        Cambiara de disfraz y haremos que tenga un sonido.
+        <br>
+        Cuando el repetir termine tendremos que guardar el número de disfraz en una variable disfraz1.
+        <br> 
+        Y por último haremos un "enviar Objeto2". Para que empieze el siguiente objeto.   
+      </p>
+
+      <p class="texto"> 
+         El Objeto2 lo haremos igual que el Objeto1 pero guardaremos el disfraz en otra variable objeto2. Y llamaremos al Objeto3. 
+      </p>
+
+      <p class="texto"> 
+         Y cuando el Objeto3 termine el repetir comprobaremos si el número de disfraz y las variables objeto1 y objeto2 son iguales.
+         <br>
+         Si es asi se puntuara.
+      </p>
+
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/21-.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
