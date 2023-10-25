@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Pacman Fácil</title>
+   <title>ComeCocos</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Pacman Fácil</h1>
+      <h1>ComeCocos</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,59 +21,80 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Pacman Fácil</h2>
+      <h2>ComeCocos</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Pacman, Laberinto y Game Over.
+         Para este juego nos harán falta los laberintos, el comecocos y un texto de Game Over.
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Haremos un Escenario que sea totalmente negro.
+         Crearemos un escenario que sea totalmente negro.
+      </p>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/13-ComeCocos.zip" download="ComeCocos"> link</a>. Es un archivo comprimido con 3 
+         objetos y 1 sonido. Lo descargaremos y lo descomprimimos en el directorio del alumno.
       </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que el pacman se moverá por el laberinto hasta que toque el color rojo e ira al siguiente laberinto y si vuelve
-         a dar al color rojo aparecera el Game Over. Si observamos al Pacman vemos que tiene una bolita muy pequeña cerca de la boca de color oscura 
-         que el Pacman se movera cuando esa bolita de color toque al color verde del laberinto. Cambiaremos su dirección con las flechas.
+         El juego consiste en que el comecocos se moverá por el laberinto hasta que toque el cuadrado rojo para pasar 
+         al siguiente laberinto. Al tocar el cuadrado rojo del segundo laberinto, terminará el juego.
+         <br><br>
+         Empezaremos crear un escenario con el fondo negro en el que programaremos que el sonido que nos hemos 
+         descargado suene continuamente.
       </p>
-      <p class="img_centrada"><img src="img/juego13/13-1.png" width="70%" alt=""></p>
-      
+      <p class="img_centrada"><img src="img/juego13/13-1.png" width="43%" alt=""></p>      
       <p class="texto">
-        En el Escenario pondremos la música que estará continuamente sonando. Dibujaremos un Escenario con el fondo en negro.
+         En los laberintos, lo posicionaremos y pondremos el primero de ellos.
       </p>
- 
+      <p class="img_centrada"><img src="img/juego13/13-2.png" width="25%" alt=""></p>      
       <p class="texto">
-         El Pacman lo posicionaremos arriba a la izquierda y haremos cambio de disfraz continuamente.
-         <br>
-         Solo se moverá cuando el color azul toque el color verde del escenario.
-         <br>
-         Y cuando pulsemos alguna de las flechas apuntaremos en esa dirección.
+         Ahora programaremos el comecocos, que le daremos el tamaño adecuado para que pueda moverse por el escenario, 
+         lo posicionaremos el la parte superior izquierda del laberinto y continuamente estaremos alternando los 
+         disfraces.
       </p>
-     
+      <p class="img_centrada"><img src="img/juego13/13-3.png" width="22%" alt=""></p>      
       <p class="texto">
-        El Laberinto tendrá dos disfraces. Le ponemos el Laberinto1.
-        <br>
-        Cuando el color rojo del laberinto toque a la bolita pequeña del Pacman y si es número de disfraz del Laberinto es igual a 2 hacemos 
-        que aparezca el Game Over con un "enviar" y detendremos el juego.
-        <br>
-        Y si no lo ha tocado cambiara al siguiente disfraz del Laberinto.
+         El comecocos estará continuamente moviéndose y lo que haremos nosotros será cambiar la dirección con los 
+         cursores.
       </p>
-
+      <p class="img_centrada"><img src="img/juego13/13-4.png" width="30%" alt=""></p>      
       <p class="texto">
-       Y el Game Over lo esconderemos al principio. Y cuando reciba el Game Over aparecerá en la posición X/Y a 0
-       </p>
-
+         Si observamos al comecocos, vemos que tiene un pequeño punto cerca de la boca de color oscuro. Nos servirá 
+         para identificar si está o no en el camino del laberinto o tocando la zona roja de llegada.
+         <br><br>
+         El comecocos se moverá solo cuando ese punto de color oscuro esté tocando el color verde del laberinto.
+      </p>
+      <p class="img_centrada"><img src="img/juego13/13-5.png" width="38%" alt=""></p>      
+      <p class="texto">
+         Ahora añadiremos a la programación que teníamos en el laberinto, que si se toca el color del punto del 
+         comecocos con el color rojo del laberinto, en el caso del primer laberinto, cambie al segundo y si se trata 
+         del segundo, enviar un mensaje de "Game Over" y detener el juego.
+      </p>
+      <p class="img_centrada"><img src="img/juego13/13-6.png" width="45%" alt=""></p>      
+      <p class="texto">
+         Finalmente añadiremos el objeto "Game Over" en el que al empezar el juego lo posicionaremos, lo traeremos a 
+         la capa delantera ya que lo pondremos encima de todo y lo esconderemos hasta que termine el juego.
+      </p>
+      <p class="img_centrada"><img src="img/juego13/13-7.png" width="20%" alt=""></p>      
+      <p class="texto">
+         Al recibir el mensaje "Game Over", mostraremos el objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego13/13-8.png" width="22%" alt=""></p>      
+       <p class="nota">
+         Otro reto que se puede añadir al juego es que en el segundo laberinto vaya más rápido que en el primero. 
+      </p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego13/13-.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego13/13-9.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/913606170/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/13-.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/13-ComeCocos.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
