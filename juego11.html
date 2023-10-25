@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Saltar Obstáculo</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Saltar<br>Obstáculo</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Saltar Obstáculo</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Necesitamos un objeto que será el que salte el obstáculo (nosotros pondremos al gato de Scratch) y otro 
+         objeto que será el personaje saltado (nosotros pondremos un perro). Los buscaremos en la biblioteca de 
+         Scratch. 
+         <br><br>
+         También, pondremos otro objeto que estará moviéndose continuamente hacia la izquierda para que parezca que 
+         el escenario se mueve. En este caso hemos puesto unas rocas, también de la biblioteca.
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Pintaremos un escenario que tenga dos terceras partes de color azul (cielo) y una tercera parte de color 
+         marrón (tierra). También podemos seleccionar un escenario de la biblioteca.
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         El juego consiste en que nuestro personaje (el gato) tiene que saltar al otro personaje (el perro) para que 
+         no le pille. Además, en el fondo irá pasando una roca para simular que vamos andando.
+         <br><br>
+         Empezaremos programando el gato, posicionándolo en la parte izquierda de la pantalla y realizando el 
+         movimiento del salto, utilizando el bloque "Deslizar En Segs A X: Y:", al pulsar la tecla espacio.
+      </p>
+      <p class="img_centrada"><img src="img/juego11/11-1.png" width="35%" alt=""></p>
+      <p class="texto">
+         Ahora cambiaremos continuamente el disfraz, entre los dos que tiene, para simular que anda.
+      </p>
+      <p class="img_centrada"><img src="img/juego11/11-2.png" width="20%" alt=""></p>
+      <p class="texto">
+         Pondremos ahora el perro y le apuntaremos hacia la izquierda. Cambiaremos el estilo de rotación para que no 
+         se dé la vuelta.
+         <br><br>
+         Para moverlo, lo posicionaremos en la parte derecha de la pantalla, a la altura del gato, lo mostraremos y 
+         lo deslizaremos hasta el final de la parte izquierda de la pantalla con el bloque "Deslizar". Al llegar a esa
+         posición, lo ocultamos y lo volvemos a posicionar para que vuelva a hacer lo mismo, esperando entre 1 y 4 
+         segundos para que no sea siempre igual.
+      </p>
+      <p class="img_centrada"><img src="img/juego11/11-3.png" width="40%" alt=""></p>
+      <p class="texto">
+         También cambiaremos continuamente el disfraz del perro para darle más vida.
+      </p>
+      <p class="img_centrada"><img src="img/juego11/11-4.png" width="20%" alt=""></p>
+      <p class="texto">
+         Volvemos al gato. Ahora vamos a programar que cuando el gato toque al perro, mostraremos el mensaje "Me 
+         pilló" y terminaremos el juego.
+      </p>
+      <p class="img_centrada"><img src="img/juego11/11-5.png" width="32%" alt=""></p>
+      <p class="nota">
+         Si vemos que saltarlo es muy difícil, podemos hacer más pequeño el tamaño del perro.
+      </p>
+      <p class="texto">
+         También podemos controlar el salto del gato con sonido. En lugar de hacer saltar al gato cuando pulsemos la 
+         tecla espacio, podemos hacerlo comprobando el volumen del sonido ambiente para que salte al dar una palmada.
+         <br><br>
+         Para ello, controlaremos que el "Volumen Del Sonido" sea mayor de 40 para hacerlo saltar. Quitaremos el 
+         control del espacio para que no interfiera.
+      </p>
+      <p class="img_centrada"><img src="img/juego11/11-6.png" width="40%" alt=""></p>
+      <p class="texto">
+         Por último, programaremos la roca. La mandaremos a la capa trasera para que se mueva por detrás de los 
+         personajes.
+         <br><br>
+         Esperaremos un número aleatorio de segundos para que aparezca y la situaremos a la derecha de la pantalla y 
+         la moveremos hacia la izquierda mediante un bloque "Deslizar" y volveremos a repetir la operación.
+      </p>
+      <p class="img_centrada"><img src="img/juego11/11-7.png" width="45%" alt=""></p>
+      <p class="nota">
+         Podemos añadirle al juego vidas de nuestro personaje, un sonido cada vez que me pilla y una pantalla final 
+         de "Game Over" en lugar de parar el juego.
+      </p>
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego11/11-8.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/912962441/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/11-SaltarObstaculo.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
