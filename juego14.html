@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Penalty</title>
+   <title>Penaltis</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Penalty</h1>
+      <h1>Penaltis</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,58 +21,84 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Penalty</h2>
+      <h2>Penaltis</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Portero, Jugador y una porteria.
+         Para este juego vamos a necesitar un futbolista que tirará los penaltis, el portero que intentará pararlos, 
+         el larguero y el poste de la portería y el balón.
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Haremos un Escenario que sea totalmente verde.
+         Haremos un escenario que sea totalmente verde, como el campo de fútbol.
+      </p>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/14-Penaltis.zip" download="Penaltis"> link</a>. Es un archivo comprimido con 5 objetos. Lo 
+         descargaremos y lo descomprimimos en el directorio del alumno.
       </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que intentaremos hacer gol. La pelota se lanzara con la tecla de "espacio". Y cuando de en cualquier parte de la 
-         porteria dira donde ha dado la pelota.
+         El juego consiste en tirar penaltis e intentar meter gol en la portería. La pelota la lanzaremos con el 
+         espacio.
+         <br><br>
+         Empezaremos en este caso por poner todos los objetos en la pantalla. el jugador, el portero y la portería 
+         (los dos postes y el larguero).
+         <br><br>
+         Lo que haremos con estos objetos será posicionarlos en la pantalla para que queden de la siguiente forma.
       </p>
-      <p class="img_centrada"><img src="img/juego14/14-1.png" width="70%" alt=""></p>
-      
+      <p class="img_centrada"><img src="img/juego14/14-1.png" width="60%" alt=""></p>      
       <p class="texto">
-        El jugador lo posicionamos para que la pelota quede a la altura del pie.
+         Al portero, le añadiremos que pueda moverse por la linea de la portería (de arriba a abajo) mediante los 
+         cursores arriba y abajo. En este caso, en lugar de mover pasos, utilizaremos el bloque "Sumar A Y" donde le 
+         sumaremos una cantidad positiva para moverlo hacia arriba y una cantidad negativa para moverlo hacia abajo.
       </p>
- 
+      <p class="img_centrada"><img src="img/juego14/14-2.png" width="40%" alt=""></p>      
       <p class="texto">
-         La pelota se lanzara cuando demos a la tecla "espacio". Usaremos un bloque de "al presionar tecla espacio".
-         <br>
-        Crearemos un bloque que se llame "Apuntar direccion". Donde posicionaremos la pelota y apuntaremos en dirección con un número aleatorio, para 
-        que nunca dispare hacia el mismo sitio.
-       <br>
-         Para que se mueva la pelota haremos un "repetir hasta que toque Portero o Jugador o Fondo Portería o Palo inferior o superior o borde.
-         <br>
-         Y cuando toque algunos de estos objetos saldrá del repetir y preguntaremos que es lo que ha tocado y pondremos un "decir .... durante 2 segundos"
-         <br>
-         Y volveremos a llamar al bloque de "Apuntar direccion" para que la pelota se posicione y vuelva apuntar a un número aleatorio.
+         Por último, programaremos la pelota, que será la que tenga toda la lógica del juego.
+         <br><br>
+         Posicionaremos la pelota y apuntaremos hacia la portería pero en un rango aleatorio entre la parte de arriba 
+         y la parte de abajo, para que pueda, desde ir fuera hasta meter gol.
+         <br><br>
+         La pelota la lanzaremos cuando pulsemos la tecla espacio y se moverá hasta que toque al portero, a los 
+         postes, al larguero o el borde del campo.
       </p>
-     
+      <p class="img_centrada"><img src="img/juego14/14-3.png" width="90%" alt=""></p>      
       <p class="texto">
-       El jugador lo posicionaremos delante de la porteria y se movera con las teclas arriba y abajo.
+         Dependiendo de donde de la pelota toque, mostraremos un mensaje distinto y volveremos a colocar la pelota y 
+         apuntar hacia un nuevo lugar.
+         <br><br>
+         Debido a que los bloques de posicionar la pelota y apuntar los vamos a repetir varias veces, crearemos un 
+         nuevo bloque con "Mis Bloques" que llamaremos "Apuntar" y que llamaremos cuando toque cada elemento y 
+         también lo pondremos al principio para inicializar la partida.
       </p>
-
+      <p class="img_centrada"><img src="img/juego14/14-4.png" width="40%" alt=""></p>      
       <p class="texto">
-      El resto de los Objetos que será la porteria las posicionamos cada uno en su lugar.
+         Según el objeto que toque y durante 2 segundos:
+         <br><br>
+         &emsp;&emsp;- Si toca al portero diremos ¡PARADÓN!<br>
+         &emsp;&emsp;- Si toca el larguero diremos ¡GOL!<br>
+         &emsp;&emsp;- Si toca los postes diremos ¡AL PALO!<br>
+         &emsp;&emsp;- Si toca el borde del campo diremos ¡FUERA!
       </p>
-
+      <p class="img_centrada"><img src="img/juego14/14-5.png" width="90%" alt=""></p>      
+      <p class="nota">
+         Otro reto que se puede añadir al juego es que se le añada una animación al jugador para cambiar el disfraz 
+         cuando lance la pelota.
+         <br><br>
+         También podemos hacer un movimiento automático del portero, hacia arriba y hacia abajo en lugar de tener 
+         que moverlo nosotros.
+      </p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego14/14-.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego14/14-6.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/914305071/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/14-.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/14-Penaltis.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
