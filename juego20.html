@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Esconder Y Mostrar Con Niveles</title>
+   <title>Estrellas</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Esconder Y Mostrar Con Niveles</h1>
+      <h1>Estrellas</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,90 +21,135 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Esconder Y Mostrar Con Niveles</h2>
+      <h2>Estrellas</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Necesitamos un objeto que será el que se aparezca y desaparezca en una posición aleatoria pero siempre dentro de los límites de la pantalla.
-         También pondremos 3 botones que serán los niveles. Y un botón para ir hacia atrás y volver a seleccionar el nivel.
+         Necesitamos un objeto que será el que se aparezca y desaparezca en la pantalla. Necesitaremos también 3 
+         botones para elegir entre los 3 niveles disponibles y un cuarto botón para volver atrás y seleccionar de 
+         nuevo el nivel.
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Usaremos el escenario que lo seleccionaremos del la biblioteca.
+         Usaremos un escenario cualquiera que seleccionaremos del la biblioteca.
+      </p>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/20-Estrellas.zip" download="Estrellas"> link</a>. Es un archivo comprimido con 5 objetos. 
+         Lo descargaremos y lo descomprimimos en el directorio del alumno.
       </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que nuestro personaje aparecera y desaparecera en posiciones aleatorias del escenario. Y cada vez que le hagamos un
-         click le sumaremos un punto. Tendremos niveles que se desbloquearán si voy consiguiendo unos determinados puntos.
+         El juego consiste en que hay una estrella que aparece y desaparece en posiciones aleatorias de la pantalla. 
+         Cada vez que le hagamos un click, sumaremos un punto. Tendremos niveles que se irán desbloqueando según 
+         vayamos consiguiendo determinados puntos.
+         <br><br>
+         Antes de poner niveles vamos a hacer que el juego funcione solo con la estrella.
+         <br><br>
+         Lo primero que haremos será posicionar la estrella y crear e inicializar las variables "Puntos" y "Segundos".
+         <br><br>
+         La variable "Segundos" nos indicará el número de segundos que aparece la estrella en la pantalla.
+         <br><br>
+         La estrella la mostraremos este número de segundos y la oculatremos también ese número de segundos antes de 
+         volver a colocarla en otra posición aleatoria y volver a mostrarla.
       </p>
-      <p class="img_centrada"><img src="img/juego20/20-1.png" width="70%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego20/20-1.png" width="65%" alt=""></p>
       <p class="texto">
-         Lo primero que haremos será posicionar nuestro personaje e inicializamos las variables puntos y segundos.
-         <br>
-         Lo moveremos y tendrá que aparecer en otra posición aleatoria y desaparezca durante un tiempo y lo haremos continuamente. En "esperar .. segundos"
-         pondremos en principio 1 para comprobar si funciona correctamente.
-         <br>
-         Usaremos un bloque que es "al hacer clic en este objeto" para sumar 1 punto y le pondremos un sondido que lo cogeremos de la biblioteca.  
+         Al hacer click en la estrella haremos un sonido, sumaremos un punto y la volveremos a esconder.
       </p>
-
+      <p class="img_centrada"><img src="img/juego20/20-2.png" width="35%" alt=""></p>
       <p class="texto">
-       Cuando veamos que funciona correctamente tendremos que hacer los distintos niveles. Para ello dibujaremos 3 objetos que sean los niveles 1, 2 y 3.
-       <br>
-       Estos objetos pueden ser unos botones, números o lo que el alumno quiera.
-       <br> 
-       Al principio del juego solo pondremos el nivel 1 como activo que se pueda hacer un click. El nivel1 solo tendrá un disfraz.
-       <br>
-       Los objetos nivel2 y nivel3 tendrán 2 disfraces. El primero tendrá un color más intenso para dar sensación de que está activo y el segundo tendrá
-       un color más oscuro para dar sensación de que está inactivo. 
+         Ahora que nos funciona la estrella, vamos a poner el primer nivel.
+         <br><br>
+         Pondremos el primer botón y lo colocaremos en la pantalla. Al empezar el juego, ocultaremos la variable 
+         "Puntos" hasta que seleccionemos algún nivel.
       </p>
-
+      <p class="img_centrada"><img src="img/juego20/20-3.png" width="23%" alt=""></p>
       <p class="texto">
-         Cuando damos un click en el nivel 1 pondremos la variable segundos a 2.
-         <br>
-         Ponemos un "enviar esconder" para que se escondan todos los niveles. Cada uno de los niveles tendrá "al recibir esconder"
-         <br> 
-         Y pondremos también un "enviar jugar" para que el personaje empiece a aparecer por el escenario.
+         Ahora programaremos el evento "Al Hacer Click En Este Objeto" para que al pinchar en el botón del primer 
+         nivel empiece el juego. 
+         <br><br>
+         Dependiendo del nivel seleccionado, la estrella se va a mostrar distinto tiempo. En este caso, el nivel 1, 
+         mostraremos la estrella durante 2 segundos. Le daremos ese valor a la variable "Segundos".
+         <br><br>
+         Además, crearemos un mensaje "Esconder" que programaremos en cada botón para esconderlos cuando pulsemos 
+         alguno de ellos y otro mensaje "Jugar" para empezar a mostrar y esconder la estrella.
       </p>
-           
-
+      <p class="img_centrada"><img src="img/juego20/20-4.png" width="25%" alt=""></p>
       <p class="texto">
-         En todos los niveles tendremos otro botón que es para ir hacia atrás y que vuelvan a aparecer todos los niveles. Al hacer un click en este botón
-         tendremos que haver un "enviar atras".
-         <br>
-         En el botón nivel 1 tendremos un "al recibir atras" que simplemente mostrara el boton.
-         <br>
-         En el botón nivel 2 tendremos un "al recibir atras" que si se han obtenido los puntos cambiaremos al disfraz del color más intenso para 
-         que si dan un click sobre el nivel 2 podremos continuar preguntando por el disfraz 1 del nivel.
+         En el mensaje "Esconder" de este objeto, lo esconderemos y en el mensaje "Jugar" mostraremos la variable 
+         "Puntos".
       </p>
-
+      <p class="img_centrada"><img src="img/juego20/20-5.png" width="22%" alt=""></p>
+      <p class="texto">
+         Ahora cambiaremos en la estrella, en la parte del bucle que hace aparecer y desaparecer la estrella,  el 
+         bloque de control "Al Hacer Click En La Bandera" por "Al Recibir El Mensaje Jugar" para que en lugar de que 
+         la estrella se empiece a ver al darle a la bandera, lo haga al pinchar en el botón. 
+         <br><br>
+         También quitaremos el saignar el valor a la variable "Segundos" ya que eso se hará en cada uno de los 
+         botones".
+      </p>
+      <p class="img_centrada"><img src="img/juego20/20-6.png" width="65%" alt=""></p>
+      <p class="texto">
+         Es hora de poner el objeto del botón atrás. Este botón aparecerá cuando estemos jugando con la estrella y 
+         nos servirá para ir a la pantalla de selección de nivel. Lo mostraremos al recibir el mensaje "Jugar".
+      </p>
+      <p class="img_centrada"><img src="img/juego20/20-7.png" width="17%" alt=""></p>
+      <p class="texto">
+         Como siempre, colocaremos el botón en la parte inferior derecha y programaremos que "Al Hacer Click En El 
+         Objeto" envíe el nuevo mensaje "Atrás" donde esconderemos lo que no nos haga falta. En el caso de este 
+         objeto, al recibir el mensaje "Atrás", esconderemos la variable puntos y el propio botón.
+      </p>
+      <p class="img_centrada"><img src="img/juego20/20-8.png" width="25%" alt=""></p>
+      <p class="texto">
+         Para terminar con la funcionalidad de volver al menú de selección de nivel, nos quedaría programar en el 
+         objeto del primer botón, que al recibir el mensaje "Atrás", muestre el propio botón. Y en la estrella, que 
+         al recibir este mismo mensaje esconda la estrella y detenga los programas de la estrella. 
+      </p>
+      <p class="img_centrada"><img src="img/juego20/20-9.png" width="33%" alt=""></p>
+      <p class="texto">
+         Ya nos funciona con un nivel. Vamos a añadir los otros dos.
+         <br><br>
+         Los botones 2 y 3 tienen 2 disfraces, uno gris y otro de color. Empezarán con el color gris (no podrán ser 
+         pulsados) y no cambiarán de color (podrán ser pulsados) hasta que no lleguemos a cierta puntuación.
+         <br><br>
+         Empezaremos por el botón del segundo nivel. Lo primero que programaremos será colocarlo en la pantalla y 
+         ponerle el disfraz gris.
+         <br><br>
+         Al recibir "Esconder", lo ocultaremos.
+      </p>
+      <p class="img_centrada"><img src="img/juego20/20-10.png" width="27%" alt=""></p>
+      <p class="texto">
+         En el bloque de control "Al Hacer Click En El Objeto" daremos a la variable "Segundos " el valor "1" para que
+         aparezca y desparezca más rápido y también enviaremos los mensajes "Jugar" y "Esconder". Todo esto solo lo 
+         haremos si el botón no tiene el disfraz gris.
+      </p>
+      <p class="img_centrada"><img src="img/juego20/20-11.png" width="40%" alt=""></p>
+      <p class="texto">
+         Al recibir el mensaje "Atrás", mostraremos el botón y cambiaremos de disfraz al de color siempre que hayamos 
+         sobrepasado los puntos necesrios para ir al segundo nivel. En nuestro caso 4 puntos.
+      </p>
+      <p class="img_centrada"><img src="img/juego20/20-12.png" width="30%" alt=""></p>
+      <p class="texto">
+         Despues de poner el botón del segundo nivel y verlo funcionar, añadimos el botón del tercer nivel. Lo 
+         programaremos igual que el segundo pero cambiando el valor de la variable "Segundos" para que en este tercer 
+         nivel la estrella aparezca y se oculte más rápidamente a "0.5" y el valor de los puntos necesarios para 
+         poder acceder al tercer nivel de la variable "Puntos", en nuestro caso a "6".
+      </p>
       <p class="nota">
-        También podriamos hacer la comprobación del click preguntando en vez de por el disfraz por los puntos como hicimos en el 
-        "enviar atras".
+         Otro reto que se puede añadir al juego es que al llegar a un determinado número de puntos, esconda todos los 
+         objetos y cambie a un escenario que ponga "Game Over".
       </p>
-
-      <p class="texto">
-        Cuando le podamos hacer el click en el nivel 2 los segundos sera 1. Y el nivel 3 tendrá los segundos a 0.5.
-      </p>
-
-      <p class="texto">
-         La variable segundos que hemos cargado al hacer click en los niveles los sustituiremos en los bloques de "esperar segundos segundos".
-       </p>
-
-       <p class="texto">
-         En el Objeto que se esconde y aparece tendremos un "recibir atras" para que esconda el objeto y "detenga otros progamas en el objeto" y 
-         deje de moverse el personaje.
-       </p>
-
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego19/19-.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego20/20-13.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/915456197/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/19-.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/20-Estrellas.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
