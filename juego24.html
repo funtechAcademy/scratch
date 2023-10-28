@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Punto De Mira</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Punto De Mira</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Punto De Mira</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Necesitamos el punto de mira para cuando toquemos el objeto cambiara de disfraz y sumara puntos y tiempo.
+      <br> 
+      Los enemigos que se podrán seleccionar en la biblioteca de scratch y los moveremos aleatoriamente y se girará también aleatoriamente cuando
+      toquen un borde.
+      <br>
+       El objeto Game Over para cuando acabe el juego. También tendremos una cuenta atrás para comenzar el juego. Nos faltaria unos textos para ir dando
+       animos cada vez que consigamos ciertos puntos y por último la suma de 1 segundo para cuando demos a nuestro objeto le sumaremos 1 segundo al tiempo
+       para tener más tiempo de juego.  
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Usaremos cualquier escenario de la biblioteca.
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         El juego consiste en que tenemos que ir disparando a nuestro personajes que van apareciendo sumando puntos y tendremos un tiempo para hacerlo que 
+         sumaremos cada vez que disparemos a un personaje. 
+      </p>
+      <p class="img_centrada"><img src="img/juego24/24-1.png" width="70%" alt=""></p>
+      <p class="texto">
+       El juego comenzara con el objeto del "Cuenta atras" del 3 al 1. Cambiando el disfraz que corresponda.
+       <br>
+       Cuando acabe de poner todos los disfraces haremos un "enviar play" para que el juego comience.
+       <br>
+       Inicializaremos las variables de "Puntos" a 0, "Record" no lo tocamos ya que tendrá lo que tenia anteriormente si se ha jugado
+       alguna vez y la variable "Tiempo" a 10 porque tendremos que ir quitando segundos hasta que tengamos 0 segundos en "Tiempo" y finalizara
+       el juego.
+      </p>
+
+      <p class="texto">
+       Aparecerán los enemigos en la posición 0,0 y se moverán con pasos a una determinada "Velocidad" que sera una variable que la modificaremos
+       cuando los puntos sean mayor que la variable "Record" y sumaremos a "Velocidad" 1.
+       <br>
+       Si toca el borde haremos que se gira con un número aleatorio.
+       <br>
+       Y si el objeto es tocado por el "Punto mira" y el ratón presionado lo posicionamos en una posición aleatoria y cambiaremos de disfraz.
+      </p>
+
+      <p class="texto">
+      El "Punto Mira" seguirá al puntero del ratón y pondremos el disfraz de "punto norma".
+      <br>
+      Y si tocamos al "Enemigo" y "ratón presionado" sumaremos la variable de "Puntos" y haremos un "enviar +1 seg" para que sume un segundo 
+      a la variable "Tiempo" y cambiaremos el disfraz a "punto disparo". 
+      </p>          
+
+      <p class="texto"> 
+         El objeto "+1 seg" aparecera cuando demos al objeto con nuestro punto de mira durante unos segundos y luego se escondera.
+      </p>
+
+      <p class="texto"> 
+         Cuando obtengamos unos determinados puntos aparecerán unos mensajes de animo durante unos segundos y luego se enconderán.
+         <br>
+         Cuando ya no nos queden segundos aparecera el "Game Over" con lo cual haremos un "enviar Game Over" y en cada uno de los objetos
+         Punto de mira, Enemigo y Animos tendremos "al recibir Game Over" para que esconda el objeto y se detenga el juego.
+      </p>
+
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego23/23-.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/23-.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
