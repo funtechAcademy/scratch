@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Punto De Mira</title>
+   <title>Tiro Al Plato</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Punto De Mira</h1>
+      <h1>Tiro Al Plato</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,76 +21,133 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Punto De Mira</h2>
+      <h2>Tiro Al Plato</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Necesitamos el punto de mira para cuando toquemos el objeto cambiara de disfraz y sumara puntos y tiempo.
-      <br> 
-      Los enemigos que se podrán seleccionar en la biblioteca de scratch y los moveremos aleatoriamente y se girará también aleatoriamente cuando
-      toquen un borde.
-      <br>
-       El objeto Game Over para cuando acabe el juego. También tendremos una cuenta atrás para comenzar el juego. Nos faltaria unos textos para ir dando
-       animos cada vez que consigamos ciertos puntos y por último la suma de 1 segundo para cuando demos a nuestro objeto le sumaremos 1 segundo al tiempo
-       para tener más tiempo de juego.  
+         Para este juego, necesitamos un punto de mira para ir tocando los objetos que van apareciendo. 
+         <br><br> 
+         Los objetos que van apareciendo y moviéndose por la pantalla, que serán disfraces de un único objeto.
+         <br><br> 
+         También tendremos un objeto game over para cuando acabe el juego y una cuenta atrás para comenzarlo.
+         <br><br> 
+         Pondremos también un objeto con unos textos para ir dando animos cada vez que consigamos ciertos puntos y 
+         por último otro objeto que indicará que le hemos añadido 1 segundo cada vez que acertemos en un objeto
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Usaremos cualquier escenario de la biblioteca.
+         Usaremos cualquier escenario de la biblioteca de Scratch.
+      </p>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/24-TiroAlPlato.zip" download="Tiro Al Plato"> link</a>. Es un archivo comprimido con 6
+         objetos. Lo descargaremos y lo descomprimimos en el directorio del alumno.
       </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que tenemos que ir disparando a nuestro personajes que van apareciendo sumando puntos y tendremos un tiempo para hacerlo que 
-         sumaremos cada vez que disparemos a un personaje. 
+         El juego consiste en que tenemos que ir tirando al plato con los objetos que van apareciendo. Sumaremos 
+         puntos y tendremos un tiempo limitado para hacerlo.
+         <br><br> 
+         Empezaremos por poner la cuenta atrás para el inicio del juego. Colocaremos el objeto y pondremos el disfraz 
+         del número "3".
+         <br><br> 
+         Esperaremos un segundo y pondremos el disfraz del número "2" y esperaremos otro segundo y pondremos el 
+         disfraz del número "1".
+         <br><br>
+         Finalmente, ocultaremos el objeto y mandaremos un mensaje "Jugar" para empezar el juego.
       </p>
-      <p class="img_centrada"><img src="img/juego24/24-1.png" width="70%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego24/24-1.png" width="20%" alt=""></p>
       <p class="texto">
-       El juego comenzara con el objeto del "Cuenta atras" del 3 al 1. Cambiando el disfraz que corresponda.
-       <br>
-       Cuando acabe de poner todos los disfraces haremos un "enviar play" para que el juego comience.
-       <br>
-       Inicializaremos las variables de "Puntos" a 0, "Record" no lo tocamos ya que tendrá lo que tenia anteriormente si se ha jugado
-       alguna vez y la variable "Tiempo" a 10 porque tendremos que ir quitando segundos hasta que tengamos 0 segundos en "Tiempo" y finalizara
-       el juego.
+         Ahora pondremos el punto de mira. Cuando reciba el mensaje "Jugar", lo mostraremos y lo mandaremos a la capa 
+         delantera para que esté siempre por encima de cualquier objeto. Haremos un bucle para que continuamente siga 
+         al puntero del raton y ponga el disfraz de la mira normal.
       </p>
-
+      <p class="img_centrada"><img src="img/juego24/24-2.png" width="28%" alt=""></p>
       <p class="texto">
-       Aparecerán los enemigos en la posición 0,0 y se moverán con pasos a una determinada "Velocidad" que sera una variable que la modificaremos
-       cuando los puntos sean mayor que la variable "Record" y sumaremos a "Velocidad" 1.
-       <br>
-       Si toca el borde haremos que se gira con un número aleatorio.
-       <br>
-       Y si el objeto es tocado por el "Punto mira" y el ratón presionado lo posicionamos en una posición aleatoria y cambiaremos de disfraz.
+         Ahora pondremos el objeto que aparecerá y se irá moviendo por la pantalla. Crearemos una variable 
+         "Velocidad" a la que asignaremos la velocidad a la que se irá moviendo el objeto que aparece que irá 
+         incrementándose según se vayan sumando puntos.
       </p>
-
+      <p class="img_centrada"><img src="img/juego24/24-3.png" width="27%" alt=""></p>
       <p class="texto">
-      El "Punto Mira" seguirá al puntero del ratón y pondremos el disfraz de "punto norma".
-      <br>
-      Y si tocamos al "Enemigo" y "ratón presionado" sumaremos la variable de "Puntos" y haremos un "enviar +1 seg" para que sume un segundo 
-      a la variable "Tiempo" y cambiaremos el disfraz a "punto disparo". 
-      </p>          
-
-      <p class="texto"> 
-         El objeto "+1 seg" aparecera cuando demos al objeto con nuestro punto de mira durante unos segundos y luego se escondera.
+         Ahora, al recibir el mensaje "Jugar". Nos posicionaremos el el centro de la pantalla y nos moveremos 
+         continuamente por ella a la velocidad que hayamos indicado en la variable "Velocidad". 
+         <br><br>
+         Controlaremos que si tocamos un borde, gire para moverse en otra dirección.
+         <br><br>
+         También programaremos que si tocamos el punto de mira y presionamos el botón del ratón (estamos haciendo 
+         click encima), cambiaremos de disfraz y lo volveremos a colocar en otra posición. La gestión de los puntos 
+         la haremos en el punto de mira.
       </p>
-
-      <p class="texto"> 
-         Cuando obtengamos unos determinados puntos aparecerán unos mensajes de animo durante unos segundos y luego se enconderán.
-         <br>
-         Cuando ya no nos queden segundos aparecera el "Game Over" con lo cual haremos un "enviar Game Over" y en cada uno de los objetos
-         Punto de mira, Enemigo y Animos tendremos "al recibir Game Over" para que esconda el objeto y se detenga el juego.
+      <p class="img_centrada"><img src="img/juego24/24-4.png" width="65%" alt=""></p>
+      <p class="texto">
+         Volveremos al objeto del punto de mira. Vamos a crear una nueva variable "Puntos". 
+         <br><br>
+         Además, programaremos añadiéndolo al bucle del recibir el mensaje "Jugar", que si tocamos los objetos que 
+         aparecen y además presionamos el botón del ratón (estamos haciendo click encima del objeto), sumaremos los 
+         puntos y cambiaremos el disfraz a la mira con la explosión para simular que hemos dado al objeto.
+         <br><br>
+         Como vamos a añadirle unos segundos al tiempo, mandaremos un mensaje "Tiempo" que después programaremos.
       </p>
-
+      <p class="img_centrada"><img src="img/juego24/24-5.png" width="55%" alt=""></p>
+      <p class="texto">
+         Colocaremos ahora el objeto tiempo, que tiene el texto "+1 seg". Crearemos también la variable "Tiempo".
+         <br><br>
+         En el objeto programaremos el recibir el mensaje "Tiempo", en el que sumaremos segundos a la variable 
+         "Tiempo" y mostraremos el objeto durante un tiempo.
+      </p>
+      <p class="img_centrada"><img src="img/juego24/24-6.png" width="22%" alt=""></p>
+      <p class="texto">
+         Vamos a programar el objeto con los mensajes de ánimo. Lo colocaremos y cuando empecemos a jugar 
+         controlaremos que con determinada cantidad de puntos, mostramos el objeto durante un tiempo. Iremos 
+         cambiando de disfraz dependiendo de los puntos conseguidos.
+      </p>
+      <p class="img_centrada"><img src="img/juego24/24-7.png" width="30%" alt=""></p>
+      <p class="texto">
+         Vamos a programar ahora el escenario, que llevará todo el control del tiempo, del record y de la velocidad.
+         <br><br>
+         Crearemos una nueva variable "Record" que tendrá la mayor puntuación conseguida en el juego.
+         <br><br>
+         Lo primero que programaremos será un bucle para ir controlando si superamos el record para ir asignando el 
+         nuevo record, y cada vez que lo superemos, asignaremos el nuevo record y aumentamos la velocidad.
+      </p>
+      <p class="img_centrada"><img src="img/juego24/24-8.png" width="33%" alt=""></p>
+      <p class="texto">
+         Ahora, al recibir el mensaje "Jugar", inicializaremos las variables "Puntos" y "Tiempo", mostraremos el 
+         tiempo e iremos descontando 1 cada segundo hasta quedarnos a 0. Al finalizar el tiempo, esconderemos la 
+         variable, enviaremos el mensaje "Game Over" para esconder el resto de objetos y detendremos el programa.
+      </p>
+      <p class="img_centrada"><img src="img/juego24/24-9.png" width="30%" alt=""></p>
+      <p class="texto">
+         Finalmente vamos a programar un truco para poner el record a "0" cuando lo estimemos oportuno. En este caso
+         programaremos que al presionar la tecla "R", ponemos a "0" la variable "Record".
+      </p>
+      <p class="img_centrada"><img src="img/juego24/24-10.png" width="23%" alt=""></p>
+      <p class="texto">
+         Para terminar, programaremos el mensaje "Game Over.
+         <br><br>
+         En el punto de mira, en los objetos que van apareciendo y en los mensajes de ánimo, esconderemos el objeto 
+         y detendremos el resto de programas del objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego24/24-11.png" width="30%" alt=""></p>
+      <p class="texto">
+         Y en el objeto "Game Over" programaremos que empiece con un tamaño de "0" y al recibir el mensaje "Game Over" 
+         mostraremos el objeto y lo haremos grande poco a poco.
+      </p>
+      <p class="img_centrada"><img src="img/juego24/24-12.png" width="25%" alt=""></p>
+      <p class="nota"> 
+         Otro reto que podemos hacer es ponerle sonidos y efectos al juego.   
+      </p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego23/23-.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego24/24-13.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/917408141/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/23-.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/24-TiroAlPlato.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
