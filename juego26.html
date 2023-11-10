@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Atrapa Las Monedas En El Cielo</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Atrapa Las Monedas En El Cielo</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Atrapa Las Monedas En El Cielo</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+       Necesitamos dos botones: "Play" y "How to play". "Play" comenzara el juego y el "How to play" explica mediante objetos como se juega.
+      <br>
+        Un titulo que pondremos encima de los botones iniciales e ira cambiando de disfraz continuamente.
+      <br>
+       La "Nube Inicio" y  que aparecera por detrás del titulo del juego.
+      <br>
+       Cuenta Atras 3-2-1-Go que se mostraran junto su sonido.
+      <br> 
+       Personaje tendremos 3 disfraces que se elegira aleatoriamente nada más empezar el juego. Y se movera con las flechas.
+      <br>
+      Pelota, la Moneda y dos Nubes Juego1/Juego2 que apareceran en la parte de abajo con un número aleatorio en X. Y la Pelota se movera cada vez más deprisa.
+       <br>
+       X2 es un Sprite que aparecera cuando sea mayor de 20 segundos y se movera en Y con un número aleatorio. Y si toca la moneda sumara 20 puntos.
+       Y si toca al personaje mostrara el Sprite de "X2-1" que es más oscuro siempre que el X2 haya durado más de 8 segundos.
+       <br>
+       Cuando el juego termine aparecera una medalla por los puntos obtenidos en el juego. 
+       <br>
+       Desde el botón "How to play" mostraremos objetos que nos indican como se juega: Botones con las flechas, Textos, Personaje,
+       Pelota, Moneda y X2 Muestra. 
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Usaremos varios escenarios que viene adjunto. Menu es el que ponemos nada más empezar donde se mostrarán los botones. El Juego, Game Over y 
+         Ayuda es el mismo escenario pero nos ayudara para usar el bloque "cuando el fondo cambie a....".
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         El juego consiste en que tenemos que mover al personaje con las flecha e ir recogiendo monedas. Si nos da una pelota terminara el juego y
+         mostraremos los puntos y la medalla que corresponde a los puntos obtenidos.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-1.png" width="70%" alt=""></p>
+
+      <p class="nota">
+         El juego está hecho sin clones pero para aumentar la dificultad podriamos hacerlo con clones para los objetos de Nubes, Monedas y Pelota.
+         Asi podriamos quitar algún que otro objeto innecesario.
+      </p>
+
+      <p class="nota">
+       Empezamos hacer el juego con el movimiento..... La intro la haremos al final junto al botón de "How to play".
+      </p>
+
+      <p class="texto">
+      El Personaje lo elegiremos aleatoriamente entre los disfraces que tengamos. Y lo moveremos con las flechas usando "sumar a x" y "sumar a y".
+      <br>
+      Cuando termine el juego el Personaje tendra un "cuando el fondo cambie a Game Over" lo enconderemos.
+      </p>
+
+      <p class="texto">
+         La pelota la posicionaremos en la parte de abajo misma Y pero con un número aleatorio en X.
+         <br>
+         Necesitamos una variable "Tiempo Bola" que ira sumando 1 por cada segundo que pase. Este tipo de variables siempre estáran en un bloque
+         separado del resto ya que al tener un "esperar" penalizaria el resto del código si esta con otros bloques.
+         <br>
+         Usaremos una variable "Velocidad Bola" la inicializaremos a 5 y se movera en Y hacia arriba siempre que la variable "Tiempo Bola"
+         sea mayor que 3. Haremos un esperar entre 10 y 15 segundos y aumentaremos la "Velocidad Bola" en 2 para que la Pelota se mueva más deprisa.
+         <br>
+         Si la Pelota toca el borde volvera a la posición en Y y en X con un número aleatorio.
+         <br>
+         Y si toca al personaje la esconderiamos y cambiariamos en fondo "Game Over" para terminar el juego.
+      </p>          
+
+      <p class="texto"> 
+       La moneda la posicionamos en la misma Y pero con un número aleatorio en X.
+       <br>
+       Siempre estará cambiando de disfraz continuamente para que se vea como gira continuamente.
+       <br>
+       Necesitamos una variable "Tiempo Moneda" que se sumara 1 por cada segundo que pase.
+       <br>
+      Cuando el "Tiempo Moneda" sea mayor que 2 sumariamos en Y un número aleatorio para que cada vez lo haga más o menos rápido.
+      <br>
+      Si la moneda toca el borde volverá a la posición en Y y en X con un número aleatorio. E inicializamos la variable a 0 "Tiempo Moneda".
+      <br>
+      Y si toca al Personaje volverá a la posición en Y y en X con un número aleatorio. Sonara el "Sonido Monedas" e inicializamos la 
+      variable "Tiempo Moneda" a 0 y sumamos a la variable "Puntos" a 10.
+      <br>
+      Cuando termine el juego la Moneda tendrá un "cuando el fondo cambie a Game Over" lo enconderemos.
+      </p>
+
+      <p class="texto">
+         Tenemos que poner también las "Nube Juego1" y "Nube Juego2" las posicionamos en distinta Y a cada una pero con un número aleatorio en X. 
+         <br>
+         Y se moveran en Y con la variable "Velocidad Bola".
+        <br>
+         Y si toca el borde volvemos a posicionarlas como al principio.
+      </p>
+
+      <p class="texto"> 
+      La moneda la posicionamos en la misma Y pero con un número aleatorio en X.
+      <br>
+       En el objeto X2 necesitariamos la variable "Tiempo*2" y la inicializamos a 0. Y se sumara 1 por cada segundo que pase. 
+       <br>
+       Cambiaremos de disfraz continuamente.
+       <br>
+       Cuando el "Tiempo*2" es mayor a 20 segundos se mostrará y la moveremos en Y hacia arriba con un número aleatorio.
+       <br>
+       Si toca el borde la posicionamos en la misma Y pero con un número aleatorio en X. E Inicializamos a 0 "Tiempo*2".
+      <br>
+      Si toca al Personaje sonara el Sonido "Power Up" y la posicionamos de nuevo. E Inicializamos a 0 "Tiempo*2".
+      <br>
+      Y si toca la moneda sumara 20 Puntos.s
+      </p>
+
+       <p class="texto"> 
+        Cuando el personaje toque a la pelota el juego terminara y aparecera el boton de "Reset" y la medalla que hallamos conseguido.
+        <br>
+        El boton de Reset inicializara la variable de "Puntos", cambiara el fondo a "Juego" para comenzar de nuevo y haremos un "enviar jugar".
+        <br>
+        Si pulsamos con el boton cambiaremos de disfraz.
+      </p>
+
+      <p class="texto"> 
+         Las medallas apareceran cuando el personaje toque a la pelota.
+         <br>
+         Cuando cambie al fondo "Game Over" comprobaremos los puntos y mostraremos la medalla correspondiente
+       </p>
+
+
+       <p class="texto"> 
+         El escenario de "How to play" quedaría asi. Que explicará con ayuda de los sprites como funciona el juego.
+         <br>
+         Tendremos un boton de "Ready" para que vuelva de nuevo al menu principal. Tendremos que inicializar los "Puntos" y cambiaremos el fondo.
+         <br>
+         Y apareceran de nuevo los botones de "Play" y "How to play". Para que volvamos a empezar a jugar.
+      </p>
+       <p class="img_centrada"><img src="img/juego26/26-2.png" width="70%" alt=""></p>
+
+
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/26-.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
