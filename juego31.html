@@ -25,88 +25,135 @@
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Barra, Pelota, Bloques, Puntos, Game Over.
+         Para este juego necesitaremos el ladrillo del que después haremos clones, la pelota que irá eliminando los 
+         ladrillos, la barra que moveremos de izquierda a derecha para lanzar la pelota hacia los ladrillos, las vidas
+         que tenemos en cada momento y un objeto con el literal "Game Over".
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Necesitamos un Escenario con fondo negro. 
+         Necesitamos un escenario con fondo negro que pintaremos. 
       </p>
-      
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/31-Arkanoid.zip" download="Arkanoid"> link</a>. Es un archivo comprimido con 5 objetos. Lo 
+         descargaremos y lo descomprimimos en el directorio del alumno.
+      </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que la pelota tendrá que rebotar en la barra y en los bloques que iran cambiando de color cada vez que les demos y se iran
-         eliminando.
+         El juego consiste en una versión sencilla del clásico Arkanoid, en el que la pelota tendrá que rebotar en la 
+         barra que nosotros manejamos y dar en los distintos ladrillos de colores, que irán cambiando de color cada 
+         vez que les demos y se irán eliminando.
+         <br><br>
+         Empezaremos por programar los ladrillos. Lo haremos con clones y tendrá esta estructura.
       </p>
-      <p class="img_centrada"><img src="img/juego31/31-1.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego31/31-1.png" width="60%" alt=""></p>
       <p class="texto">
-         Inicializamos Puntos y posicionamos la Barra.
+         Empezaremos ocultando el objeto original para luego mostrar los clones. Pondremos el primer color de los 
+         ladrillos y lo posicionaremos en la parte superior izquierda. 
+         <br><br>
+         Repetiremos 6 veces (el número de ladrillos de la primera fila) que cree el clon y se desplace a la derecha 
+         para crear el siguiente.
+         <br><br>
+         Ahora lo posicionaremos para crear la siguiente fila y ponemos el siguiente disfraz.
+         <br><br>
+         Repetiremos estas operaciones hasta que hagamos la última fila.
+         <br><br>
+         Para ver los clones generados, programaremos que al empezar como clon, lo muestre.
       </p>
-      <p class="img_centrada"><img src="img/juego31/31-2.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego31/31-2.png" width="25%" alt=""></p>
       <p class="texto">
-         Creamos clones de los bloques. Cada fila tendra un disfraz de un color diferente. Empezaremos con el disfraz "Bloque1". En la primera
-         fila crearemos 6 bloques sumando la X para ir posicionando los bloques. Hay que acordarse que el bloque original se esconde y el
-         clon se muestra.
+         Ahora programaremos la barra. Crearemos una variable "Puntos" que inicializaremos a "0" y la posicionaremos 
+         en el centro de la parte inferior.
+         <br><br>
+         Le daremos el tamaño del 100% y la mostraremos.
+         <br><br>
+         Ahora la moveremos con el cursor derecho y el izquierdo. Al pulsar estas teclas, apuntaremos al lado indicado
+         y moveremos pasos. Añadiremos al final que si toca un borde, rebote.
       </p>
-      <p class="img_centrada"><img src="img/juego31/31-3.png" width="20%" alt=""></p>
-      <p class="img_centrada"><img src="img/juego31/31-4.png" width="20%" alt=""></p>
-     
+      <p class="img_centrada"><img src="img/juego31/31-3.png" width="45%" alt=""></p>
       <p class="texto">
-         Para crear la siguiente fila de clones tendremos que posicionar la X, bajar la Y y cambiar al siguiente disfraz. 
-         Este bucle iria a continuación del anterior repetir.
+         Continuaremos con la pelota. la posicionamos en la parte central de la pantalla, apuntaremos hacia abajo y 
+         la mostraremos. Esperaremos un segundo para que terminen de pintarse los bloques antes de poder jugar.
       </p>
-      <p class="img_centrada"><img src="img/juego31/31-5.png" width="20%" alt=""></p>
-
+      <p class="img_centrada"><img src="img/juego31/31-4.png" width="22%" alt=""></p>
       <p class="texto">
-         Para tercera fila de clones serán 4 clones y empieza en X = -119 e Y = 116 y cambiar de disfraz.
-         <br>
-         Cuarta fila de clones serán 3 clones y empieza en X = -82 en Y = 88 y cambiar de disfraz.
-         <br>
-         Quinta fila de clones serán 2 clones y empieza en X = 42 en Y = 58 y cambiar de disfraz.
-         <br>
-         La última fila de clones será 1 clon y empieza en X = -5 e Y = 31 y cambiar de disfraz.
-         <br>
-         Las posiciones son orientativas dependerá del tamaño de los clones.
+         Crearemos una variable "Jugar" para determinar si la pelota se tiene que mover o no. Al pulsar espacio, 
+         marcaremos la variable con "SI" para indicar que empezamos a jugar. Moveremos la pelota hasta que dicha 
+         variable contenga el valor "NO".
       </p>
+      <p class="img_centrada"><img src="img/juego31/31-5.png" width="40%" alt=""></p>
       <p class="texto">
-        Nos quedaria saber como gestionar que tendriamos que hacer cuando la pelota toque a los bloques.
-       </p>
-      
-      <p class="texto">
-         Si el bloque toca a la pelota hacemos un "enviar Giro pelota" que tendrá su recibir en la pelota. Si tenemos el disfraz 6 (hemos llegado
-         al último disfraz) y hacemos un sonido, puntos y eliminamos el clon. Y si no cambiamos el disfraz al siguiente.
+         Vamos a añadir ahora que si toca la barra, rebote. Controlaremos que si toca la barra, giraremos una 
+         cantidad de grados para que pueda ir en sentido contrario pero pondremos una franja aleatoria para que nunca 
+         sea el mismo tipo de movimiento.
       </p>
-      <p class="img_centrada"><img src="img/juego31/31-6.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego31/31-6.png" width="48%" alt=""></p>
       <p class="texto">
-         La barra la moveremos con las flechas derecha e izquierda
-      <p class="img_centrada"><img src="img/juego31/31-7.png" width="20%" alt=""></p>
-      <p class="texto">
-        Y si llegamos a los puntos 8 ó 15 modificaremos el tamaño de la barra más pequeña para que el juego sea más dificil.
+         Volvemos con los ladrillos. Ahora programaremos el bloque "Al Comenzar Como Clon". Añadiremos un bucle "Por 
+         Siempre" donde controlaremos si tocamos la pelota. Si es así, enviaremos un mensaje "Giro Pelota" para que 
+         la pelota gire y que recibiremos en la pelota. 
+         <br><br>
+         Controlaremos que si el disfraz es el último, haremos un sonido, sumaremos un punto y eliminaremos el clon.
+         Si no lo es, haremos otro sonido distinto, pondremos el siguiente disfraz y esperaremos un momento.
       </p>
-      <p class="img_centrada"><img src="img/juego31/31-8.png" width="20%" alt=""></p>   
+      <p class="img_centrada"><img src="img/juego31/31-7.png" width="45%" alt=""></p>
       <p class="texto">
-         En el Objeto de puntos cuando lleguemos a 21 puntos terminara el juego y aparecera un Game Over.
+         Ahora terminaremos de programar la barra para que al ir sumando puntos, la barra vaya encogiendo para ir 
+         haciendo el juego más complicado. Añadiremos al bucle que si los puntos llegan a una cantidad, la barra 
+         disminuye al 60% y que si llegan a otra cantidad mayor, disminuye al 40%.
       </p>
-      <p class="img_centrada"><img src="img/juego31/31-9.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego31/31-8.png" width="45%" alt=""></p>
       <p class="texto">
-         Tendremos también "al recibir Vida" cuando nos quiten vidas y cambiaremos el disfraz y si llegamos al disfraz 5 haremmos un Game Over
-         y terminara el juego.
+         A continuación programaremos en la pelota, que al recibir el mensaje "Giro Pelota", la pelota gire unos 
+         grados aleatorios entre 160 y 200 grados.
       </p>
-      <p class="img_centrada"><img src="img/juego31/31-6.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego31/31-9.png" width="43%" alt=""></p>
       <p class="texto">
-         El Game Over al principio estára escondido y cuando recibamos el Game Over lo mostraremos 
+         Añadimos un nuevo bloque, el de las vidas. Colocamos el objeto el la esquina inferior derecha y ponemos el 
+         primer disfraz con todas las vidas. Ahora controlaremos continuamente, que si llegamos al máximo de puntos,
+         mandamos un mensaje de "Game Over".
       </p>
-      <p class="img_centrada"><img src="img/juego31/31-6.png" width="20%" alt=""></p>
-
+      <p class="img_centrada"><img src="img/juego31/31-10.png" width="33%" alt=""></p>
+      <p class="texto">
+         Vamos a terminar de programar la pelota. Vamos a añadir en el bucle de movimiento de la pelota que si la 
+         pelota no la damos con la barra (la posición de la pelota es más baja que la barra), la volveremos a colocar 
+         en su posición inicial, apuntaremos hacia arriba y enviaremos un mensaje "Vida" para quitar una vida.
+      </p>
+      <p class="img_centrada"><img src="img/juego31/31-11.png" width="48%" alt=""></p>
+      <p class="texto">
+         En el objeto "Vidas" programaremos que al recibir el mensaje "Vida", pondremos el siguiente disfraz con una 
+         vida menos, Daremos a la variable "Jugar el valor "NO" que indica que dejamos de jugar hasta que volvamos a 
+         pulsar la tecla "Espacio".
+         <br><br>
+         Si el disfraz que ponemos es el último, habremos terminado la partida y enviaremos un mensaje de "Game Over" 
+         y detendremos el juego.
+      </p>
+      <p class="img_centrada"><img src="img/juego31/31-12.png" width="43%" alt=""></p>
+      <p class="texto">
+         Terminaremos con el último objeto, el "Game Over", donde programaremos que lo escondemos y colocamos en la 
+         pantalla inicialmente y que al recibir el mensaje "Game Over" lo mostramos.
+      </p>
+      <p class="img_centrada"><img src="img/juego31/31-13.png" width="22%" alt=""></p>
+      <p class="texto">
+         Por ultimo, programaremos también que al recibir "Game Over" en la pelota, la esconderemos.
+      </p>
+      <p class="nota"> 
+         Otro reto que podemos hacer es que aleatoriamente al eliminar un ladrillo, que caiga una vida y si la cogemos 
+         añadimos una vida a las que tenemos.   
+      </p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego13/4-6.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego31/31-14.gif" width="60%" alt=""></p>  
       <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/921732245/editor" target="_blank">aquí</a>.
+         <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/4-GatoVeloz.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/31-Arkanoid.sb3">aquí</a>.
       </p>
       <br><br>
-      <a class="texto volver" href="indexiniciales.html">Volver al índice</a>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
    </div>
    <div id="pie">
       <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
