@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Tiburón Ataca</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Tiburón Ataca</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Tiburón Ataca</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+       Necesitamos un Boton "Play" que comenzara el juego.
+      <br>
+        Una Intro que aparecera antes del Boton "Play". Que hara unos cambios de disfraces junto con una música.
+      <br>
+      Otro objeto que tiene dos disfraces. La negra aparecera cuando demos al boton de jugar que se devanecera antes de que comience el juego y
+      la roja aparecera cuando el tiburon toque a la basura haciendo un efecto grafico de desvanecer.
+      <br>
+      El Tiburón que lo moveremos con el ratón pero solo en el eje vertical Y. Estará abriendo y cerrando la boca continuamente y cuando ya no tiene
+      más salud hara un cambio de disfraz a muerto y se movera haciendo un giro hacia abajo.
+      <br>
+      Tendremos también peces que haremos clones y si tocamos el color de la parte de delante del tiburón sumara puntos.
+      <br>
+      La Basura también serán clones y es la que nos quitara la salud y cada uno la moveremos de distinta manera.
+      <br>
+      La Salud que ira cambiando de disfraz cada vez que la basura nos toque
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Usaremos varios escenarios que viene adjunto. Escenario Inicio es donde aparecera el boton de "Play". Escenario Juego donde el tiburón 
+         se movera y aparecerán los peces y la basura. Hay un Escenario Final que Yo no uso (lo deje por si acaso).
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         El juego consiste en que tenemos que mover al Tiburón con el ratón solo en el Eje de la Y e iran apareciendo peces y Basuras. Los peces me daran 
+         puntos pero la Basura me ira quitando salud.
+      </p>
+      <p class="img_centrada"><img src="img/juego27/27-1.png" width="70%" alt=""></p>
+
+      <p class="texto">
+         El Juego comenzara con el Objeto Intro pero como ya dije con anterioridad lo dejaremos para el final cuando el alumno halla terminado el juego.
+         <br>
+         Tendremos un "al recibir Empezar juego" en la Intro que se llamara desde el Tiburon y haremos cambios de disfraz por un lado y tendremos otro recibir para 
+         que cuando vaya terminando de vaya desvaneciendo poco a poco.
+         <br> 
+         Cuando termine esta animacion escondemos la Intro para que veamos el botón de "Play"
+      </p>
+
+      <p class="texto">
+        El Boton comenzara con un movimiento que haremos mediante un bloque "Boton" para que se mueva un poco hacia arriba, abajo y utilizando la función seno 
+        se movera de arriba y abajo (Yo no lo hago en el juego lo deje por si acaso).
+        <br>
+        Tendremos un "recibir esconder" para que se esconda el boton antes de que el tiburon empieze a jugar.
+        <br>
+        Si el ratón se pone encima hara un efecto de brillo y lo seguira haciendo hasta que le de al raton presionado.
+        <br>
+        Y si le damos click en el boton haremos un efecto de brillo y haremos que aparezca el objeto de "Tiburo escena/Tiburon antes de juego" que es un
+        objeto de color negro con un "enviar Desvanecer". Y cuando termine de hacer este enviar se escondera.
+      </p>          
+
+      <p class="texto"> 
+         Tendremos varias variables que utilizaremos a lo largo del programa: Puntos, High Score, Puntuacion Global, Puntuacion de esta ronda y 
+         Disfraces que contaminan.
+         <br>
+         Los Puntos se sumará 1 cuando toquemos el color de la boca del tiburón.
+         <br>
+         La Puntuacion de esta ronda la inicializamos a Puntos. Creams está variable que parece inutil porque luego tenemos que ir mostrando el valor en 
+         otra posición distinta de Puntos. Y de momento las variables no se pueden modificar de posición a la hora de mostrar.
+         <br>
+         High Score tendrá un valor de la partida anterior pero si los Puntos es mayor que High Score le pondremos a High Score el valor de Puntos.
+         <br>
+         Puntuacion Global tendrá también un valor de la partida anterior pero si el High Score es mayor que la Puntuacion Global le pondremos a 
+         Puntuacion Global el valor de High Score.
+      </p>
+
+      <p class="texto">
+         Las variables de: High Score, Puntuacion Global y Puntuacion de esta ronda, Disfraces que contaminan se modificaran sl recibir en el tiburón 
+         un "enviar Tiburon Muerto" esperara a que pulsemos el Espacio para que aparezca otro disfraz del tiburon "Tiburon Puntuacion1"
+         <br>
+         Y si el High Score es mayor que Puntuacion Global pondremos el disfraz "Tiburon Puntuacion2".
+      </p>
+      
+      <p class="texto"> 
+       Comenzamos con el Tiburon y al "recibir Empezar juego" esconderemos todas las variables menos lo Puntos.
+       <br>
+       Le ponemos el "Escenario Juego" y el tiburon tendrá el disfraz "Tiburon1" y lo escondemos para que no aparezca hasta que escondamos el boton de "Play".
+       <br>
+       Al "recibir Esconder boton" haremos un por siempre para que siga el tiburon a la "posicion y del ratón". Y tambien haremos cambios de disfraces
+       para que abra y cierre la boca.
+       <br>
+       Al "recibir Tiburon Muerto" detendremos todos lo sonidos y sonara "Sonido Tiburon Muerto". Se cambia al disfraz de "Tiburon Muerto". Y haremos que se paren
+       otros programas del objeto para que deje de funcionar que ya no me siga al ratón y moveremos al tiburon con un giro como si se tirase al vacio.
+       <br>
+       Haremos que aparezca el texto "Tiburon Texto1" de "You died" y con un desvanecer poco a poco y luego aparecera otro texto "Tiburon Texto2" que tendrá 
+       añadido el texto para que le demos al Espacio para ver los resultados.
+       <br>
+       Esconderemos la Salud con un "enviar Esconder Salud".
+       <br>
+       Escondemos la variable de Puntos y mostramos High Score, Puntuacion de esta ronda, Puntuacion Global. Y mostraremos como he comentado antes 
+       "Tiburon Puntuacion1" ó "Tiburon Puntuacion2".
+       <br>
+       Y si le doy a la "P" volvera a mostrarme el boton de "Play" para comenzar de nuevo el juego.
+      </p>
+
+       <p class="texto"> 
+      Al "recibir Esconder boton" apareceran los Peces que serán clones y aparecerán por la derecha en un número aleatorio de Y e iran apareciendo 
+      poco a poco.
+       <br>
+       Y si toca al color de la boca del tiburon sumara un punto y hara el "Sonido Come Tiburon".
+       <br>
+       Tendremos "enviar Tiburon Muerto" que detendra otros programas en el objeto y eliminara clo por si alguno se ha quedado en el escenario.
+      </p>
+
+      <p class="texto"> 
+         Al "recibir Esconder boton" apareceran las basuras que serán clones. Esperaremos un numero aleatorio de segundo y cambiaremos a un número 
+         aleatorio de disfraz.
+       <br>
+        Si el disfraz es el ancla esperaremos a que toque al tiburon y hara un "enviar Menos Salud" para que le quite la Salud.
+        <br>
+        Y para el resto de los disfraces esperara a tocar el color de la boca del tiburon y tambien espera a que toque al tiburon. Y también hara
+        un "enviar Menos Salud".
+         <br>
+         El movimiento será distinto. Para el ancla se pondra en la parte de arriba y con una X aleatoria e ira moviendose y girandose. 
+         <br>
+         Para el resto de los disfraces el movimiento se pondra en la misma X pero la Y será aleatorio a las posiciones de arriba y abajo.
+         Y dependiendo de si es 1 o no se movera de distinta manera. Esto lo haremos dentro de un bloque ya que hara lo mismo y asi no duplicamos código.
+      </p>
+      
+      <p class="texto"> 
+        Nos falta la Salud. Al "Empezar Juego" pondremos el disfraz "Salud10" y lo posicionaremos en la parede de abajo a la derecha.  
+        <br>
+        Esperaremos hasta que el disfraz se el "Salud11" y haremos un "enviar Tiburon Muerto".
+      <br>
+      Cada vez que recibamos "Menos Salud" cambiaremos el disfraz al siguiente.
+      </p>
+
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/26-.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
