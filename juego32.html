@@ -28,9 +28,7 @@
          Para este juego vamos a necesitar los reboteadores laterales y los centrales, que utilizaremos de tres 
          colores distintos para hacerlo más vistoso.
          <br><br>
-         También pondremos los dos flippers que moveremos con los cursores derecha e izquierda.
-         <br><br>
-         En lugar de tener una bola tendremos tres, con las que jugaremos con ellas simultáneamente.
+         También pondremos los dos flippers que moveremos con los cursores derecha e izquierda y una bola para jugar.
          <br><br>
          Otros objetos que vamos a utilizar son un botón de "Start", un indicador de si tenemos la música sonando o no,
          un objeto con el texto "Game Over", una linea para la parte inferior y una imagen con movimiento para 
@@ -43,7 +41,7 @@
       </p>
       <p class="nota">
          Para descargar los objetos necesarios para el juego, lo haremos desde este 
-         <a href="sprites/32-Pinball.zip" download="Pinball"> link</a>. Es un archivo comprimido con 15 objetos y 1 
+         <a href="sprites/32-Pinball.zip" download="Pinball"> link</a>. Es un archivo comprimido con 13 objetos y 1 
          escenario. Lo descargaremos y lo descomprimimos en el directorio del alumno.
       </p>
       <h3>Paso a Paso</h3>
@@ -75,129 +73,170 @@
          Lo colocaremos en su posición en un lado de la pantalla y crearemos un clon, lo volveremos a poner en el 
          otro lado de la pantalla, simétricamente y crearemos otro clon.
       </p>
-      <p class="img_centrada"><img src="img/juego32/32-3.png" width="30%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego32/32-3.png" width="28%" alt=""></p>
       <p class="texto">
          Haremos lo mismo con los otros dos reboteadores, quedando la pantalla de esta forma:
       </p>
       <p class="img_centrada"><img src="img/juego32/32-4.png" width="60%" alt=""></p>
       <p class="texto">
-
-
-
-
+         Vamos a poner el botón de inicio. Creamos 2 listas donde iremos almacenando los nombres de los jugadores y 
+         sus records.
          <br><br>
+         &emsp;- Record Nombre: Guardaremos los nombres de los distintos jugadores.<br>
+         &emsp;- Record Puntos: Guardaremos los puntos de los distintos jugadores.
+         <br><br>        
+         Creamos tambien una serie de variables para el control de las bolas y de la puntuación:
          <br><br>
+         &emsp;- Puntos: Guardamos los puntos de la partida.<br>
+         &emsp;- Elemento Lista: Fila de la lista donde hemos introducido el nombre y los puntos.<br>
+         &emsp;- Puntos Jugador: Los  puntos máximos que va obteniendo el jugador.<br>
+         &emsp;- Bolas: Número de bolas que hay en juego.
          <br><br>
-         <br><br>
-         <br><br>
-         <br><br>
-         <br>
+         Inicializamos las variables, lo mandamos a la capa delantera para que esté encima del resto de objetos y lo 
+         mostramos.         
       </p>
-      <p class="img_centrada"><img src="img/juego32/32-1.png" width="20%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego32/32-5.png" width="28%" alt=""></p>
       <p class="texto">
-         En el Escenario inicializamos Puntos, Pelotas, Highscore y Puntos Jugador. También tendremos un "al recibir inicio" para que este
-         el Sonido Juego sonando continuamente. También tendra otros dos "al recibir Parar sonido/Poner sonido" al igual que en todos los objetos que tengan
-         sonido para poder bajar o subir el volumen cuando hagamos un click al objeto "Sonido".
+         Ahora haremnos la gestión de solicitar el nombre del nuevo jugador y buscarlo o incluirlo en las listas. 
+         <br><br>
+         Pedimos el nombre del jugador hasta que nos lo introduzcan, y lo buscamnos en la lista de nombres. El bloque 
+         "# De Elemento De <nombre> En" nos dá la fila donde está ese nombre. Si no existe, nos devuelve "0". Lo 
+         guardamos en la variable "Elemento Lista".
+         <br><br>
+         Inicializamos los puntos del jugador, que serán los de la lista sin lo hemos enbcontrado o "0" si no lo 
+         encontramos.
+         <br><br>
+         Si no encontramos el nombre en la lista, lo añadimos (nombre y puntos) y volvemos a buscar el nombre para que 
+         nos dé la fila donde lo ha insertado. También pondríamos a "0" los puntos del jugador.
+         <br><br>
+         Al final enviaremos el mensaje "Inicio" para empezar el juego.
       </p>
-      
+      <p class="img_centrada"><img src="img/juego32/32-6.png" width="60%" alt=""></p>
       <p class="texto">
-        En los Objetos Paddle Derecha/Izquierda lo primero que haremos será posicionar los objetos y poner el disfraz verde en cada uno de ellos. También 
-        tendrán un "al recibir Disfraz Paddle Derecha/Izquierda" para que cuando la pelota toque a estos objetos cambien el disfraz y luego vuelvan a su 
-        disfraz inicial. 
+         Vamos a programar el objeto "Linea De Tierra". Inicialmente le ponemos el primer disfraz, lo mostramos y lo 
+         colocamos en la parte inferior de la pantalla.
       </p>
-        
+      <p class="img_centrada"><img src="img/juego32/32-7.png" width="25%" alt=""></p>
       <p class="texto">
-        Las Paletas Derecha/Izquierda se posicionarán en su sitio. Pero cuidado porque tendremos que moverlas una con la flecha derecha y la otra con 
-        la flecha izquierda pero tendremos que poner su centro en un extremo ya que tendremos que hacer un giro hacia derecha y otro de vuelta hacia
-        la izquierda.  
+         Le toca el turno a las bolas. Empezaremos con la primera y el resto serán muy similares. Vamos a crear 4 
+         variables y les vamos a dar un valor inicial:
+         <br><br>
+            &emsp;- Mínimo y Máximo: Son los grados aleatorios que le sumaremos a 180 grados para que al rebotar la 
+                    bola gire en sentido contrario, pero no siempre igual.<br>
+            &emsp;- Pasos: Es la velocidad a la que moveremos la bola.<br>
+            &emsp;- Batida: Es lo que le añadimos al movimiento si a la bola la damos con el flipper para un mejor
+                    efecto.
       </p>
-     
+      <p class="img_centrada"><img src="img/juego32/32-8.png" width="25%" alt=""></p>
       <p class="texto">
-        Tendremos 1 Sprite para la pelota pero la duplicaremos para poder hacer 3 Objetos pelotas.
-        <br>
-        En la Pelota1 al comienzo del juego inicializamos variables: Minimo a -45, Maximo a 45, Pasos a 25, Batida a 2. 
-        <br>
-        Tendrá "al recibir Game Over" para esconder la pelota cuando termine el juego.
-        <br>
-        "al recibir inicio" para que comience el juego. Inicializar variables: Pelota1 a S (para que sepamos que se ha lanzado la pelota1), 
-        Pelota2 y Pelota3 a N.
-        <br>
-        Cambiaremos el disfraz de la pelota aleatoriamente. Cambiamos tamaño, posicionamos y apuntamos hacia 180 pero sumandole un numero aleatorio.
-        Y le aumentamos el volumen del sonido.
+         Al recibir el mensaje "Inicio", como vamos a crear clones, esconderemos el original y le pondremos el tamaño 
+         al 35%, la situaremos en la parte superior del centro y fijaremos el volumen para los efectos del 50%.
+         <br><br>
+         Como vamos a jugar con 3 bolas, repetiremos 3 veces sumar uno a la variable "Bolas" que indica el número de 
+         bolas con las que estamos jugando, le pondremos uno de los disfraces (colores) aleatoriamente, apuntaremos 
+         a una dirección también aleatoria y crearemos un clon de la bola, esperando 2 segundos para crear el siguiente.
+         <br><br>
+         También controlaremos que si nos quedamos sin bolas, llamaremos al mensaje "Game Over" y detendremos este 
+         programa.
       </p>
-
-     <p class="texto">
-         Haremos el movimiento de la pelota moviendo pasos y rebotando si toca un borde.
-         <br>
-         Haremos un "enviar Rebotar" y este enviar sonará un "pop", girara 180 grados para que se de la vuelta para que este en la dirección contraria
-         a la que se dirigia y le sumamos el aleatorio en el Minimo y Maximo. Y moveramos "Pasos" por si acaso para que no toque de nuevo el Boton.
-         <br>
-         Si toca Paddle Derecha/Izquierda llamara al enviar Paddle Derecha/Izquierda.
-         <br>
-         Si toca la Paleta Derecha/Izquierda haremos practicamente lo mismo pero moveremos los "Pasos * Batida". Ya que las Paletas tiene el movimiento
-         de giro.
-         <br>
-         Si toca la Linea de tierra sonara el sonido de "Quitar Vida", le resta a la variable Pelota 1 y hara un "enviar Linea de Tierra" para que
-         cambie de disfraz. Si sigo teniendo pelotas para poder lanzar modificamos los valores de Pelota1 a N y Pelota2 a S y asi podremos dar
-         a la tecla "Espacio" paa poder lanzar la Pelota2. Y detenemos este programa para que deje de moverse la Pelota1.
-         <br>
-         Si los Puntos es mayor que 5 y Pelota1 es igual a S aparecera la Pelota2. Ponemos la variable Pelota1 a N y Pelota2 a S.   
-        </p>
-    
-        <p class="texto">
-         Tendremos también otro "al recibir inicio" paa que este comprobando continuamente si tengo Pelotas. Si ya no tengo Pelotas haremos
-         "al enviar Game Over" y detendriamos el juego.
-        </p>
-        <p class="texto">
-         La Pelota2 y la Pelota3 será muy parecida.
-         <br>
-         La Pelota2 tendra un "al presionar tecla espacio". Comprobaremos si Pelota2 es igual a S y Puntos es menor a 6 y cambiamos la variable Pelota2 a N.
-         Y hacemos un "enviar Mostrar pelota2", esperamos un poco y modificamos variable Pelota3 a S ya que la Pelota3 también la podremos llamara con el espacio.
-         <br>
-         Haremos lo mismo que la Pelota1 pero no comprobaremos al tocar Linea de tierra Pelotas mayor que 0. Los Puntos pondremos mayor que 10 y Pelota2
-         es igual a S. Y no tendremos el bloque de Pelotas igual a 0, solo estara está opción en Pelota1.
-         </p>
-
-        <p class="texto">
-             La Pelota3 tendrá un "al presionar tecla espacio". Comprobaremos si Pelota2 es igual a N y Pelota3 es igual a S y Puntos es igual a 6
-            y cambiamos la variable Pelota2 y Pelota3 a N. Y hacemos un "enviar Mostrar pelota3", 
-         <br>
-            Haremos lo mismo que la Pelota1 pero no comprobaremos al tocar Linea de tierra le quitamos vida a Pelotas y detenemos el programa.
-         </p>
-
-         <p class="texto">
-            El Botón serán 6 clones (se podrián hacer niveles creando más o menos clones para ir dando más dificultad al juego).
-         <br>
-            Al comenzar como clon y si tocamos las Pelotas1,2 ó 3 llamaremos a cada Rebotar1/2/3. Y cambiara disfraz epera un poco y lo 
-            dejamos como al principio.
-         </p>
-
-         <p class="texto">
-            El Objeto Sonido será para bajar o subir los sonidos del juego.
-         </p>
-         <p class="texto">
-           El Objeto Record tendremos un "al recibir Game Over" y comprobare¡mos si nuestro jugador ha superado su record para poder guardarlo
-           en la lista y que cuando empiece el juego lo podamos mostrar en el escenario. Pondremos una texto y un cambio de disfraz con un "repetir".
-           Haremos que tenga un sonido. Y llamaremos a un "enviar Fin" para que se muestre un Objeto de "Game Over".
-         </p>
-         <p class="texto">
-            Nos faltaria el Objeto de Start para que nos pida el nombre de usuario y si no esta en la lista Record Name/Puntos nos lo añada.
-            <Br>
-            Esto lo haremos en el Escenario "al recibir Nombre Jugador". Hasta que no nos meta un nombre no nos dejara continuar el juego.
-            <br>
-            Buscamos el nombre y si no está lo añadiremos a la lista.
-          </p>         
-
+      <p class="img_centrada"><img src="img/juego32/32-9.png" width="55%" alt=""></p>
+      <p class="texto">
+         Al comenzar como clon, lo mostraremos y repetiremos continuamente que se mueva y si toca un borde, rebote.
+         <br><br>
+         Ahora controlaremos si la bola toca los distintos elementos del pinball:
+         <br><br>
+         &emsp;- Los Paddel: Mandaremos un mensaje "Disfraz Paddle" (izquierdo o derecho) y rebotaremos. Para rebotar, 
+                 crearemos un bloque nuevo llamado "Rebotar" ya que el código lo utilizaremos varias veces. Lo 
+                 llamaremos aquí también
+         <br><br>
+         &emsp;- Los Reboteadores: Mandaremos un mensaje "Disfraz Reboteador" (1, 2 o 3), sumaremos un punto y 
+                 llamaremos al bloque "Rebotar".
+         <br><br>
+         &emsp;- Los Fliper: Tendremos que dividir en dos el bloque de "Rebotar" ya que para estos objetos, no 
+                 moveremos la bola lo mismo. Para ello, crearemos otro bloque llamado "Sonido Y Giro" donde 
+                 programaremos el sonido que hace al tocar y el giro. En el bloque "Rebotar" esperaremos un momento, 
+                 llamaremos al bloque "Sonido y Giro" y moveremos pasos. En el caso de que toque los flipper, 
+                 llamaremos al bloque "Sonido Y Giro" y moveremos los "Pasos" más la "Batida". 
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-10.png" width="50%" alt=""></p>
+      <p class="texto">
+         &emsp;- La línea de tierra: Hacemos un sonido distinto, quitaremos uno a la variable "Bola", mandaremos el 
+                 mensaje "Línea De Tierra" para cambiar su disfraz, y eliminaremos el clon.
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-11.png" width="65%" alt=""></p>
+      <p class="texto">
+         Ahora completaremos la programación de los paddle. al recibir el mensaje "Disfraz Paddle Izquierda" en el 
+         izquierdo y "Disfraz Paddle Derecha" en el derecho, cambiamos al segundo deisfraz, esperamos un momento y 
+         volvemos a cambiar al primer disfraz.
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-12.png" width="65%" alt=""></p>
+      <p class="texto">
+         Ahora también terminaremos de programar los reboteadores. Haremos un bucle en el que si tocamos la bola, 
+         haremos un sonido, cambiaremos al segundo disfraz, esperaremos un momento y volveremos a dejar el primer 
+         disfraz. Lo haremos en los tres reboteadores. 
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-13.png" width="33%" alt=""></p>
+      <p class="texto">
+         En la línea de tierra, programaremos el mensaje "Línea De Tierra", donde pondremos el segundo disfráz, 
+         esperaremos un momento y volveremos a poner el primer disfraz.
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-14.png" width="25%" alt=""></p>
+      <p class="texto">
+         Vamos a programar ahora un nuevo objeto, el "Game Over", que colocaremos en el centro de la pantalla y 
+         esconderemos.
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-15.png" width="17%" alt=""></p>
+      <p class="texto">
+         Ahora al recibir el mensaje "Game Over", miraremos si hemos batido el récord. Para ello compararemos los 
+         puntos obtenidos con los puntos del jugador que hemos encontrado al introducir el nombre.
+         <br><br>
+         Si es así, actualizaremos el récord en la lista mostraremos el objeto, que contiene un mensaje indicándolo 
+         y haremos un sonido. Finalmente, llamaremos a un mensaje "Fin" para terminar el juego.
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-16.png" width="55%" alt=""></p>
+      <p class="texto">
+         Programaremos el mensaje "Game Over" en los reboteadores, donde eliminaremos los clones.
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-17.png" width="20%" alt=""></p>
+      <p class="texto">
+         También programaremos este mensaje en el objeto "Linea De Tierra" donde esconderemos el objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-18.png" width="20%" alt=""></p>
+      <p class="texto">
+         Programaremos en el objeto "Game Over" el mensaje "Fin", donde mostraremos el objeto llevándolo a la capa 
+         delantera y detendremos el juego.
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-19.png" width="20%" alt=""></p>
+      <p class="texto">
+         Por último, añadiremos el objeto "Sonido" que quitará y pondrá la música del juego. Lo colocaremos en la 
+         esquina inferior derecha, colocaremos el disfraz de sonido, ya que la música empezará sonando y lo 
+         mostraremos.
+         <br><br>
+         Haremos un bucle donde haremos sonar la música del juego continuamente.
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-20.png" width="32%" alt=""></p>
+      <p class="texto">
+         Ahora, al hacer click en este objeto, pondremos el otro disfraz y dependiendo del disfraz que tenga, 
+         quitaremos o pondremos el sonido.
+      </p>
+      <p class="img_centrada"><img src="img/juego32/32-21.png" width="32%" alt=""></p>
+      <p class="nota">
+         Un reto intyeresante que podemos añadir al juego es que las bolas las tengamos que soltar nosotros mediante 
+         una tecla y que no pueda haber más de una bola al mismo tiempo, hasta jugar un máximo de 3 bolas.
+      </p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego13/4-6.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego32/32-22.gif" width="60%" alt=""></p>  
       <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/923899265/editor" target="_blank">aquí</a>.
+         <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/4-GatoVeloz.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/32-Pinball.sb3">aquí</a>.
       </p>
       <br><br>
-      <a class="texto volver" href="indexiniciales.html">Volver al índice</a>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
    </div>
    <div id="pie">
       <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
