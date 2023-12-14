@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Pacman</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Pacman</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Pacman</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+        
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+        
+      </p>
+      
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         •	Variables Globales
+         o	Matar_Fantasma1
+         o	Matar_Fantasma2
+         o	Matar_Fantasma3
+         o	Matar_Fantasma4
+         o	Muerto Pacman
+         o	Puntos
+         o	Tiempo Fantasmas Morados
+         o	Tocar Bola Naranja
+         o	Vida Pacman
+         
+         ESCENARIO
+         
+         •	Escenario de Entrada al Juego.
+         •	Laberinto con el fondo negro y centrado.
+         
+         PACMAN
+         
+         •	Variables Locales
+         o	_Direccion
+         
+         •	Recibir Jugar 
+         o	Inicializar
+         	Puntos 
+         	Dirección: Derecha, Izquierda, Arriba y Abajo.
+         	Vidas: 3.
+         	Muerto Pacman: S/N.
+         	Tiempo Fantasmas Morados: 10 sg.
+         
+         o	Coloco a Pacman en su punto de partida. 
+         o	Para mover al Pacman usar las X e Y. 
+         
+         o	Por siempre y Movemos a Pacman
+         	Bloque Tecla Pulsada
+         -	Compruebo si he tocado color Azul del laberinto no me muevo  y Bloque Retroceder un paso ( lo explico mas adelante)
+         -	Y si no toco el color Azul comprueba la tecla derecha apunto a derecha y variable _Direccion = Derecha y así con todas las teclas
+         
+         	Si _Direccion = Derecha muevo sumo X a 1 y es Izquierda resto X a -1 e igual para Arriba y Abajo
+         	Controlo las coordenadas de entrada de los pasadizos para moverlo de un lado a otro
+         	Bloque TocarFantasma ( lo explico mas adelante)
+         	El Pacman esta continuamenta abriendo y cerrando la boca
+         	Estará continuamente sonado el sonido del pacman_beginning
+         
+         	Si toca las bolitas amarillas obtendrá puntos.
+         	Si toca un Fantasma
+         -	Comprobar el color del Fantasma:
+         -	Si nos hemos comido alguna bola Naranja se pondrán en morado durante unos segundos y podre comérmelo.
+         -	Y si esta de su color me quitara 1 vida. Y tendré que cambiar el disfraz y volver a su posición inicial. Sonido cuando se muera.
+         
+         •	Bloque Retroceder un paso
+         o	Si la _Direccion = Derecha retrocedo X -1 y así con todas las direcciones
+         
+         •	Bloque TocarFantasma
+         
+         o	Comprobar que fantasma he tocado
+         	Comprobar que disfraz tiene el fantasma
+         •	Si es el morado lo matamos
+         •	Y si no es morado el fantasma me quita 1 vida
+         
+         •	Bloque Muerto Pacman
+         o	Cambiaremos los disfraces del Pacman 
+         
+         
+         FANTASMA
+         
+         •	Recibir Jugar 
+         o	  Inicializar
+         	Dirección Fantasma1: Derecha, Izquierda…
+         	Matar Fantasma1: S/N.
+         
+         o	Coloco a fantasma en su punto de partida cada uno en una esquina
+         o	Muevo a fantasma
+         	Si estoy tocando el color azul retrocedo y calculo la nueva dirección
+         	Calculo la nueva dirección al azar.
+         	Apunto a esa dirección
+         	Si esta morado puede ser comido por el Pacman y si no podrá quitar      vidas al Pacman. Solo podrá estar morado 10 segundos.
+         
+                  
+         BOLAS AMARILLAS
+         
+         •	Haremos 11 Filas x  10 Columnas con Clones.
+         •	Crearemos Clones cuando tengamos hueco para ello y donde no estén las otras Bolas Naranjas.. Y lo posicionaremos con X e Y.
+         •	Cada vez que se coma una bola el Pacman se oirá un sonido y sumara punto.
+         
+         BOLAS NARANJAS
+         •	4 Clones, una en cada esquina. 
+         •	Se esconderán cuando lo toque el Pacman.
+         
+         
+      </p>
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego35/35-.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/923899265/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/35-Pacman.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
