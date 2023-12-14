@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Atrapa Las Monedas En El Cielo</title>
+   <title>Sky Fly</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Atrapa Las Monedas En El Cielo</h1>
+      <h1>Sky Fly</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,147 +21,272 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Atrapa Las Monedas En El Cielo</h2>
+      <h2>Sky Fly</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-       Necesitamos dos botones: "Play" y "How to play". "Play" comenzara el juego y el "How to play" explica mediante objetos como se juega.
-      <br>
-        Un titulo que pondremos encima de los botones iniciales e ira cambiando de disfraz continuamente.
-      <br>
-       La "Nube Inicio" y  que aparecera por detrás del titulo del juego.
-      <br>
-       Cuenta Atras 3-2-1-Go que se mostraran junto su sonido.
-      <br> 
-       Personaje tendremos 3 disfraces que se elegira aleatoriamente nada más empezar el juego. Y se movera con las flechas.
-      <br>
-      Pelota, la Moneda y dos Nubes Juego1/Juego2 que apareceran en la parte de abajo con un número aleatorio en X. Y la Pelota se movera cada vez más deprisa.
-       <br>
-       X2 es un Sprite que aparecera cuando sea mayor de 20 segundos y se movera en Y con un número aleatorio. Y si toca la moneda sumara 20 puntos.
-       Y si toca al personaje mostrara el Sprite de "X2-1" que es más oscuro siempre que el X2 haya durado más de 8 segundos.
-       <br>
-       Cuando el juego termine aparecera una medalla por los puntos obtenidos en el juego. 
-       <br>
-       Desde el botón "How to play" mostraremos objetos que nos indican como se juega: Botones con las flechas, Textos, Personaje,
-       Pelota, Moneda y X2 Muestra. 
+         Para este juego necesitamos cuatro botones para navegar entre las distintas pantallas del juego.
+         <br><br>
+         Un título que pondremos encima de los botones iniciales.
+         <br><br>
+         Tres nubes que aparecerán en la pantalla del menú y en el juego.
+         <br><br>
+         Una Cuenta atrás que inicia el juego.
+         <br><br>
+         El personaje del juego que tendrá que ir cogiendo las monedas.
+         <br><br>
+         Una pelota que nos quitará la vida y una moneda que nos dará puntos.
+         <br><br>
+         Un objeto "X2" que multiplicará por 2 los puntos que tengamos si lo cogemos.
+         <br><br>
+         Y finalmente, una medalla que será de oro, plata o bronce dependiendo de los puntos obtenidos.
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Usaremos varios escenarios que viene adjunto. Menu es el que ponemos nada más empezar donde se mostrarán los botones. El Juego, Game Over y 
-         Ayuda es el mismo escenario pero nos ayudara para usar el bloque "cuando el fondo cambie a....".
+         Usaremos varios escenarios. El escenario menú le pondremos para el menú inicial. 
+         <br><br>
+         El escenario juego lo pondremos durante el juego. 
+         <br><br>
+         El escenario game over lo pondremos cuando terminemos el juego y el escenario ayuda lo pondremos cuando le 
+         demos al botón "Como Se Juega".
+      </p>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/32-Pinball.zip" download="Pinball"> link</a>. Es un archivo comprimido con 14 objetos y 4 
+         escenarios. Lo descargaremos y lo descomprimimos en el directorio del alumno.
       </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que tenemos que mover al personaje con las flecha e ir recogiendo monedas. Si nos da una pelota terminara el juego y
-         mostraremos los puntos y la medalla que corresponde a los puntos obtenidos.
+         El juego consiste en ir recogiendo monedas del cielo con nuestro personaje. Cuidado con la pelota, que nos 
+         hará terminar el juego.
       </p>
-      <p class="img_centrada"><img src="img/juego26/26-1.png" width="70%" alt=""></p>
+      <p class="nota">
+         Programaremos primero la pantalla del juego. Posteriormente añadiremos la pantalla del menú principal, la 
+         de ayuda y la de game over.
+      </p>
+      <p class="texto">
+         Vamos a empezar por poner a nuestro personaje. Todo lo que hagamos ahora lo pondremos bajo un mensaje 
+         "Empezar" ya que lo utilizaremos más tarde desde la pantalla de inicio. También se puede poner bajo "Al Hacer 
+         Clic En La Bandera" y después cambiarlo.
+         <br><br>
+         Empezaremos por colocarlo en el centro de la parte superior y le pondremos uno de los tres disfraces que tiene 
+         de manera aleatoria.
+         <br><br>
+         Lo mostraremos y programaremos el movimiento por toda la pantalla con los cursores. Añadiremos al final "Si 
+         Toca Un Borde, Rebotar".
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-1.png" width="40%" alt=""></p>
+      <p class="texto">
+         A continuación, programaremos la moneda. Crearemos una variable "Puntos" donde los iremos guardando y lo 
+         inicializaremos a "0" al empezar, además de esconder el objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-2.png" width="25%" alt=""></p>
+      <p class="texto">
+         Al recibir el mensaje "Empezar", haremos un bucle que irá colocando la moneda en la parte inferior cada vez 
+         que llegue a la parte superior o toque al personaje.
+         <br><br>
+         La colocaremos en la parte inferior y en una posición aleatoria en el eje "X" y esperaremos un segundo para 
+         mostrarla y empezar a moverla.
+         <br><br>
+         El movimiento lo haremos hasta que toque el borde superior o al personaje.
+         <br><br>
+         Si tocamos al personaje, añadimos 1 punto y hacemos el sonido de coger la moneda. Finalmente la escondemos.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-3.png" width="55%" alt=""></p>
+      <p class="texto">
+         También haremos un bucle donde iremos cambiando de disfraz para simular el movimiento de la moneda. Esto 
+         también lo haremos al recibir el mensaje "Empezar".
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-4.png" width="20%" alt=""></p>
+      <p class="texto">
+         Es el turno de la pelota que nos quitará la vida. Crearemos una variable "Velocidad Pelota" que 
+         inicializaremos al empezar a "5", además de esconder el objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-5.png" width="30%" alt=""></p>
+      <p class="texto">
+         Al recibir el mensaje "Empezar", haremos un bucle que irá colocando la pelota en la parte inferior cada vez 
+         que llegue a la parte superior o toque al personaje.
+         <br><br>
+         La colocaremos en la parte inferior y en una posición aleatoria en el eje "X" y cada esperaremos un tiempo 
+         aleatorio para mostrarla y empezar a moverla.
+         <br><br>
+         El movimiento lo haremos hasta que toque el borde superior o al personaje.
+         <br><br>
+         Si tocamos al personaje, mandaremos un mensaje "Game Over" que luego programaremos en casi todos los objetos. 
+         Finalmente la escondemos.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-6.png" width="55%" alt=""></p>
+      <p class="texto">
+         Haremos un bucle donde iremos incrementando la velocidad de la pelota cada un número aleatorio de segundos y 
+         haciendo el sonido del que subimos de nivel. Esto también lo haremos al recibir el mensaje "Empezar".
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-7.png" width="40%" alt=""></p>
+      <p class="texto">
+         Vamos a colocar un par de nubes que solo serán decorativas. Las esconderemos al empezar y al recibir el 
+         mensaje "Empezar", las colocaremos (una en la parte derecha de la pantalla y otra en la parte izquierda) en 
+         la zona inferior de la pantalla.
+         <br><br>
+         Las mandaremos a la capa trasera, para que no molesten y las mostraremos. Haremos un bucle para moverlas 
+         hacia arriba y aprovecharemos la velocidad de la pelota (la variable) para incrementar la "Y" en el movimiento.
+         <br><br>
+         Si tocamos el borde superior, volvemos a colocarla en la parte de abajo.         
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-8.png" width="80%" alt=""></p>
+      <p class="texto">
+         Vamos a programar ahora el objeto "X2", que ocultaremos al empezar. Al recibir el mensaje "Empezar", haremos 
+         un bucle donde lo colocaremos en una posición aleatoria de la parte de abajo y esperaremos también un número 
+         aleatorio de tiempo para mostrarlo y moverlo hacia arriba hasta que toque el borde superior o a nuestro 
+         personaje.
+         <br><br>
+         Si tocamos al personaje, multiplicamos los puntos por 2 y hacemos sonar un sonido. Finalmente lo escondemos.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-9.png" width="55%" alt=""></p>
+      <p class="texto">
+         Haremos también un bucle para cambiar de disfraz.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-10.png" width="20%" alt=""></p>
+      <p class="texto">
+         Programaremos ahora el mensaje "Game Over" en los objetos que ya tenemos.   
+         <br><br>
+         En nuestro personaje, en la moneda, en la pelota, en las dos nubes y en el objeto "X2", esconderemos el 
+         mensaje y detendremos otros programas del objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-11.png" width="30%" alt=""></p>
+      <p class="texto">
+         Programaremnos ahora el recibir el mensaje "Game Over" en el escenario, donde cambiaremos el fondo al de "Game 
+         Over", mostrremos la variable "Puntos" y haremos sonar el sonido "Game Over".
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-12.png" width="25%" alt=""></p>
+      <p class="texto">
+         Programaremos a continuación la medalla. Vamos a esconder el objeto "Al Hacer Clic en la Bandera" y al 
+         recibir el mensaje "Empezar".
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-13.png" width="18%" alt=""></p>
+      <p class="texto">
+         Al recibir "Game Over" colocaremos el objeto y esperaremos el tiempo suficiente para que termine el sonido de 
+         "Game Over".
+         <br><br>
+         Evaluaremos ahora los puntos conseguidos. Si hemos conseguido entre 50 y 500 puntos, mostraremos medalla de 
+         bronce. Si hemos conseguido entre 500 y 1000 puntos, mostraremos medalla de plata. Y si hemos conseguido 
+         más de 1000 puntos, mostraremos medalla de oro.
+         <br><br>
+         Además, reproduciremos un sonido y mostraremos el objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-14.png" width="30%" alt=""></p>
+      <p class="texto">
+         Ahora pondremos el botón "Reset", que nos hará volver a jugar. Lo ocultaremos al iniciar el juego.
+         <br><br>
+         Al recibir el mensaje "Game Over", lo coloaremos en la esquina inferior derecha y lo mostraremos.
+         <br><br>
+         Mientras estemos en este fondo, haremos un efecto en el botón, que haremos posteriormente en el resto de 
+         botones que vamos a poner. Repetiremos que si lo estamos tocando con el puntero del ratón, lo haremos más 
+         pequeño y si no, lo dejaremos en su tamaño original.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-15.png" width="40%" alt=""></p>
+      <p class="texto">
+         Cuando hacemos clic en el botón, iniciaremos el juego de nuevo, poniendo los "Puntos" a "0" y la velocidad de 
+         la pelota a "5", cambiando al fondo a "Juego", mandando el mensaje "Empezar" y escondiendo el botón.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-16.png" width="30%" alt=""></p>
+      <p class="texto">
+         Nuestro juego ya funciona perfectamente. Ahora vamos a poner una pantalla de inicio.
+         <br><br>
+         Lo primero que haremos será cambiar la programación inicial que teníamos en el escenario. Cambiaremos que al 
+         hacer click en la bandera, en lugar de poner el fondo del juego y enviar el mensake "Empezar", simplemente 
+         pondremos el fondo "Menú", iniciaremos el sonido "Sonido de Comienzo" e inicializamos la variable "Puntos" a 
+         "0" y la ocultaremos.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-17.png" width="65%" alt=""></p>
+      <p class="texto">
+         Vamos a programar el objeto "Título" que aparecerá en la pantalla de inicio con un efecto de movimiento. Al 
+         empezar, lo colocaremos en el centro de la pantalla y lo esconderemos.
+         <br><br>
+         Después, pondremos una nueva etiqueta de eventos "Cuando El Fondo Cambia A", donde controlaremos que si el 
+         fondo que colocamos es el "Menú", lo mostraremos y haremos un movimiento continuo del título.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-18.png" width="43%" alt=""></p>
+      <p class="texto">
+         También pondremos que cuando el fondo cambie a "Ayuda" o cuando recibamos el mensaje "Jugar", lo esconderemos.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-19.png" width="25%" alt=""></p>
+      <p class="texto">
+         Pondremos ahora una nube que vaya pasando de derecxha aizquierda por la pantalla de inicio. Al empezar lo 
+         esconderemos y lo colocaremos en su posición debajo del título
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-20.png" width="18%" alt=""></p>
+      <p class="texto">
+         Para el movimiento, programaremos que cuando el fondo cambie a "Menú", lo mostraremos y lo moveremos de 
+         derecha a izquierda, y cuando llegue al final, la volveremos a la derecha.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-21.png" width="45%" alt=""></p>
+      <p class="texto">
+         También pondremos que cuando el fondo cambie a "Ayuda" o cuando recibamos el mensaje "Jugar", lo esconderemos.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-22.png" width="25%" alt=""></p>
+      <p class="texto">
+         Colocaremos a cointinuación el botón "Jugar". Para empezar, lo esconderemos y lo colocaremos en el centro de 
+         la pantalla.
+         <br><br>
+         Cuando el fondo cambie a "Menú", lo mostraremos y haremos un efecto donde al pasar el ratón por encima del 
+         botón, este se hará más pequeño.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-23.png" width="40%" alt=""></p>
+      <p class="texto">
+         Al pulsar el botón, tocaremos un sonido, esconderemos el botón y enviaremos el mensaje "Jugar". No enviamos el 
+         mensaje empezar ya que previamente vamos a realizar una cuenta atrás antes de poder jugar. También 
+         cambiaremos el fondo al de "Juego".
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-24.png" width="30%" alt=""></p>
+      <p class="texto">
+         También programaremos que al recibir el mensaje "Jugar" detenga todos los sonidos y que al cambiar el fondo a 
+         "Ayuda", esconda el botón.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-25.png" width="25%" alt=""></p>
+      <p class="texto">
+         Vamos a hacer la cuenta atrás antes de empezar a jugar. Al empezar, lo esconderemos, pondremos el disfraz del 
+         "3" y lo posicionaremos en el centro de la pantalla.
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-26.png" width="15%" alt=""></p>
+      <p class="texto">
+         Ahora mostraremos el objeto e iremos haciendo la cuenta atrás, con un sonido por número. Al final, mandaremos 
+         el mensaje "Empezar", esconderemos el mensaje y mostraremos la variable "Puntos".
+      </p>
+      <p class="img_centrada"><img src="img/juego26/26-27.png" width="40%" alt=""></p>
+      <p class="texto">
+
+
+
+         <br><br>
+         <br><br>
+         <br><br>
+         <br><br>
+         <br><br>
+         <br><br>
+         <br><br>
+         <br><br>
+
+
 
       <p class="nota">
-         El juego está hecho sin clones pero para aumentar la dificultad podriamos hacerlo con clones para los objetos de Nubes, Monedas y Pelota.
-         Asi podriamos quitar algún que otro objeto innecesario.
+         El juego está hecho sin clones, pero para aumentar la dificultad podríamos hacerlo con clones para los objetos de Nubes, Monedas y Pelota.
+         Así podríamos quitar algún que otro objeto innecesario.
       </p>
+
+
 
       <p class="nota">
-       Empezamos hacer el juego con el movimiento..... La intro la haremos al final junto al botón de "How to play".
+
       </p>
-
-      <p class="texto">
-      El Personaje lo elegiremos aleatoriamente entre los disfraces que tengamos. Y lo moveremos con las flechas usando "sumar a x" y "sumar a y".
-      <br>
-      Cuando termine el juego el Personaje tendra un "cuando el fondo cambie a Game Over" lo enconderemos.
-      </p>
-
-      <p class="texto">
-         La pelota la posicionaremos en la parte de abajo misma Y pero con un número aleatorio en X.
-         <br>
-         Necesitamos una variable "Tiempo Bola" que ira sumando 1 por cada segundo que pase. Este tipo de variables siempre estáran en un bloque
-         separado del resto ya que al tener un "esperar" penalizaria el resto del código si esta con otros bloques.
-         <br>
-         Usaremos una variable "Velocidad Bola" la inicializaremos a 5 y se movera en Y hacia arriba siempre que la variable "Tiempo Bola"
-         sea mayor que 3. Haremos un esperar entre 10 y 15 segundos y aumentaremos la "Velocidad Bola" en 2 para que la Pelota se mueva más deprisa.
-         <br>
-         Si la Pelota toca el borde volvera a la posición en Y y en X con un número aleatorio.
-         <br>
-         Y si toca al personaje la esconderiamos y cambiariamos en fondo "Game Over" para terminar el juego.
-      </p>          
-
-      <p class="texto"> 
-       La moneda la posicionamos en la misma Y pero con un número aleatorio en X.
-       <br>
-       Siempre estará cambiando de disfraz continuamente para que se vea como gira continuamente.
-       <br>
-       Necesitamos una variable "Tiempo Moneda" que se sumara 1 por cada segundo que pase.
-       <br>
-      Cuando el "Tiempo Moneda" sea mayor que 2 sumariamos en Y un número aleatorio para que cada vez lo haga más o menos rápido.
-      <br>
-      Si la moneda toca el borde volverá a la posición en Y y en X con un número aleatorio. E inicializamos la variable a 0 "Tiempo Moneda".
-      <br>
-      Y si toca al Personaje volverá a la posición en Y y en X con un número aleatorio. Sonara el "Sonido Monedas" e inicializamos la 
-      variable "Tiempo Moneda" a 0 y sumamos a la variable "Puntos" a 10.
-      <br>
-      Cuando termine el juego la Moneda tendrá un "cuando el fondo cambie a Game Over" lo enconderemos.
-      </p>
-
-      <p class="texto">
-         Tenemos que poner también las "Nube Juego1" y "Nube Juego2" las posicionamos en distinta Y a cada una pero con un número aleatorio en X. 
-         <br>
-         Y se moveran en Y con la variable "Velocidad Bola".
-        <br>
-         Y si toca el borde volvemos a posicionarlas como al principio.
-      </p>
-
-      <p class="texto"> 
-      La moneda la posicionamos en la misma Y pero con un número aleatorio en X.
-      <br>
-       En el objeto X2 necesitariamos la variable "Tiempo*2" y la inicializamos a 0. Y se sumara 1 por cada segundo que pase. 
-       <br>
-       Cambiaremos de disfraz continuamente.
-       <br>
-       Cuando el "Tiempo*2" es mayor a 20 segundos se mostrará y la moveremos en Y hacia arriba con un número aleatorio.
-       <br>
-       Si toca el borde la posicionamos en la misma Y pero con un número aleatorio en X. E Inicializamos a 0 "Tiempo*2".
-      <br>
-      Si toca al Personaje sonara el Sonido "Power Up" y la posicionamos de nuevo. E Inicializamos a 0 "Tiempo*2".
-      <br>
-      Y si toca la moneda sumara 20 Puntos.s
-      </p>
-
-       <p class="texto"> 
-        Cuando el personaje toque a la pelota el juego terminara y aparecera el boton de "Reset" y la medalla que hallamos conseguido.
-        <br>
-        El boton de Reset inicializara la variable de "Puntos", cambiara el fondo a "Juego" para comenzar de nuevo y haremos un "enviar jugar".
-        <br>
-        Si pulsamos con el boton cambiaremos de disfraz.
-      </p>
-
-      <p class="texto"> 
-         Las medallas apareceran cuando el personaje toque a la pelota.
-         <br>
-         Cuando cambie al fondo "Game Over" comprobaremos los puntos y mostraremos la medalla correspondiente
-       </p>
-
-
-       <p class="texto"> 
-         El escenario de "How to play" quedaría asi. Que explicará con ayuda de los sprites como funciona el juego.
-         <br>
-         Tendremos un boton de "Ready" para que vuelva de nuevo al menu principal. Tendremos que inicializar los "Puntos" y cambiaremos el fondo.
-         <br>
-         Y apareceran de nuevo los botones de "Play" y "How to play". Para que volvamos a empezar a jugar.
-      </p>
-       <p class="img_centrada"><img src="img/juego26/26-2.png" width="70%" alt=""></p>
-
-
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego26/26-.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego32/32-22.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/906218148/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/923899265/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/26-.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/32-Pinball.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
