@@ -36,10 +36,10 @@
          <br><br>
          El texto de juego terminado.
          <br><br>
-         La pantalla resumen de puntuación y records.
+         La pantalla resumen de puntuación y récords.
          <br><br>
-         Un objeto que tendrá dos disfraces. Una pantalla negra que aparecera cuando demos al boton de jugar y que se 
-         devanecerá antes de que comience el juego y una pantalla roja que aparecerá cuando el tiburon se coma la 
+         Un objeto que tendrá dos disfraces. Una pantalla negra que aparecerá cuando demos al botón de jugar y que se 
+         desvanecerá antes de que comience el juego y una pantalla roja que aparecerá cuando el tiburón se coma la 
          basura.
          <br><br>
          Un botón "Play" para comenzar el juego.
@@ -60,7 +60,7 @@
          El juego consiste en que tenemos el tiburón, que solo se podrá mover arriba y abajo, se tiene que comer los 
          peces y tendrá que esquivar la basura.
          <br><br>
-         Empezamos por colocar los escenarios y programaer enm ellos que "Al Hacer Click En La Bandera" mandaremos el 
+         Empezamos por colocar los escenarios y programar en ellos que "Al Hacer Clic En La Bandera" mandaremos el 
          mensaje "Jugar" para empezar el juego.
       </p>
       <p class="img_centrada"><img src="img/juego27/27-1.png" width="15%" alt=""></p>
@@ -70,7 +70,7 @@
          <br><br>
          Le colocaremos en el centro de la parte izquierda de la pantalla, apuntaremos a la derecha y lo mostraremos. 
          <br><br>
-         Finalmente haremos un bucle continuo para dar al valor "Y" del tibiurón, el valor "Y" de la posición del 
+         Finalmente haremos un bucle continuo para dar al valor "Y" del tiburón, el valor "Y" de la posición del 
          ratón, ya que solo podremos moverlo en el eje "Y".
       </p>
       <p class="img_centrada"><img src="img/juego27/27-2.png" width="28%" alt=""></p>
@@ -80,34 +80,34 @@
       </p>
       <p class="img_centrada"><img src="img/juego27/27-3.png" width="38%" alt=""></p>
       <p class="texto">
-         Ahora le toca a los peces que se tendrá que comer el tiburón para ir ganando puntos. Al recibir el mensaje 
+         Ahora les toca a los peces que se tendrá que comer el tiburón para ir ganando puntos. Al recibir el mensaje 
          "Jugar", esconderemos el pez y haremos un bucle para ir creando clones cada cierto tiempo.
       </p>
       <p class="img_centrada"><img src="img/juego27/27-4.png" width="40%" alt=""></p>
       <p class="texto">
-         Al comenzar cada clon, le pondremnos un disfraz aleatorio al pez, fijaremos el tamaño al 30%, le pondremos en 
-         la derecha de la pantalla pero en una posición aleatoria del eje "Y". 
+         Al comenzar cada clon, le pondremos un disfraz aleatorio al pez, fijaremos el tamaño al 30%, le pondremos en 
+         la derecha de la pantalla, pero en una posición aleatoria del eje "Y". 
          <br><br>
          Mostraremos el pez y lo moveremos hacia la izquierda. Al llegar al final, eliminaremos el clon.
          <br><br>
          Al mover el pez, controlaremos si estamos tocando el color de los dientes, por ejemplo, para comérselo, 
-         escondiendo el pez, reprodciendo un sonido, sumando un punto y eliminando el clon.
+         escondiendo el pez, reproduciendo un sonido, sumando un punto y eliminando el clon.
       </p>
       <p class="img_centrada"><img src="img/juego27/27-5.png" width="40%" alt=""></p>
       <p class="texto">
-         Programaremos ahora la basura que si le da al tiburón, le irá quitando vida. Al recibir el mensaje "Jugar", 
+         Programaremos ahora la basura que, si le da al tiburón, le irá quitando vida. Al recibir el mensaje "Jugar", 
          escondemos el objeto original, y haremos un bucle, creando un clon cada cierto tiempo y poniéndole un disfraz 
          de forma aleatoria.
       </p>
       <p class="img_centrada"><img src="img/juego27/27-6.png" width="40%" alt=""></p>
       <p class="texto">
-         Vamnos a mover estos objetos. "Al Comenzar Como Clon", vamos a controlar primero si el disfraz que tiene el 
+         Vamos a mover estos objetos. "Al Comenzar Como Clon", vamos a controlar primero si el disfraz que tiene el 
          objeto es el del ancla para hacerlo caer de arriba a abajo. Si no, lo colocamos a la derecha y aleatoriamente, 
          lo movemos con una inclinación hacia arriba o hacia abajo, girando sobre sí mismo. 
       </p>
       <p class="img_centrada"><img src="img/juego27/27-7.png" width="45%" alt=""></p>
       <p class="texto">
-         Ahora, a la hora de quitar salud del tiburón, vamos a diferenciar entre si es el ancla (disfraz número 1) o 
+         Ahora, a la hora de quitar salud del tiburón, vamos a diferenciar entre sí es el ancla (disfraz número 1) o 
          es el resto. Si es el ancla, esperaremos a que toque al tiburón y si lo toca mandaremos un nuevo mensaje 
          "Menos Salud" que más adelante programaremos en el objeto "Salud".
          <br><br>
@@ -116,10 +116,10 @@
       </p>
       <p class="img_centrada"><img src="img/juego27/27-8.png" width="58%" alt=""></p>
       <p class="texto">
-         Ahora le toca al objeto "Salud", que al recibirb el mensaje "Jugar", le mandaremos a la capa delantera, 
+         Ahora le toca al objeto "Salud", que al recibir el mensaje "Jugar", le mandaremos a la capa delantera, 
          pondremos el primer disfraz, y lo mostraremos.
          <br><br>
-         También esperaremos hasta que tenga el último difraz para enviar un nuevo mensaje "TBiburón Muerto" que 
+         También esperaremos hasta que tenga el último disfraz para enviar un nuevo mensaje "Tiburón Muerto" que 
          programaremos en la mayoría de los objetos.
       </p>
       <p class="img_centrada"><img src="img/juego27/27-9.png" width="43%" alt=""></p>
@@ -139,17 +139,17 @@
          <br><br>
          Cambiaremos el disfraz al de "Tiburón Muerto" y detendremos otros programas del objeto.
          <br><br>
-         Ahora lo moveremos hacia abajo. Primero lo deslizaremos un poco, y luego haremnos un bucle para seguir 
+         Ahora lo moveremos hacia abajo. Primero lo deslizaremos un poco, y luego haremos un bucle para seguir 
          cayendo, girando sobre sí mismo. Al finalizar enviaremos el mensaje "Mostrar Texto" para mostrar el mensaje 
          final.
       </p>
       <p class="img_centrada"><img src="img/juego27/27-12.png" width="32%" alt=""></p>
       <p class="texto">
-         En el objeto "Texto", pondremnos el primer disfraz, lo posicionaremos en el centro de la pantalla, fijaremnos 
-         el tamaño al 70% para que se vea bien y le dfaremnos el efecto desvanecer al 100% para que no se vea y lo 
+         En el objeto "Texto", pondremos el primer disfraz, lo posicionaremos en el centro de la pantalla, fijaremos 
+         el tamaño al 70% para que se vea bien y le daremos el efecto desvanecer al 100% para que no se vea y lo 
          mostraremos.
          <br><br>
-         Esperaremnos un segundo y haremos un bucle para que poco a poco vaya apareciendo. Esperaremos otro segundo y 
+         Esperaremos un segundo y haremos un bucle para que poco a poco vaya apareciendo. Esperaremos otro segundo y 
          cambiaremos al segundo disfraz.
          <br><br>
          Finalmente esperaremos hasta que se pulse la tecla "Espacio" y al pulsar la tecla, lo esconderemos y 
@@ -157,8 +157,8 @@
       </p>
       <p class="img_centrada"><img src="img/juego27/27-13.png" width="38%" alt=""></p>
       <p class="texto">
-         Vamos añadir un objeto para que cuando nos alcance basura, haga un efecto de daño. Para ello, añadiremnos el 
-         objeto "Escernas". Al recibir el mensaje "Menos Salud", iniciaremos el sonido "Sonido Tiburón 
+         Vamos añadir un objeto para que cuando nos alcance basura, haga un efecto de daño. Para ello, añadiremos el 
+         objeto "Escenas". Al recibir el mensaje "Menos Salud", iniciaremos el sonido "Sonido Tiburón 
          Alcanzado", pondremos el disfraz "Tiburón Alcanzado", le daremos el efecto "Desvanecer" al 100% para que esté 
          totalmente desvanecido y lo mostramos.
          <br><br>
@@ -174,7 +174,7 @@
          Vamos programar el mensaje "Empieza Juego" en los objetos que lo necesiten. 
          <br><br>
          En el tiburón, pondremos a cero la variable "Puntos", esconderemos todas las variables, lo colocaremos en la 
-         parte izquierda de la pantalla, apuntaremnos a la derecha y lo esconderemos.
+         parte izquierda de la pantalla, apuntaremos a la derecha y lo esconderemos.
       </p>
       <p class="img_centrada"><img src="img/juego27/27-16.png" width="30%" alt=""></p>
       <p class="texto">
@@ -202,13 +202,13 @@
          <br><br>
          Después colocaremos el botón en el centro de la pantalla y esperaremos 1 segundo antes de mostrarlo.
          <br><br>
-         Ahora vamos a hacer que el botón aparezca. Para ello creremos un nuevo bloque al que llamaremos "Botón" y lo 
+         Ahora vamos a hacer que el botón aparezca. Para ello crearemos un nuevo bloque al que llamaremos "Botón" y lo 
          llamaremos al final.
       </p>
       <p class="img_centrada"><img src="img/juego27/27-20.png" width="27%" alt=""></p>
       <p class="texto">
          En el bloque "Botón" haremos aparecer el botón de jugar. Crearemos una variable a la que llamaremos 
-         "Velocidad Botón" y le daremos el valor 30. Lo posicionaremnos en el centro, pero en el eje "Y" lo pondremos 
+         "Velocidad Botón" y le daremos el valor 30. Lo posicionaremos en el centro, pero en el eje "Y" lo pondremos 
          por debajo de la pantalla y lo mostraremos.
          <br><br>
          Para hacer que aparezca, repetiremos 15 veces que vaya subiendo lo que indique la variable "Velocidad Botón" 
@@ -223,25 +223,25 @@
       <p class="img_centrada"><img src="img/juego27/27-21.png" width="30%" alt=""></p>
       <p class="texto">
          Vamos a hacer un efecto de brillo sobre el botón cuando pasemos por encima. Para ello, al recibir el mensaje 
-         "Empieza Juego", repetiremos hasta que pulsemos el botón, que si pasamos el ratón por encima, daremnos el 
+         "Empieza Juego", repetiremos hasta que pulsemos el botón, que, si pasamos el ratón por encima, daremos el 
          efecto brillo al 100% y si no, quitamos el efecto.
       </p>
       <p class="img_centrada"><img src="img/juego27/27-22.png" width="53%" alt=""></p>
       <p class="texto">
-         Al hacer clic en el botón, quitaremos un poco de brillo y esperarermnos un poco antes de enviar un nuevo 
+         Al hacer clic en el botón, quitaremos un poco de brillo y esperaremos un poco antes de enviar un nuevo 
          mensaje "Desvanecer" que después programaremos en el objeto "Escenas".
          <br><br>
-         Quitaremos los efectos gráficos, esconderemos el botón y dsetendremos todos los programas del objeto.
+         Quitaremos los efectos gráficos, esconderemos el botón y detendremos todos los programas del objeto.
       </p>
       <p class="img_centrada"><img src="img/juego27/27-23.png" width="30%" alt=""></p>
       <p class="texto">
-         Terminaremos programando en el obnjeto "Escenas" que cuando recibamos el mensaje "Desvanecer", pondremos el 
+         Terminaremos programando en el objeto "Escenas" que cuando recibamos el mensaje "Desvanecer", pondremos el 
          disfraz "Negro",  Daremos el efecto "Ghost" al 100%, lo mandamos a la capa delantera, lo posicionamos en el 
          centro de la pantalla y lo mostramos.
          <br><br>
          Después haremos un bucle para ir quitando el efecto desvanecer y posteriormente enviamos el mensaje "Jugar".
          <br><br>
-         Cambiamos el fondo al "Escenario Juego" y volveremos a hacder otro bucle para ir poniendo el efecto 
+         Cambiamos el fondo al "Escenario Juego" y volveremos a hacer otro bucle para ir poniendo el efecto 
          "Desvanecer". Finalmente lo escondemos.
       </p>
       <p class="img_centrada"><img src="img/juego27/27-24.png" width="30%" alt=""></p>
