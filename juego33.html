@@ -9,11 +9,11 @@
    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
    <script src="js/scripts.js"></script>
-   <title>Pinball</title>
+   <title>Race City</title>
 </head>
 <body>
    <div id="cabecera">
-      <h1>Pinball</h1>
+      <h1>Race City</h1>
    </div>
    <!-- INICIO_LOADER -->
    <div id="pageloader">
@@ -21,205 +21,153 @@
    </div>
    <!-- FIN_LOADER -->
    <div id="contenido">
-      <h2>Pinball</h2>
+      <h2>Race City</h2>
       <h3>Objetos Necesarios</h3>
       <h4>Personajes</h4>
       <p class="texto">
-         Para este juego vamos a necesitar los reboteadores laterales y los centrales, que utilizaremos de tres 
-         colores distintos para hacerlo más vistoso.
+         Para este juego necesitaremos un coche visto lateralmente, con 6 disfraces que nos servirá para elegir el 
+         coche con el que jugaremos. Este objeto tendrá un sonido para cuando lo elijamos.
          <br><br>
-         También pondremos los dos flippers que moveremos con los cursores derecha e izquierda y una bola para jugar.
+         Otro objeto coche visto desde atrás (también con los seis disfraces  posibles y otro más con el coche roto) 
+         que será el coche con el que juguemos. 
          <br><br>
-         Otros objetos que vamos a utilizar son un botón de "Start", un indicador de si tenemos la música sonando o no,
-         un objeto con el texto "Game Over", una linea para la parte inferior y una imagen con movimiento para 
-         mostrar el record.
+         Otro coche más que hará de los coches que vamos adelantando.
+         <br><br>
+         También necesitraremos una explosión en el caso de colisionar con otro coche. Tendrá el sonido de la explosión.
+         <br><br>
+         Otros objetos que necesitaremos serán, papeleras y farolas que irán saliendo aleatoriamente y un  objeto con 
+         el texto de Game Over.
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Añadiremos el escenario incluid, pero podemos poner el fondo que más nos guste, siempre y cuando se vean 
-         bien los accesorios.
+         Añadiremos un escenario tipo garaje donde aparecerán los distintos coches que podemos elegir. Además tendremos 
+         tres escenarios más que simularán la carretera en movimiento.
+         <br><br>
+         Los escenarios llevarán también tres sonidos que serán el sonido del garaje, el del juego y el del fin del 
+         juego.
       </p>
       <p class="nota">
          Para descargar los objetos necesarios para el juego, lo haremos desde este 
-         <a href="sprites/32-Pinball.zip" download="Pinball"> link</a>. Es un archivo comprimido con 13 objetos y 1 
-         escenario. Lo descargaremos y lo descomprimimos en el directorio del alumno.
+         <a href="sprites/33-RaceCity.zip" download="Pinball"> link</a>. Es un archivo comprimido con 7 objetos, 4 
+         escenarios y 3 sonidos. Lo descargaremos y lo descomprimimos en el directorio del alumno.
       </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en el clásico Pinball. Tenemos que mantener la bola en el juego el mayor tiempo posible, 
-         haciendo puntos con los reboteadores. Los reboteadores irán cambiando de color cuando la bola rebote en ellos.
+         El juego consiste en que tenemos que elgir un coche de nuestro garaje e ir por la carretera esquivando otros 
+         coches.
          <br><br>
-         Podremos quitar y poner el sonido del juego y jugaremos con tres bolas al mismo tiempo.
-         <br><br>
-         También tendremos una lista de jugadores con el record de cada uno.
-         <br><br>
-         Empezaremos por los reboteadores laterales (paddel) donde fijaremos el tamaño al 30%, los colocaremos en la 
-         parte inferior de la pantalla y le pondremos el primer disfraz.
+         Empezaremos por poner el escenario del garaje y programando que al empezar se ponga este escenario y esté 
+         sonando continuamente el sonido del garaje.
       </p>
-      <p class="img_centrada"><img src="img/juego32/32-1.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-1.png" width="60%" alt=""></p>
       <p class="texto">
-         Ahora pondremos los flippers, que colocaremos al final de cada paddel, y poniendoles con un tamaño del 40%.
+         Ahora empezaremos a programar los coches que aparecerán en el garage.
          <br><br>
-         Cuando pulsemos el cursor derecjo o el izquierdo, moveremos hacia arriba y hacia abajo cada uno de ellos.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-2.png" width="60%" alt=""></p>
-      <p class="texto">
-         Colocaremos a continuación los reboteadores del centro del pimbal. Serán de tres colores distintos y haremos 
-         dos clones de cada uno.
+         Vamos a necesitar una variable "Puntos" que utilizaremos más tarde y otra variable "Coche" donde almacenaremos 
+         el número del coche que hemos elegido. Ambas serán variables "Para Todos Los Objetos".
          <br><br>
-         Primero le pondremos un tamaño del 20%, pondremos el primer disfráz y como siempre que creamos clones, lo 
-         esconderemos.
+         También crearemos otras dos variables "_Coche" y "_Numero Coche" para el control del número de coche que 
+         elegimos. Ambas serán variables "Sólo Para Este Objeto". 
+      </p>
+      <p class="nota">
+         A partir de ahora, diferenciaremos las variables que son para todos los objetos de las que son solo para el 
+         objeto donde las creamos. Las que son solo para ese objeto, las crearemos con un "_" delante del nombre de 
+         la variable.
+      </p>
+      <p class="texto">
+         La única variable que tendremos visible será "Puntos" que inicialmente ocultaremos. Inicializaremos a "0" las 
+         variables "Puntos" y "Coche", y a "1" la variable "_Numero Coche".
          <br><br>
-         Lo colocaremos en su posición en un lado de la pantalla y crearemos un clon, lo volveremos a poner en el 
-         otro lado de la pantalla, simétricamente y crearemos otro clon.
+         A continuación colocaremos nuestro objeto en la primera posición y repetiremos 6 veces (ya que crearemos 6 
+         coches) el crear clon e ir colocandolo en la pantalla. Iremos sumando 1 a la variable "_Numero Coche" para 
+         identificar cada uno de ellos.
       </p>
-      <p class="img_centrada"><img src="img/juego32/32-3.png" width="28%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-2 1.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-2 2.png" width="60%" alt=""></p>
       <p class="texto">
-         Haremos lo mismo con los otros dos reboteadores, quedando la pantalla de esta forma:
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-4.png" width="60%" alt=""></p>
-      <p class="texto">
-         Vamos a poner el botón de inicio. Creamos 2 listas donde iremos almacenando los nombres de los jugadores y 
-         sus records.
+         Ahora, al crear cada clon, daremos a la variable "_Coche" el valor de "_Numero Coche" para que cada coche 
+         tenga almacenado en esta variable el número de coche que lo identiofica (dsel 1 al 6). Cambiaremos al disfraz 
+         que lo identifica con este valor y lo mostraremos.
          <br><br>
-         &emsp;- Record Nombre: Guardaremos los nombres de los distintos jugadores.<br>
-         &emsp;- Record Puntos: Guardaremos los puntos de los distintos jugadores.
-         <br><br>        
-         Creamos tambien una serie de variables para el control de las bolas y de la puntuación:
+         A continuación haremnos un bucle hasta que seleccionemos uno de los coches en el que haremos lo siguiente.
          <br><br>
-         &emsp;- Puntos: Guardamos los puntos de la partida.<br>
-         &emsp;- Elemento Lista: Fila de la lista donde hemos introducido el nombre y los puntos.<br>
-         &emsp;- Puntos Jugador: Los  puntos máximos que va obteniendo el jugador.<br>
-         &emsp;- Bolas: Número de bolas que hay en juego.
+         Si pasamos por encima de cualquier coche, lo agrandaremos al 110% y si no, lo dejaremos en el 90%.
          <br><br>
-         Inicializamos las variables, lo mandamos a la capa delantera para que esté encima del resto de objetos y lo 
-         mostramos.         
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-5.png" width="28%" alt=""></p>
-      <p class="texto">
-         Ahora haremnos la gestión de solicitar el nombre del nuevo jugador y buscarlo o incluirlo en las listas. 
+         Además, si al pasar por encima, pinchamos en el coche, enviaremos un mensaje "Detener Sonido" para quitar el 
+         sonido del garaje, haremos el sonido de selección del coche y a continuación el sonido de arranque, esperando 
+         a que termine.
          <br><br>
-         Pedimos el nombre del jugador hasta que nos lo introduzcan, y lo buscamnos en la lista de nombres. El bloque 
-         "# De Elemento De <nombre> En" nos dá la fila donde está ese nombre. Si no existe, nos devuelve "0". Lo 
-         guardamos en la variable "Elemento Lista".
+         Daremos a la variable "Coche" el número de coche seleccionado, que lo tenemos guardado en la variable 
+         "_Coche".
          <br><br>
-         Inicializamos los puntos del jugador, que serán los de la lista sin lo hemos enbcontrado o "0" si no lo 
-         encontramos.
+         Una vez seleccionado el coche, que hará que nos salgamos del bucle, mandaremos el mensaje "Jugar"
          <br><br>
-         Si no encontramos el nombre en la lista, lo añadimos (nombre y puntos) y volvemos a buscar el nombre para que 
-         nos dé la fila donde lo ha insertado. También pondríamos a "0" los puntos del jugador.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-3.png" width="60%" alt=""></p>
+      <p class="texto">
+         Añadiremos un bloque para recibir el mensaje "Jugar", donde detendremos otros programas del objeto y 
+         esconderemos los coches.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-4.png" width="60%" alt=""></p>
+      <p class="texto">
+         Volvemos al escenario. Al recibir el mensaje "Jugar", mandaremos un nuevo mensaje "Escenario Juego" donde 
+         haremos el movimiento de la carretera mediante los escenarios. Detendremos todos los sonidos y haremos un 
+         bucle para poner el sonido del juego hasta que termine mientras se está jugando.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-5.png" width="60%" alt=""></p>
+      <p class="texto">
+         También programaremos que al recibir el mensaje "Escenario Juego", iremos poniendo cada uno de los tres 
+         escenarios de la carretera, con un intervalo de tiempo.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-6.png" width="60%" alt=""></p>
+      <p class="texto">
+         Vamos ahora a programar el coche que nosotros vamos a manejar. Al empezar el juego, esconderemos el coche.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-7.png" width="60%" alt=""></p>
+      <p class="texto">
+         Crearemos una variable "Posición X Coche" donde guardaremos la posición del coche en el eje "X" en todo 
+         momento.
          <br><br>
-         Al final enviaremos el mensaje "Inicio" para empezar el juego.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-6.png" width="60%" alt=""></p>
-      <p class="texto">
-         Vamos a programar el objeto "Linea De Tierra". Inicialmente le ponemos el primer disfraz, lo mostramos y lo 
-         colocamos en la parte inferior de la pantalla.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-7.png" width="25%" alt=""></p>
-      <p class="texto">
-         Le toca el turno a las bolas. Empezaremos con la primera y el resto serán muy similares. Vamos a crear 4 
-         variables y les vamos a dar un valor inicial:
+         Programaremos que al recibir el mensaje "Jugar", le pondremos el disfraz que nos indica la cariable "Coche" 
+         y lo posicionamos en el centro de la parte inferior de la pantalla. Mostraremos la variable "Puntos" y el 
+         propio objeto.
          <br><br>
-            &emsp;- Mínimo y Máximo: Son los grados aleatorios que le sumaremos a 180 grados para que al rebotar la 
-                    bola gire en sentido contrario, pero no siempre igual.<br>
-            &emsp;- Pasos: Es la velocidad a la que moveremos la bola.<br>
-            &emsp;- Batida: Es lo que le añadimos al movimiento si a la bola la damos con el flipper para un mejor
-                    efecto.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-8.png" width="25%" alt=""></p>
-      <p class="texto">
-         Al recibir el mensaje "Inicio", como vamos a crear clones, esconderemos el original y le pondremos el tamaño 
-         al 35%, la situaremos en la parte superior del centro y fijaremos el volumen para los efectos del 50%.
+         A continuación programaremos que se mueva el coche con los cursores derecha e izquierda. Haremos un bucle 
+         donde lo primero que haremos será apuntar hacia la derecha para que el coche quede recto. 
          <br><br>
-         Como vamos a jugar con 3 bolas, repetiremos 3 veces sumar uno a la variable "Bolas" que indica el número de 
-         bolas con las que estamos jugando, le pondremos uno de los disfraces (colores) aleatoriamente, apuntaremos 
-         a una dirección también aleatoria y crearemos un clon de la bola, esperando 2 segundos para crear el siguiente.
+         Controlaremos si pulsamos la flecha derecha para mover el coche a la derecha, controlando que no se salga de 
+         la carretera y haciendo un pequeño giro a la derecha para hacer un efecto de amortiguación del coche.
          <br><br>
-         También controlaremos que si nos quedamos sin bolas, llamaremos al mensaje "Game Over" y detendremos este 
-         programa.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-9.png" width="55%" alt=""></p>
-      <p class="texto">
-         Al comenzar como clon, lo mostraremos y repetiremos continuamente que se mueva y si toca un borde, rebote.
+         Lo mismo si pulsamos la flecha izquierda, moveremos a la izquierda y el giro también lo haremos a la izquierda.
          <br><br>
-         Ahora controlaremos si la bola toca los distintos elementos del pinball:
+         Finalmente, guardaremos la posición "X" del coche en la variable "Posición X Coche"
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-8.png" width="60%" alt=""></p>
+      <p class="texto">
+         Vamos a programar otro efecto para el coche para darle mayor realismo. Volvemos a programar otra vez que al 
+         recibir el mensaje "Jugar", hacemnos un bucle donde vamos cambiando un poco el tamaño del coche de una forma 
+         aleatoria.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-9.png" width="60%" alt=""></p>
+      <p class="texto">
+
+
+
+
+
          <br><br>
-         &emsp;- Los Paddel: Mandaremos un mensaje "Disfraz Paddle" (izquierdo o derecho) y rebotaremos. Para rebotar, 
-                 crearemos un bloque nuevo llamado "Rebotar" ya que el código lo utilizaremos varias veces. Lo 
-                 llamaremos aquí también
          <br><br>
-         &emsp;- Los Reboteadores: Mandaremos un mensaje "Disfraz Reboteador" (1, 2 o 3), sumaremos un punto y 
-                 llamaremos al bloque "Rebotar".
          <br><br>
-         &emsp;- Los Fliper: Tendremos que dividir en dos el bloque de "Rebotar" ya que para estos objetos, no 
-                 moveremos la bola lo mismo. Para ello, crearemos otro bloque llamado "Sonido Y Giro" donde 
-                 programaremos el sonido que hace al tocar y el giro. En el bloque "Rebotar" esperaremos un momento, 
-                 llamaremos al bloque "Sonido y Giro" y moveremos pasos. En el caso de que toque los flipper, 
-                 llamaremos al bloque "Sonido Y Giro" y moveremos los "Pasos" más la "Batida". 
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-10.png" width="50%" alt=""></p>
-      <p class="texto">
-         &emsp;- La línea de tierra: Hacemos un sonido distinto, quitaremos uno a la variable "Bola", mandaremos el 
-                 mensaje "Línea De Tierra" para cambiar su disfraz, y eliminaremos el clon.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-11.png" width="65%" alt=""></p>
-      <p class="texto">
-         Ahora completaremos la programación de los paddle. al recibir el mensaje "Disfraz Paddle Izquierda" en el 
-         izquierdo y "Disfraz Paddle Derecha" en el derecho, cambiamos al segundo deisfraz, esperamos un momento y 
-         volvemos a cambiar al primer disfraz.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-12.png" width="65%" alt=""></p>
-      <p class="texto">
-         Ahora también terminaremos de programar los reboteadores. Haremos un bucle en el que si tocamos la bola, 
-         haremos un sonido, cambiaremos al segundo disfraz, esperaremos un momento y volveremos a dejar el primer 
-         disfraz. Lo haremos en los tres reboteadores. 
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-13.png" width="33%" alt=""></p>
-      <p class="texto">
-         En la línea de tierra, programaremos el mensaje "Línea De Tierra", donde pondremos el segundo disfráz, 
-         esperaremos un momento y volveremos a poner el primer disfraz.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-14.png" width="25%" alt=""></p>
-      <p class="texto">
-         Vamos a programar ahora un nuevo objeto, el "Game Over", que colocaremos en el centro de la pantalla y 
-         esconderemos.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-15.png" width="17%" alt=""></p>
-      <p class="texto">
-         Ahora al recibir el mensaje "Game Over", miraremos si hemos batido el récord. Para ello compararemos los 
-         puntos obtenidos con los puntos del jugador que hemos encontrado al introducir el nombre.
          <br><br>
-         Si es así, actualizaremos el récord en la lista mostraremos el objeto, que contiene un mensaje indicándolo 
-         y haremos un sonido. Finalmente, llamaremos a un mensaje "Fin" para terminar el juego.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-16.png" width="55%" alt=""></p>
-      <p class="texto">
-         Programaremos el mensaje "Game Over" en los reboteadores, donde eliminaremos los clones.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-17.png" width="20%" alt=""></p>
-      <p class="texto">
-         También programaremos este mensaje en el objeto "Linea De Tierra" donde esconderemos el objeto.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-18.png" width="20%" alt=""></p>
-      <p class="texto">
-         Programaremos en el objeto "Game Over" el mensaje "Fin", donde mostraremos el objeto llevándolo a la capa 
-         delantera y detendremos el juego.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-19.png" width="20%" alt=""></p>
-      <p class="texto">
-         Por último, añadiremos el objeto "Sonido" que quitará y pondrá la música del juego. Lo colocaremos en la 
-         esquina inferior derecha, colocaremos el disfraz de sonido, ya que la música empezará sonando y lo 
-         mostraremos.
          <br><br>
-         Haremos un bucle donde haremos sonar la música del juego continuamente.
+         <br><br>
+         <br><br>
+
+
+
+
+
       </p>
-      <p class="img_centrada"><img src="img/juego32/32-20.png" width="32%" alt=""></p>
-      <p class="texto">
-         Ahora, al hacer click en este objeto, pondremos el otro disfraz y dependiendo del disfraz que tenga, 
-         quitaremos o pondremos el sonido.
-      </p>
-      <p class="img_centrada"><img src="img/juego32/32-21.png" width="32%" alt=""></p>
       <p class="nota">
          Un reto intyeresante que podemos añadir al juego es que las bolas las tengamos que soltar nosotros mediante 
          una tecla y que no pueda haber más de una bola al mismo tiempo, hasta jugar un máximo de 3 bolas.
