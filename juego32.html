@@ -31,7 +31,7 @@
          También pondremos los dos flippers que moveremos con los cursores derecha e izquierda y una bola para jugar.
          <br><br>
          Otros objetos que vamos a utilizar son un botón de "Start", un indicador de si tenemos la música sonando o no,
-         un objeto con el texto "Game Over", una linea para la parte inferior y una imagen con movimiento para 
+         un objeto con el texto "Game Over", una línea para la parte inferior y una imagen con movimiento para 
          mostrar el record.
       </p>
       <h4>Escenarios</h4>
@@ -58,16 +58,16 @@
       </p>
       <p class="img_centrada"><img src="img/juego32/32-1.png" width="60%" alt=""></p>
       <p class="texto">
-         Ahora pondremos los flippers, que colocaremos al final de cada paddel, y poniendoles con un tamaño del 40%.
+         Ahora pondremos los flippers, que colocaremos al final de cada paddel, y poniéndoles con un tamaño del 40%.
          <br><br>
-         Cuando pulsemos el cursor derecjo o el izquierdo, moveremos hacia arriba y hacia abajo cada uno de ellos.
+         Cuando pulsemos el cursor derecho o el izquierdo, moveremos hacia arriba y hacia abajo cada uno de ellos.
       </p>
       <p class="img_centrada"><img src="img/juego32/32-2.png" width="60%" alt=""></p>
       <p class="texto">
          Colocaremos a continuación los reboteadores del centro del pimbal. Serán de tres colores distintos y haremos 
          dos clones de cada uno.
          <br><br>
-         Primero le pondremos un tamaño del 20%, pondremos el primer disfráz y como siempre que creamos clones, lo 
+         Primero le pondremos un tamaño del 20%, pondremos el primer disfraz y como siempre que creamos clones, lo 
          esconderemos.
          <br><br>
          Lo colocaremos en su posición en un lado de la pantalla y crearemos un clon, lo volveremos a poner en el 
@@ -85,11 +85,11 @@
          &emsp;- Record Nombre: Guardaremos los nombres de los distintos jugadores.<br>
          &emsp;- Record Puntos: Guardaremos los puntos de los distintos jugadores.
          <br><br>        
-         Creamos tambien una serie de variables para el control de las bolas y de la puntuación:
+         Creamos también una serie de variables para el control de las bolas y de la puntuación:
          <br><br>
          &emsp;- Puntos: Guardamos los puntos de la partida.<br>
          &emsp;- Elemento Lista: Fila de la lista donde hemos introducido el nombre y los puntos.<br>
-         &emsp;- Puntos Jugador: Los  puntos máximos que va obteniendo el jugador.<br>
+         &emsp;- Puntos Jugador: Los puntos máximos que va obteniendo el jugador.<br>
          &emsp;- Bolas: Número de bolas que hay en juego.
          <br><br>
          Inicializamos las variables, lo mandamos a la capa delantera para que esté encima del resto de objetos y lo 
@@ -97,13 +97,13 @@
       </p>
       <p class="img_centrada"><img src="img/juego32/32-5.png" width="28%" alt=""></p>
       <p class="texto">
-         Ahora haremnos la gestión de solicitar el nombre del nuevo jugador y buscarlo o incluirlo en las listas. 
+         Ahora haremos la gestión de solicitar el nombre del nuevo jugador y buscarlo o incluirlo en las listas. 
          <br><br>
-         Pedimos el nombre del jugador hasta que nos lo introduzcan, y lo buscamnos en la lista de nombres. El bloque 
-         "# De Elemento De <nombre> En" nos dá la fila donde está ese nombre. Si no existe, nos devuelve "0". Lo 
+         Pedimos el nombre del jugador hasta que nos lo introduzcan, y lo buscamos en la lista de nombres. El bloque 
+         "# De Elemento De <nombre> En" nos da la fila donde está ese nombre. Si no existe, nos devuelve "0". Lo 
          guardamos en la variable "Elemento Lista".
          <br><br>
-         Inicializamos los puntos del jugador, que serán los de la lista sin lo hemos enbcontrado o "0" si no lo 
+         Inicializamos los puntos del jugador, que serán los de la lista sin lo hemos encontrado o "0" si no lo 
          encontramos.
          <br><br>
          Si no encontramos el nombre en la lista, lo añadimos (nombre y puntos) y volvemos a buscar el nombre para que 
@@ -113,12 +113,12 @@
       </p>
       <p class="img_centrada"><img src="img/juego32/32-6.png" width="60%" alt=""></p>
       <p class="texto">
-         Vamos a programar el objeto "Linea De Tierra". Inicialmente le ponemos el primer disfraz, lo mostramos y lo 
+         Vamos a programar el objeto "Línea De Tierra". Inicialmente le ponemos el primer disfraz, lo mostramos y lo 
          colocamos en la parte inferior de la pantalla.
       </p>
       <p class="img_centrada"><img src="img/juego32/32-7.png" width="25%" alt=""></p>
       <p class="texto">
-         Le toca el turno a las bolas. Empezaremos con la primera y el resto serán muy similares. Vamos a crear 4 
+         Les toca el turno a las bolas. Empezaremos con la primera y el resto serán muy similares. Vamos a crear 4 
          variables y les vamos a dar un valor inicial:
          <br><br>
             &emsp;- Mínimo y Máximo: Son los grados aleatorios que le sumaremos a 180 grados para que al rebotar la 
@@ -152,7 +152,7 @@
          &emsp;- Los Reboteadores: Mandaremos un mensaje "Disfraz Reboteador" (1, 2 o 3), sumaremos un punto y 
                  llamaremos al bloque "Rebotar".
          <br><br>
-         &emsp;- Los Fliper: Tendremos que dividir en dos el bloque de "Rebotar" ya que para estos objetos, no 
+         &emsp;- Los Flipper: Tendremos que dividir en dos el bloque de "Rebotar" ya que para estos objetos, no 
                  moveremos la bola lo mismo. Para ello, crearemos otro bloque llamado "Sonido Y Giro" donde 
                  programaremos el sonido que hace al tocar y el giro. En el bloque "Rebotar" esperaremos un momento, 
                  llamaremos al bloque "Sonido y Giro" y moveremos pasos. En el caso de que toque los flipper, 
@@ -166,7 +166,7 @@
       <p class="img_centrada"><img src="img/juego32/32-11.png" width="65%" alt=""></p>
       <p class="texto">
          Ahora completaremos la programación de los paddle. al recibir el mensaje "Disfraz Paddle Izquierda" en el 
-         izquierdo y "Disfraz Paddle Derecha" en el derecho, cambiamos al segundo deisfraz, esperamos un momento y 
+         izquierdo y "Disfraz Paddle Derecha" en el derecho, cambiamos al segundo disfraz, esperamos un momento y 
          volvemos a cambiar al primer disfraz.
       </p>
       <p class="img_centrada"><img src="img/juego32/32-12.png" width="65%" alt=""></p>
@@ -177,7 +177,7 @@
       </p>
       <p class="img_centrada"><img src="img/juego32/32-13.png" width="33%" alt=""></p>
       <p class="texto">
-         En la línea de tierra, programaremos el mensaje "Línea De Tierra", donde pondremos el segundo disfráz, 
+         En la línea de tierra, programaremos el mensaje "Línea De Tierra", donde pondremos el segundo disfraz, 
          esperaremos un momento y volveremos a poner el primer disfraz.
       </p>
       <p class="img_centrada"><img src="img/juego32/32-14.png" width="25%" alt=""></p>
@@ -199,7 +199,7 @@
       </p>
       <p class="img_centrada"><img src="img/juego32/32-17.png" width="20%" alt=""></p>
       <p class="texto">
-         También programaremos este mensaje en el objeto "Linea De Tierra" donde esconderemos el objeto.
+         También programaremos este mensaje en el objeto "Línea De Tierra" donde esconderemos el objeto.
       </p>
       <p class="img_centrada"><img src="img/juego32/32-18.png" width="20%" alt=""></p>
       <p class="texto">
@@ -221,7 +221,7 @@
       </p>
       <p class="img_centrada"><img src="img/juego32/32-21.png" width="32%" alt=""></p>
       <p class="nota">
-         Un reto intyeresante que podemos añadir al juego es que las bolas las tengamos que soltar nosotros mediante 
+         Un reto interesante que podemos añadir al juego es que las bolas las tengamos que soltar nosotros mediante 
          una tecla y que no pueda haber más de una bola al mismo tiempo, hasta jugar un máximo de 3 bolas.
       </p>
       <p class="texto"> 

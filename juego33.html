@@ -28,19 +28,19 @@
          Para este juego necesitaremos un coche visto lateralmente, con 6 disfraces que nos servirá para elegir el 
          coche con el que jugaremos. Este objeto tendrá un sonido para cuando lo elijamos.
          <br><br>
-         Otro objeto coche visto desde atrás (también con los seis disfraces  posibles y otro más con el coche roto) 
+         Otro objeto coche visto desde atrás (también con los seis disfraces posibles y otro más con el coche roto) 
          que será el coche con el que juguemos. 
          <br><br>
          Otro coche más que hará de los coches que vamos adelantando.
          <br><br>
-         También necesitraremos una explosión en el caso de colisionar con otro coche. Tendrá el sonido de la explosión.
+         También necesitaremos una explosión en el caso de colisionar con otro coche. Tendrá el sonido de la explosión.
          <br><br>
-         Otros objetos que necesitaremos serán, papeleras y farolas que irán saliendo aleatoriamente y un  objeto con 
+         Otros objetos que necesitaremos serán, papeleras y farolas que irán saliendo aleatoriamente y un objeto con 
          el texto de Game Over.
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Añadiremos un escenario tipo garaje donde aparecerán los distintos coches que podemos elegir. Además tendremos 
+         Añadiremos un escenario tipo garaje donde aparecerán los distintos coches que podemos elegir. Además, tendremos 
          tres escenarios más que simularán la carretera en movimiento.
          <br><br>
          Los escenarios llevarán también tres sonidos que serán el sonido del garaje, el del juego y el del fin del 
@@ -53,15 +53,15 @@
       </p>
       <h3>Paso a Paso</h3>
       <p class="texto">
-         El juego consiste en que tenemos que elgir un coche de nuestro garaje e ir por la carretera esquivando otros 
+         El juego consiste en que tenemos que elegir un coche de nuestro garaje e ir por la carretera esquivando otros 
          coches.
          <br><br>
          Empezaremos por poner el escenario del garaje y programando que al empezar se ponga este escenario y esté 
          sonando continuamente el sonido del garaje.
       </p>
-      <p class="img_centrada"><img src="img/juego33/33-1.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-1.png" width="35%" alt=""></p>
       <p class="texto">
-         Ahora empezaremos a programar los coches que aparecerán en el garage.
+         Ahora empezaremos a programar los coches que aparecerán en el garaje.
          <br><br>
          Vamos a necesitar una variable "Puntos" que utilizaremos más tarde y otra variable "Coche" donde almacenaremos 
          el número del coche que hemos elegido. Ambas serán variables "Para Todos Los Objetos".
@@ -78,18 +78,17 @@
          La única variable que tendremos visible será "Puntos" que inicialmente ocultaremos. Inicializaremos a "0" las 
          variables "Puntos" y "Coche", y a "1" la variable "_Numero Coche".
          <br><br>
-         A continuación colocaremos nuestro objeto en la primera posición y repetiremos 6 veces (ya que crearemos 6 
-         coches) el crear clon e ir colocandolo en la pantalla. Iremos sumando 1 a la variable "_Numero Coche" para 
+         A continuación, colocaremos nuestro objeto en la primera posición y repetiremos 6 veces (ya que crearemos 6 
+         coches) el crear clon e ir colocándolo en la pantalla. Iremos sumando 1 a la variable "_Numero Coche" para 
          identificar cada uno de ellos.
       </p>
-      <p class="img_centrada"><img src="img/juego33/33-2 1.png" width="60%" alt=""></p>
-      <p class="img_centrada"><img src="img/juego33/33-2 2.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-2.png" width="34%" alt=""></p>
       <p class="texto">
          Ahora, al crear cada clon, daremos a la variable "_Coche" el valor de "_Numero Coche" para que cada coche 
-         tenga almacenado en esta variable el número de coche que lo identiofica (dsel 1 al 6). Cambiaremos al disfraz 
+         tenga almacenado en esta variable el número de coche que lo identifica (del 1 al 6). Cambiaremos al disfraz 
          que lo identifica con este valor y lo mostraremos.
          <br><br>
-         A continuación haremnos un bucle hasta que seleccionemos uno de los coches en el que haremos lo siguiente.
+         A continuación, haremos un bucle hasta que seleccionemos uno de los coches en el que haremos lo siguiente.
          <br><br>
          Si pasamos por encima de cualquier coche, lo agrandaremos al 110% y si no, lo dejaremos en el 90%.
          <br><br>
@@ -103,36 +102,36 @@
          Una vez seleccionado el coche, que hará que nos salgamos del bucle, mandaremos el mensaje "Jugar"
          <br><br>
       </p>
-      <p class="img_centrada"><img src="img/juego33/33-3.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-3.png" width="37%" alt=""></p>
       <p class="texto">
          Añadiremos un bloque para recibir el mensaje "Jugar", donde detendremos otros programas del objeto y 
          esconderemos los coches.
       </p>
-      <p class="img_centrada"><img src="img/juego33/33-4.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-4.png" width="30%" alt=""></p>
       <p class="texto">
          Volvemos al escenario. Al recibir el mensaje "Jugar", mandaremos un nuevo mensaje "Escenario Juego" donde 
          haremos el movimiento de la carretera mediante los escenarios. Detendremos todos los sonidos y haremos un 
          bucle para poner el sonido del juego hasta que termine mientras se está jugando.
       </p>
-      <p class="img_centrada"><img src="img/juego33/33-5.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-5.png" width="35%" alt=""></p>
       <p class="texto">
          También programaremos que al recibir el mensaje "Escenario Juego", iremos poniendo cada uno de los tres 
          escenarios de la carretera, con un intervalo de tiempo.
       </p>
-      <p class="img_centrada"><img src="img/juego33/33-6.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-6.png" width="30%" alt=""></p>
       <p class="texto">
          Vamos ahora a programar el coche que nosotros vamos a manejar. Al empezar el juego, esconderemos el coche.
       </p>
-      <p class="img_centrada"><img src="img/juego33/33-7.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-7.png" width="16%" alt=""></p>
       <p class="texto">
          Crearemos una variable "Posición X Coche" donde guardaremos la posición del coche en el eje "X" en todo 
          momento.
          <br><br>
-         Programaremos que al recibir el mensaje "Jugar", le pondremos el disfraz que nos indica la cariable "Coche" 
+         Programaremos que al recibir el mensaje "Jugar", le pondremos el disfraz que nos indica la variable "Coche" 
          y lo posicionamos en el centro de la parte inferior de la pantalla. Mostraremos la variable "Puntos" y el 
          propio objeto.
          <br><br>
-         A continuación programaremos que se mueva el coche con los cursores derecha e izquierda. Haremos un bucle 
+         A continuación, programaremos que se mueva el coche con los cursores derecha e izquierda. Haremos un bucle 
          donde lo primero que haremos será apuntar hacia la derecha para que el coche quede recto. 
          <br><br>
          Controlaremos si pulsamos la flecha derecha para mover el coche a la derecha, controlando que no se salga de 
@@ -142,46 +141,172 @@
          <br><br>
          Finalmente, guardaremos la posición "X" del coche en la variable "Posición X Coche"
       </p>
-      <p class="img_centrada"><img src="img/juego33/33-8.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-8.png" width="42%" alt=""></p>
       <p class="texto">
          Vamos a programar otro efecto para el coche para darle mayor realismo. Volvemos a programar otra vez que al 
-         recibir el mensaje "Jugar", hacemnos un bucle donde vamos cambiando un poco el tamaño del coche de una forma 
+         recibir el mensaje "Jugar", hacemos un bucle donde vamos cambiando un poco el tamaño del coche de una forma 
          aleatoria.
       </p>
-      <p class="img_centrada"><img src="img/juego33/33-9.png" width="60%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego33/33-9.png" width="42%" alt=""></p>
       <p class="texto">
-
-
-
-
-
-         <br><br>
-         <br><br>
-         <br><br>
-         <br><br>
-         <br><br>
-         <br><br>
-         <br><br>
-
-
-
-
-
+         Programaremos a continuación el coche enemigo. Al empezar el juego, esconderemos el coche.
       </p>
+      <p class="img_centrada"><img src="img/juego33/33-10.png" width="16%" alt=""></p>
+      <p class="texto">
+         Ahora, al recibir "Jugar", esperaremos un poco para que empiecen a salir coches, los colocaremos al final de 
+         la carretera y pondremos el tamaño al 0% para que después hacer que vaya creciendo y parezca que se va 
+         acercando.
+         <br><br>
+         Haremos también un bucle para ir creando clones cada cierto tiempo.       
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-11.png" width="40%" alt=""></p>
+      <p class="texto">
+         Ahora vamos a programar cada uno de los clones. Vamos a crear una nueva variable "Segundos" en la que iremos 
+         guardando el tiempo que va a tardar el coche enemigo en llegar a nuestro coche y le daremos el valor inicial 
+         "3". Posteriormente, ese tiempo lo iremos recortando, dependiendo de los puntos conseguidos.
+         <br><br>
+         Cambiaremos el disfraz del coche a uno de los 6 que tiene de forma aleatoria y lo mostraremos.
+         <br><br>
+         Deslizaremos el coche durante el tiempo que contenga la variable "Segundos" a la posición en "X" de nuestro 
+         coche, guardada en la variable "Posición X Coche" y a la posición "Y" de la parte baja de la pantalla.
+         <br><br>
+         Una vez llegue el coche al final de la pantalla, sumaremos un punto y eliminaremos el clon del coche.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-12.png" width="45%" alt=""></p>
+      <p class="texto">
+         Ahora vamos a hacer un bucle, también en un "Al Comenzar Como Clon", donde iremos cambiando el tamaño del 
+         coche dependiendo de los segundos que tardará en llegar al final.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-13.png" width="30%" alt=""></p>
+      <p class="texto">
+         En otro bloque "Al Comenzar Como Clon", vamos a controlar que cuando se choque con nuestro coche, nos elimine. 
+         <br><br>
+         Mandaremos un nuevo mensaje "Fin Juego" que recibiremos en el resto de objetos para terminar el juego.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-14.png" width="32%" alt=""></p>
+      <p class="texto">
+         En este objeto, al recibir el mensaje "Fin Juego", detendremos otros programas del objeto y eliminaremos el 
+         clon.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-15.png" width="30%" alt=""></p>
+      <p class="texto">
+         Ahora, para terminar con la programación de este objeto, vamos a darle mayor velocidad al coche dependiendo 
+         de los puntos conseguidos. 
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-16.png" width="30%" alt=""></p>
+      <p class="texto">
+         Vamos a terminar de programar también el escenario, donde añadiremos que el recibir el mensaje "Fin Juego" 
+         detengamos otros programas del objeto (para detener la música y el movimiento del escenario), pondremos el 
+         sonido de fin de juego y detenemos todo.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-17.png" width="35%" alt=""></p>
+      <p class="texto">
+         También terminaremos de programar nuestro coche con el mismo mensaje. Al recibir "Fin Juego", cambiaremos el 
+         disfraz de nuestro coche al de "Jugador Muerto" y detendremos el resto de programas del objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-18.png" width="28%" alt=""></p>
+      <p class="texto">
+         Le toca el turno al objeto explosión. Al empezar lo esconderemos como el resto de objetos.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-19.png" width="15%" alt=""></p>
+      <p class="texto">
+         La explosión aparecerá cuando choquen los dos coches, con lo que al recibir el mensaje "Fin Juego", lo 
+         llevaremos a la capa delantera, la llevaremos a la posición "X" e "Y" de nuestro coche, le pondremos el 
+         primer disfraz y lo mostraremos.
+         <br><br>
+         A continuación, haremos un bucle para mostrar todos los disfraces de la explosión, esperando un poco entre 
+         cada cambio de disfraz, y lo esconderemos.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-20.png" width="58%" alt=""></p>
+      <p class="texto">
+         Por otro lado, y también al recibir el mensaje "Fin Juego", pondremos el sonido de la explosión.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-21.png" width="36%" alt=""></p>
+      <p class="texto">
+         Ahora es el momento de programar el objeto "Game Over". Crearemos una nueva variable para este objeto a la 
+         que llamaremos "_Fin", que inicializaremos con el valor "No".
+         <br><br>
+         Al empezar lo esconderemos y lo pondremos en el centro de la pantalla.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-22.png" width="23%" alt=""></p>
+      <p class="texto">
+         Ahora, al recibir el mensaje "Fin Juego", daremos efectos para que el mensaje salga de manera diferente. 
+         Empezaremos por poner el efecto "Ghost" y "Pixelate" al 100%.
+         <br><br>
+         Le mandaremos a la capa delantera y lo mostraremos.
+         <br><br>
+         A continuación, controlaremos que si la variable "_Fin" es igual a "No", haremos lo siguiente; esperaremos el 
+         tiempo necesario para que termine la explosión, repetiremos 100 veces el ir quitándole los efectos que le hemos 
+         puesto poco a poco y haremos otro bucle para cambiarle el efecto color al texto.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-23.png" width="30%" alt=""></p>
+      <p class="texto">
+         Vamos a darle un toque de profundidad y movimiento al juego con unas papeleras y farolas. Comenzaremos con 
+         las farolas.
+         <br><br>
+         En el caso de las farolas, saldrá una por cada lado, alternándose y cada un tiempo fijo. Para ello, lo primero
+         que haremos será crear una variable "_Dirección" para el propio objeto.
+         <br><br>
+         Al empezar, esconderemos el objeto y le daremos a la variable "_Dirección" el valor "1".
+         <br><br>
+         Ahora, haremos un bucle donde iremos cambiando el valor de la variable "_Dirección" por "0" o por "1", 
+         alternativamente, esperando un segundo después y creando un clon de la farola.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-24.png" width="30%" alt=""></p>
+      <p class="texto">
+         Ahora, al comenzar como clon, situamos la farola en el punto de inicio, la mostramos y dependiendo de la 
+         dirección, la deslizamos hacia la derecha o hacia la izquierda. 
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-25.png" width="33%" alt=""></p>
+      <p class="texto">
+         A continuación, en otro bloque "Al Comenzar Como Clon", fijaremos el tamaño al 0% e iremos aumentándolo poco 
+         a poco para que parezca que se acerca. Al final eliminaremos el clon.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-26.png" width="22%" alt=""></p>
+      <p class="texto">
+         Finalmente, al recibir el mensaje "Fin Juego", detendremos el resto de programas del objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-27.png" width="30%" alt=""></p>
+      <p class="texto">
+         El último objeto que programaremos será la papelera. En este caso irán apareciendo aleatoriamente por la 
+         derecha o la izquierda cada x tiempo también de forma aleatoria.
+         <br><br>
+         Crearemos también una variable "_Dirección" para este objeto.
+         <br><br>
+         Al empezar, esconderemos el objeto y haremos un bucle donde esperaremos un tiempo aleatorio para ir creando 
+         clones.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-28.png" width="40%" alt=""></p>
+      <p class="texto">
+         Al empezar como clon, le daremos a la variable "_Dirección" un número aleatorio entre "0" y "1" (derecha e 
+         izquierda), lo situaremos en el punto de inicio y lo mostraremos.
+         <br><br>
+         Dependiendo de la dirección, la deslizamos hacia la derecha o hacia la izquierda. 
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-29.png" width="47%" alt=""></p>
+      <p class="texto">
+         A continuación, en otro bloque "Al Comenzar Como Clon", fijaremos el tamaño al 0% e iremos aumentándolo poco 
+         a poco para que parezca que se acerca. Al final eliminaremos el clon.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-30.png" width="22%" alt=""></p>
+      <p class="texto">
+         Finalmente, al recibir el mensaje "Fin Juego", detendremos el resto de programas del objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego33/33-31.png" width="30%" alt=""></p>
       <p class="nota">
-         Un reto intyeresante que podemos añadir al juego es que las bolas las tengamos que soltar nosotros mediante 
-         una tecla y que no pueda haber más de una bola al mismo tiempo, hasta jugar un máximo de 3 bolas.
+         Un reto interesante que podemos añadir al juego es poner otro tipo de coches (camiones, motos, etc.) que vayan 
+         siempre a una dirección fija y no hacia nuestra posición.
       </p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego32/32-22.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego33/33-32.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/923899265/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/974080245/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/32-Pinball.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/33-RaceCity.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
