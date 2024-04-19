@@ -228,38 +228,146 @@
          Es el turno de la Nave Nodriza. Será una nave que irá de izquierda a derecha de la pantalla pero solo en la 
          parte superior. Los disparos de esta nave irán hacia nosotros.
          <br><br>
-         Empezaremos por esconder la nave y ponerle el primer disfraz
-      </p>
-
-
-
-
-
-
-
-
-
-
-      <p class="img_centrada"><img src="img/juego34/34-.png" width="45%" alt=""></p>
-      <p class="texto">
-      </p>
+         Vamos a crear 3 variables, dos locales que serán "_Vidas Nodriza" que contendrá el número de vidas de la nave 
+         con un valor inicial de "3" y "_Dirección" donde guardaremos la dirección en la que se mueve y que empezará 
+         con el valor "Izquierda". También crearemos una variable global que llamaremos "Posición X Nodriza" que 
+         tendrá en todo momento la posición de la nave en el eje "X" para el posterior disparo de esta.
          <br><br>
-
-
+         Empezaremos por esconder la nave y ponerle el primer disfraz. Fijamos el tamaño al 50% y la posicionamos en 
+         la esquina superior derecha.
+         <br><br>
+         Esperaremnos un tiempo para que no aparezca nada más empezar y la mostraremos.
+         <br><br>
+         Haremos un bucle donde la moveremos de un lado a otro, siempre que tenga alguna vida. 
+         <br><br>
+         Por un lado, controlaremos la variable "_Dirección" para movernos hacia un lado o hacia el otro y por otro 
+         lado, tendremos en cuenta las posiciones máximas de derecha e izquierda para cambiar de dirección.
+         <br><br>
+         Acabaremos por guardar la posición del eje "X" de la nave.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-15.png" width="40%" alt=""></p>
+      <p class="texto">
+         Vamos a hacer el sonido que va a tener la nodriza cuando salga. Lo crearemos en un mensaje "Sonido Nodriza" ya 
+         que estará continuamente sonando mientras la nodriza tenga vidas. Lo iniciaremos y esperaremos un poco para 
+         que no suene tan seguido.
+         <br><br>
+         Este mensaje lo llamaremos al principio, tras mostrar la nave.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-16.png" width="35%" alt=""></p>
+      <p class="texto">
+         Ahora haremos la gestión de los disfraces de la nave nodriza dependiendo de las vidas que le quedan.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-17.png" width="35%" alt=""></p>
+      <p class="texto">
+         Es el momento de que la nave nodriza dispare. Para ello, cada cierto tiempo y siempre que la nave tenga vidas, 
+         crearemos un clon del disparo de la nodriza.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-18.png" width="40%" alt=""></p>
+      <p class="texto">
+         Añadiremos que al dispara nuestra bala, hagamos daño a la nave nodriza. Para ello, iremos a nuestra bala y 
+         donde hacemos el bucle de movimiento hasta que toque el borde o al marciano, añadiremos también la nave 
+         nodriza.
+         <br><br>
+         También controlaremos más abajo que si tocamos la nave nodriza, iniciaremos el sonido de la explosión, 
+         enviaremos el mensaje "Nodriza" y esperaremos, y eliminaremos el clon.
+         <br><br>
+         Con la modificación, quedaría de la siguiente forma.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-19.png" width="75%" alt=""></p>
+      <p class="texto">
+         Volvemos a la nave nodriza. Ahora programaremos que al recibir el mensaje "Nodriza", que es cuando alcanzamos 
+         a la nave, le quitaremos una vida y si ya no le quedan vidas haremos sonar el sonido de la bomba la 
+         esconderemos y pararemos el resto de programas del objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-20.png" width="32%" alt=""></p>
+      <p class="texto">
+         Por último, programaremos el mensaje "Fin Juego" para que esconda el objeto y pare el resto de programas del objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-21.png" width="29%" alt=""></p>
+      <p class="texto">
+         Toca programar la bala de la nave nodriza. Vamos a empezar por mantarlo a la capa trasera y esconderlo
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-22.png" width="18%" alt=""></p>
+      <p class="texto">
+         Recordemos que los clones de estas balas se crean cada cierto tiempo desde la nave nodriza. Al comenzar como 
+         clon, la vamos a mostrar, iremos a la nave nodriza y la deslizaremos hasta la nave utilizando la variable 
+         "Posición X Nave" que tiene en todo momento la posición "X" de nuestra nave.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-23.png" width="40%" alt=""></p>
+      <p class="texto">
+         Ahora haremos que la bala desaparezca en determinadas ocasiones. Para ello, al empezar como clon, haremos un 
+         bucle que evaluará si tocamos un borde para eliminar el clon o tocamos nuestra nave para mandar el mensaje 
+         "Toco Nave" donde haremos la gestión de las vidas y también eliminaremos el clon.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-24.png" width="32%" alt=""></p>
+      <p class="texto">
+         Al recibir el mensaje "Toco Nave", Le quitaremos una vida. Si ya no nos quedan vidas, Enviaremos el mensaje 
+         "Explosión" para que explote nuestra nave y el mensaje "Fin Juego" para terminar.
+         <br><br>
+         Si nos quedaran vidas todavía, emitiríamos el sonido "Bomba". En ambos casos eliminaríamos el clon.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-25.png" width="28%" alt=""></p>
+      <p class="texto">
+         Por último programaremos que al recibir el mensaje "Fin Juego", eliminaremos el clon que tengamos en ese 
+         momento.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-26.png" width="18%" alt=""></p>
+      <p class="texto">
+         El último objeto que vamos a añadir son unos bloques que servirán de parapetos y que las balas (tanto las 
+         enemigas como las nuestras) irán dañando hasta eliminarlos. Para empezar, lo esconderemos, pondremos el 
+         primer disfraz y crearemos tres clones en la parte inferior de la pantalla.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-27.png" width="23%" alt=""></p>
+      <p class="texto">
+         Al empezar cada clon, mostraremos los bloques y haremos un bucle donde controlaremos si nos toca algún 
+         disparo para poner el siguiente disfraz y esperar un momento.
+         <br><br>
+         Si el disfraz que le toca ponerse es el último, esperaremos un momento antes de eliminar el clon.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-28.png" width="75%" alt=""></p>
+      <p class="texto">
+         También programaremos que al recibir el mensaje "Fin Juego" elimine los clones.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-29.png" width="18%" alt=""></p>
+      <p class="texto">
+         Vamos a hacer un par de cosas que nos quedan pendientes con el tema de los bloques. Iremnos al disparo de 
+         nuestra nave y en el bucle que tenemos de repetir hasta que toque el borde, el marciano o la nave nodriza y 
+         añadiremos que también lo haga hasta que toque el bloque.
+         <br><br>
+         También añadiremos que si toca el bloque, haga el sonido de la "Explosión".
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-30.png" width="75%" alt=""></p>
+      <p class="texto">
+         Ahora nos iremos al objeto del disparo del marciano y en el bucle que tenemos de repetir hasta que toque el 
+         borde o nuestra nave añadiremos que también lo haga hasta que toque el bloque.
+         <br><br>
+         También añadiremos que si toca el bloque, haga el sonido de la "Explosión".
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-31.png" width="70%" alt=""></p>
+      <p class="texto">
+         Por último nos iremos al objeto del disparo de la nave nodriza y donde tenemos controlado si toca nuestra 
+         nave o el borde, añadiremos que si toca el bloque, haga el sonido de la "Bomba", espere un momento y elimne 
+         el clon.
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-32.png" width="30%" alt=""></p>
+      <p class="texto">
+         Añadiremos finalmente en el escenario que al recibir el mensaje "Fin Juego" cambiaremos el escenario por el 
+         de "Game Over".
+      </p>
+      <p class="img_centrada"><img src="img/juego34/34-33.png" width="23%" alt=""></p>
       <p class="nota">
-         Un reto interesante que podemos añadir al juego es poner otro tipo de coches (camiones, motos, etc.) que vayan 
-         siempre a una dirección fija y no hacia nuestra posición.
+         Un reto que podemos añadirle al juego son distintos niveles o que la velocidad de los marcianos vaya creciendo.
       </p>
       <p class="texto"> 
          Y el juego quedaría así.   
       </p>
-      <p class="img_centrada"><img src="img/juego33/33-32.gif" width="60%" alt=""></p>  
+      <p class="img_centrada"><img src="img/juego34/34-34.gif" width="60%" alt=""></p>  
       <p class="texto"> 
          Para ver el juego terminado pulsa
-         <a class="link_s" href="https://scratch.mit.edu/projects/974080245/editor" target="_blank">aquí</a>.
+         <a class="link_s" href="https://scratch.mit.edu/projects/1004151465/editor" target="_blank">aquí</a>.
          <br><br>
          Para descargarte el juego terminado pulsa
-         <a class="link_s" download href="juegos/33-RaceCity.sb3">aquí</a>.
+         <a class="link_s" download href="juegos/34-SpaceInvaders.sb3">aquí</a>.
       </p>
       <br><br>
       <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
