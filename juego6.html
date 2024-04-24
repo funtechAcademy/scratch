@@ -29,13 +29,21 @@
       </p>
       <h4>Escenarios</h4>
       <p class="texto">
-         Como mínimo necesitamos dos escenarios de la biblioteca pero podemos tener todos los que queramos. 
+         Como mínimo necesitamos dos escenarios de la biblioteca, pero podemos tener todos los que queramos. 
       </p>
-      <h3>Paso a Paso</h3>
+      <h3>Objetivos del Juego</h3>
       <p class="texto">
          El juego consiste en que nosotros manejaremos un objeto con los cursores por la pantalla y habrá otro objeto 
          que se irá moviendo automáticamente por toda la pantalla.
          <br><br>
+         Uno de los objetos se mueve y rebota contra las paredes.
+         <br><br>
+         Cuando los objetos se chocan el fondo del escenario debe cambiar.
+         <br><br>
+         El objeto que no se mueve automáticamente ha de ser controlado por nosotros.
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
          Posicionamos el objeto que se va a mover automáticamente por toda pantalla en el cetro. Antes de iniciar el 
          movimiento, apuntaremos a una posición aleatoria para que cada vez el objeto empiece a moverse hacia una 
          dirección distinta. 
@@ -48,7 +56,7 @@
          El otro objeto, el que moveremos con los cursores, lo posicionaremos en cualquier sitio de la pantalla 
          (podría ser aleatorio tanto la x como la y).
          <br><br>
-         Una vez posicionado, controlaremos que si pulsamos alguno de los cursores, apunte en esa dirección y se 
+         Una vez posicionado, controlaremos que, si pulsamos alguno de los cursores, apunte en esa dirección y se 
          mueva unos pasos.
       </p>
       <p class="img_centrada"><img src="img/juego6/6-2.png" width="45%" alt=""></p>
@@ -60,7 +68,7 @@
       </p>
       <p class="img_centrada"><img src="img/juego6/6-3.png" width="40%" alt=""></p>
       <p class="texto">
-         Si ejecutamos lo que hemos hecho, observamos que si se tocan, hace un cambio de escenario continuamente 
+         Si ejecutamos lo que hemos hecho, observamos que, si se tocan, hace un cambio de escenario continuamente 
          hasta que dejan de tocarse.
          <br><br>
          Para solucionarlo, lo que tenemos que hacer es esconder nuestro objeto, esperar un tiempo y volver a 
