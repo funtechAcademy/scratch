@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>A Volar</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>A Volar</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>A Volar</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Necesitamos un objeto que será el que se moverá con los cursores arriba, abajo, izquierda y derecha por toda 
+         la pantalla. En nuestro caso será el gato que parece que está volando. También necesitaremos edificios y 
+         nubes que se moverán de derecha a izquierda continuamente. Estos objetos los cogeremos de la biblioteca de 
+         Scratch
+         <br><br>
+         Irán apareciendo también unos objetos tipo monedas que iremos cogiendo y acumulando puntos. Nosotros 
+         pondremos unas bolas de tres colores, oro, plata y bronce.
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Usaremos dos escenarios distintos que seleccionaremos de la biblioteca de Scratch. También se pueden dibujar.
+      </p>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/21-AVolar.zip" download="A Volar"> link</a>. Es un archivo comprimido con 1 objeto. Lo 
+         descargaremos y lo descomprimimos en el directorio del alumno.
+      </p>
+      <h3>Objetivos del Juego</h3>
+      <p class="texto">
+         El juego consiste en que nuestro personaje (el gato volador) se moverá con los cursores e ira recogiendo las 
+         monedas (bolas) que se va encontrando. Dependiendo del color de la moneda, recibirá una serie de puntos, 1 
+         si es de bronce, 2 si es de plata y 3 si es de oro. Pero cuidado con los edificios. Si nos golpeamos con 
+         alguno de ellos, nos quitarán 5 puntos.
+         <br><br>
+         &emsp;- Mover el gato con los cursores (arriba, abajo, izquierda y derecha) usando sensores para un 
+                 movimiento más fluido.<br><br>
+         &emsp;- El gato siempre tiene que mirar hacia la derecha.<br><br>
+         &emsp;- Salen tres tipos de objetos para coger con distinta puntuación cada uno. Si los tocamos desaparecen 
+                 y sumamos puntos.<br><br>
+         &emsp;- Si chocamos contra los edificios, nos restará puntos.<br><br>
+         &emsp;- Cuando el edificio llega a la izquierda del todo, además de desaparecer, cambiamos el color del fondo. 
+      </p>
+      <p class="nota">
+         Recordar que siempre tenemos que poner apuntar antes de mover y no al revés.
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         En este juego, para mover al gato por la pantalla, en lugar de moverlo mediante los bloques "Apuntar En 
+         Dirección" y "Mover Pasos", lo haremos mediante las coordenadas "X" e "Y". Tenemos que tener en cuenta las 
+         coordenadas de nuestra pantalla.
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-1.png" width="60%" alt=""></p>
+      <p class="texto">
+         Empezaremos por poner al gato volador. Lo posicionaremos a la parte superior izquierda de la pantalla y lo 
+         traeremos a la capa delantera. Crearemos una variable "Puntos" que inicializaremos a "0" y mostraremos en la 
+         esquina superior derecha.
+         <br><br>
+         Ahora moveremos el gato por la pantalla. Lo haremos mediante las coordenadas "X" e "Y". quedando de la 
+         siguiente forma:
+         <br><br>
+         &emsp;- Si pulsamos la tecla "Arriba", sumaremos 10 a y.<br>
+         &emsp;- Si pulsamos la tecla "Abajo", sumaremos -10 a y.<br>
+         &emsp;- Si pulsamos la tecla "Derecha", sumaremos 10 a x.<br>
+         &emsp;- Si pulsamos la tecla "Izquierda", sumaremos -10 a x.
+         <br><br>
+         Añadiremos que si toca un borde, rebote para que se quede dentro de los límites de la pantalla.
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-2.png" width="45%" alt=""></p>
+      <p class="texto">
+         Mostraremos un mensaje de "¡Cuidado Con Los Edificios!" para avisar al jugador. Lo pondremos a parte para
+         que no interfiera con el movimiento.
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-3.png" width="42%" alt=""></p>
+      <p class="texto">
+         Para dar sensación de movimiento pondremos edificios y nubes que se moverán de derecha a izquierda.
+         <br><br>
+         Ahora que el gato se nos mueve por toda la pantalla. pondremos los edificios. Irán saliendo por la parte 
+         derecha, irán cambiando de disfraz y se moverán a la izquierda hasta el final de la pantalla.
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-4.png" width="30%" alt=""></p>
+      <p class="texto">
+         Pondremos ahora las nubes, que haremos como clones. Los clones son objetos creados a partir de otro con 
+         exactamente las mismas características en el momento de ser creados.
+         <br><br>
+         Los iremos creando cada una cantidad de tiempo aleatoria. El objeto original lo esconderemos.
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-5.png" width="42%" alt=""></p>
+      <p class="texto">
+         Para programar los clones que hemos creado, lo haremos mediante el bloque de control "Al Comenzar Como Clon".
+         <br><br>
+         Como hemos dicho, mostraremos el clon y lo colocaremos a la derecha de la pantalla y en una posición 
+         aleatoria en la coordenada "Y" para que unas aparezcan más altas que otras. 
+         <br><br>
+         También la velocidad con la que se mueven las nubes será aleatoria. Para ello, crearemos una variable 
+         "Velocidad" que inicializaremos con un valor aleatorio y moveremos las nubes hacia la izquierda a la 
+         velocidad asignada. Para moverlas, también utilizaremos la coordenada "X". Al final, en lugar de esconder el 
+         clon, lo eliminaremos.
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-6.png" width="48%" alt=""></p>
+      <p class="texto">
+         Vamos a programar las monedas. En nuestro caso serán unas bolas que simularán las monedas de oro, plata y 
+         bronce.
+         <br><br>
+         Lo primero que haremos será un bucle para ir mostrando las monedas en la parte derecha y en posiciones 
+         aleatorias de "Y". Cambiaremos el disfraz también aleatoriamente, la mostraremos y la moveremos hasta el 
+         otro extremo sumando a la coordenada "X".
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-7.png" width="43%" alt=""></p>
+      <p class="texto">
+         Ahora programaremos que si el gato coge las monedas suma a su puntuación 1, 2 o 3 puntos, dependiendo del 
+         color
+         <br><br>
+         Desde la moneda, programaremos que si toca el gato, evaluaremos el disfraz que tiene para ver el color y 
+         sumaremos los puntos correspondientes. Además haremos un sonido.
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-8.png" width="45%" alt=""></p>
+      <p class="texto">
+         Vamos a añadir que si nos chocamos con un edificio, le quitaremos 5 puntos. 
+      </p>
+      <p class="nota">
+         Al coger las monedas, le quitaremos 5 puntos pero si no tiene puntos suficientes, lo dejaremos a cero, 
+         nunca en negativo.
+      </p>
+      <p class="texto">
+         Para ello, en el edificio programaremos que si tocamos al gato, dependiendo de los puntos que tengamos nos 
+         quitará 5 puntos o menos.
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-9.png" width="35%" alt=""></p>
+      <p class="nota">
+         Se podrían hacer clones para que tuviésemos varias monedas a la vez en la pantalla. También podríamos en 
+         lugar de quitar puntos cuando chocamos con los edificios, quitar vidas y hacer una pantalla final de "Game 
+         Over"
+      </p>
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego21/21-10.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/916066522/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/21-AVolar.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Recreativos</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Recreativos</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Recreativos</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Para este juego necesitamos una palanca para comenzar el juego y pondremos 5 botones de colores distintos 
+         para cambiar el color de fondo del escenario. También utilizaremos una palanca para accionar el juego y un 
+         texto que diga "GANASTE".
+         <br><br>
+         Los objetos que se van moviendo los compondremos de objetos de la biblioteca. Los tres objetos tendrán como 
+         mínimo 5 disfraces y en los tres serán los mismos disfraces. Estos objetos los formaremos con objetos de la 
+         biblioteca de Scratch. 
+         <br><br>
+         Para poder probar el juego, pondremos 2 disfraces para que sea más fácil que coincidan.
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Usaremos 5 escenarios con cinco colores distintos para poder seleccionarlo con los botones.
+      </p>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/22-Recreativos.zip" download="Recreativos"> link</a>. Es un archivo comprimido con 76 objetos 
+         y 5 escenarios. Lo descargaremos y lo descomprimimos en el directorio del alumno.
+      </p>
+      <h3>Objetivos del Juego</h3>
+      <p class="texto">
+         El juego consiste en que tenemos que acertar con la combinación ganadora que consistirá en que todas las 
+         imágenes sean iguales.
+         <br><br>
+         Las imágenes se irán moviendo y primero se moverá y parará el primer objeto, luego el segundo y por último 
+         el tercero.
+         <br><br>
+         Si los tres coinciden la misma imagen, puntuaremos.
+         <br><br>
+
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         Empezaremos por colocar los escenarios (5 colores de fondo) y ponemos uno de ellos.
+      </p>
+      <p class="img_centrada"><img src="img/juego22/22-1.png" width="22%" alt=""></p>
+      <p class="texto">
+         Ahora colocaremos los 5 botones de colores en sus posiciones.
+         <br><br>
+         Lo que haremos con los botones será elegir el color de fondo, con lo que simularemos que presionamos el 
+         botón al pulsarlo mediante sus dos disfraces y poner el fondo del color que pulsamos.
+      </p>
+      <p class="img_centrada"><img src="img/juego22/22-2.png" width="21%" alt=""></p>
+      <p class="texto">
+         Haremos lo mismo en los 5 botones.
+         <br><br>
+         Ahora pondremos la palanca. La posicionaremos y le pondremos el disfraz derecho.
+         <br><br>
+         Al pulsar encima, haremos que parezca que la palanca se mueve a la izquierda cambiando de disfraz y 
+         deslizándola un poco.
+         <br><br>
+         Al final, enviaremos un mensaje para que el primer objeto de la pantalla recreativa empiece a moverse.
+      </p>
+      <p class="img_centrada"><img src="img/juego22/22-3.png" width="32%" alt=""></p>
+      <p class="texto">
+         Ahora Vamos a programar el primer objeto. Lo posicionaremos y le daremos un tamaño del 50%. También 
+         inicializaremos la variable "Puntos" a "0" y lo dejaremos oculto
+      </p>
+      <p class="img_centrada"><img src="img/juego22/22-4.png" width="25%" alt=""></p>
+      <p class="texto">
+         A continuación programaremos el recibir el mensaje "Objeto1", en el que mostraremos el objeto y cambiaremos 
+         un número de veces aleatorio los disfraces. Reproduciremos el sonido "Coin" y esperaremos 0,2 segundos para 
+         ver los disfraces.
+         <br><br>
+         Crearemos 3 variables donde guardaremos el número final del disfraz que tenga cada uno de los objetos.
+         <br><br>
+         Después del bucle y cuando ya tenemos el primer objeto seleccionado, guardaremos en "Disfraz1" el número del 
+         disfraz final del primer objeto.
+         <br><br>
+         Finalmente, mandaremos el mensaje "Objeto2" para hacer lo mismo con el segundo objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego22/22-5.png" width="37%" alt=""></p>
+      <p class="nota"> 
+         Para que funcione correctamente el juego y sume puntos, tendremos que poner los 3 objetos con los mismos 
+         disfraces y en el mismo orden.
+         <br><br>
+         Al comprobar si tenemos la misma imagen en los tres objetos, lo haremos por el "Número De Disfraz".
+      </p>
+      <p class="texto">
+         La programación del segundo objeto será igual salvo que ya no tenemos que inicializar la variable "Puntos", el
+         disfraz resultante lo guardaremos en la variable "Disfraz2" y que en lugar de enviar el mensaje "Objeto2" 
+         enviaremos "Objeto3".
+         <br><br>
+         Por último pondremos y programaremos el tercer objeto que será igual que el segundo salvo que el disfraz 
+         resultante lo guardaremos en la variable "Disfraz3" y ya no enviaremos ningún mensaje en este caso.
+         <br><br>
+         Es en este objeto donde cuando ya tengamos los 3 disfraces seleccionados, los compararemos y si son los tres 
+         iguales, enviaremos el mensaje "Ganaste".
+      </p>
+      <p class="img_centrada"><img src="img/juego22/22-6.png" width="55%" alt=""></p>
+      <p class="texto">
+         Para terminar, pondremos el objeto con el texto "GANASTE", que colocaremos y ocultaremos al principio y al 
+         recibir el mensaje "Ganaste" sumaremos uno a la variable "Puntos" y mostraremos el texto durante uno o dos 
+         segundos.
+      </p>
+      <p class="img_centrada"><img src="img/juego22/22-7.png" width="23%" alt=""></p>
+      <p class="nota">
+         Otro reto que se podría añadir sería en lugar de comparar los números de disfraz, compararlo por el nombre del 
+         disfraz para que no tuvieran que estar colocados en el mismo orden.
+      </p>
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego22/22-8.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/916221183/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/22-Recreativos.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>

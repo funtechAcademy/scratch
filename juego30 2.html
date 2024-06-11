@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Bicho En El Plato</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Bicho En<br>El Plato</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Bicho En El Plato</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Los objetos necesarios para este juego serán, un bicho (en nuestro caso pondremos una mariquita), distintas
+         frutas que nos iremos comiendo, un cubo de basura, un reloj y una imagen de frutas.
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Para este juego necesitaremos dos escenarios, el escenario inicial (tendremos que pinchar en él para iniciar
+         el juego) y el escenario del juego.
+      </p>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este
+         <a href="sprites/30-BichoEnElPlato.zip" download="Bicho En El Plato"> link</a>. Es un archivo comprimido
+         con 5 objetos, 2 escenarios y un sonido. Lo descargaremos y lo descomprimimos en el directorio del alumno.
+      </p>
+      <h3>Objetivos del Juego</h3>
+      <p class="texto">
+         El juego consiste en que el bicho tiene que ir cogiendo las frutas que van apareciendo aleatoriamente por la 
+         pantalla. Irá acumulando puntos y tendrá un tiempo determinado para poder recoger la fruta. Además, ira 
+         dejando su rastro y no podrá chocarse contra él.
+         <br><br>
+
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         Primeramente prepararemos la pantalla inicial. Colocaremos el escenario inicial y el bicho en el centro del 
+         mismo. En el lateral del escenario tendremos que poner la imagen de la fruta, el cubo de basura y el reloj.
+         <br><br>
+         Cada objeto del lateral tendrá una variable asociada que mostraremos bajo el objeto, "Puntos" bajo la fruta,
+         "Vidas" pago el cubo de basura y "Tiempo" bajo el reloj. Además crearemos otra variable más, que llamaremos 
+         "Jugando" que nos indicará si estamos jugando o no.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-1.png" width="60%" alt=""></p>
+      <p class="texto">
+         En el escenario, crearemos un evento "Al Hacer Click En El Escenario" que nos permitirá iniciar el juego. 
+         Para ello, si el juego no está en marcha, activaremos la variable "Jugando", cambiaremos el escenario al 
+         "Escenario Juego" y mandaremos el mensaje "Empezar", que hará que todos los objetos empiecen el juego.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-2.png" width="30%" alt=""></p>
+      <p class="texto">
+         Después programaremos el bicho. Crearemos un nuevo bloque que llamaremos "Inicializar Juego" que tendrá todo 
+         lo necesario para inicializar nuestro juego. Creamos un bloque ya que lo llamaremos desde varios sitios y 
+         así no duplicamos código.
+         <br><br>
+         Vamos a "Mis bloques" y pinchamos en "Crear un bloque". Aparecerá la ventana de configuración del bloque. En 
+         esta ocasión sólo le daremos un nombre.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-3.png" width="60%" alt=""></p>
+      <p class="texto">
+         En el bloque le damos un valor inicial a las variables, posicionamos el 
+         bicho, borramos la pantalla y preparamos el lápiz.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-4.png" width="25%" alt=""></p>
+      <p class="texto">
+         Este bloque "Inicializar Juego" lo llamaremos cuando iniciemos el juego, además de poner el escenario 
+         inicial y marcar la variable como que todavía no estamos jugando.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-5.png" width="27%" alt=""></p>
+      <p class="texto">
+         Haremos el movimiento del bicho, que será mediante los cursores. Lo haremos dentro de una etiqueta de 
+         control "Empezar", donde también llamaremos a nuestro bloque de inicializar para poner todo en su sitio antes 
+         de comenzar el juego.
+         <br><br>
+         Sólo lo moveremos si estamos jugando y solo nos moveremos dentro del plato con lo que tendremos que acotar 
+         los movimientos. 
+         <br><br>
+         El bicho tendrá al menos dos disfraces con distinto movimiento que iremos intercambiando al moverse para 
+         darle mayor realismo.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-6.png" width="45%" alt=""></p>
+      <p class="texto">
+         Ahora controlaremos que cuando el bicho toque el rastro que va dejando, el juego termine mandando un mensaje 
+         "Parar Juego" que añadiremos a todos los objetos para hacer que paren. 
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-7.png" width="38%" alt=""></p>
+      <p class="texto">
+         En el propio bicho, el mensaje "Parar Juego" lo programaremos para que haga un efecto de desvanecer en el 
+         objeto. Haremos también un sonido de fin de juego que añadiremos al objeto de los objetos descargados, 
+         cambiaremos la variable para indicar que ya no estamos jugando y cambiamos el escenario al escenario inicial.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-8.png" width="33%" alt=""></p>
+      <p class="texto">
+         Ahora programaremos las frutas que van apareciendo. Cuando recibamos el mensaje empezar, prepararemos la 
+         fruta para mostrarla y enviaremos un mensaje de "Mostrar Fruta".
+         <br><br>
+         En el mensaje "Mostrar Fruta", primero la esconderemos para prepararla, la colocaremos en una posición 
+         aleatoria dentro del plato, le pondremos un disfraz aleatorio y la mostraremos.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-9.png" width="65%" alt=""></p>
+      <p class="texto">
+         Ahora haremos un efecto en la fruta para que parezca que está flotando. Lo que haremos será un movimiento 
+         para arriba y para abajo del objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-10.png" width="32%" alt=""></p>
+      <p class="texto">
+         Finalmente en este objeto, al recibir "Parar Juego", desvaneceremos el objeto igual que el bicho.
+         <br><br>
+         Lo que nos queda con la fruta es programar que el bicho se la coma. Para ello, en el bicho, controlaremos 
+         donde hacemos que no pueda tocar su rastro, que si tocamos la fruta, haremos un sonido, sumaremos un punto y 
+         llamaremos al mensaje "Mostrar Fruta" para que aparezca otra en otro sitio del plato.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-11.png" width="40%" alt=""></p>
+      <p class="texto">
+         Vamos a programar el cubo de la basura. Su funcionamiento es que cuando se pincha en el cubo, limpiamos la 
+         pantalla y le quitamos una vida. Solo limpiará la pantalla mientras tenga vidas.
+         <br><br>
+         Al recibir el mensaje "Empezar", pondremos 3 vidas y pondremos el primer disfraz del cubo. 
+         <br><br>
+         Después, al hacer click en el objeto, si estamos jugando y tenemos vidas, haremos un sonido, le quitaremos 
+         una vida, borraremos todo y por un momento cambiaremos el disfraz y volveremos a poner el inicial.
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-12.png" width="50%" alt=""></p>
+      <p class="texto">
+         Por último, vamos a programar el reloj. Al empezar, lo que haremos será poner el reloj a 15 para que lo 
+         muestre. 
+         <br><br>
+         Cuando recibamos el mensaje "Mostrar Fruta", que será cuando volvamos a colocar una fruta en el plato, 
+         pondremos de nuevo el reloj a 15 segundos, y lo que haremos mientras estemos jugando y nos quede tiempo será
+         ir quitando segundo a segundo del tiempo y hacer sonar un sonido de reloj cuando quedan más de 5 segundos y 
+         otro más alarmante cuando queden 5 segundos o menos.
+         <br><br>
+         Cuando se acaben los segundos, mandaremos un mensaje de "Parar Juego".
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-13.png" width="32%" alt=""></p>
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada"><img src="img/juego30/30-14.gif" width="60%" alt=""></p>  
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/909648744/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/30-BichoEnElPlato.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
