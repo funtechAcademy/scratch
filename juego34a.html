@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Space Invaders</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Space<br>Invaders</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Space Invaders</h2>
+      <h3>Objetos Necesarios</h3>
+      <p class="texto">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/34-SpaceInvaders.zip" download="Space Invaders"> link</a>. Es un archivo comprimido con 8 
+         objetos y 1 escenario. Lo descargaremos y lo descomprimimos en el directorio del alumno.
+      </p>
+      <h3>Objetivo Del Juego</h3>
+      <p class="texto">
+         El juego tendrá una nave espacial que manejaremos nosotros y que se podrá mover únicamente de izquierda a 
+         derecha, pero sin sobrepasar los límites de la pantalla.
+         <br><br>
+         La nave disparará una bala cada vez que le demos a la tecla "Espacio" aunque tendrá que esperar un pequeño 
+         tiempo entre disparo y disparo.
+         <br><br>
+         Los marcianos saldrán por la parte superior derecha de la pantalla e irá hacia la izquierda bajando y 
+         cambiando de dirección cuando llegue al final. Al llegar abajo, volverá a empezar en la parte superior.
+         <br><br>
+         Al tocar la bala de la nave al marciano le irá quitando vida (3) cambiando de disfraces con distintos daños 
+         hasta que lo elimine.
+         <br><br>
+         El marciano también disparará. Hay que tener en cuenta que son clones y hay que tener cuidado con la posición 
+         de las balas cuando disparen. Estas balas, si nos dan, nos irán quitando vida (3) poco a poco.
+         <br><br>
+         Al quitarnos toda la vida, aparecerá en nuestra posición una explosión y terminará el juego cambiando el 
+         fondo al de "Game Over".
+         <br><br>
+
+
+      </p>
+      <h3>Pruébalo</h3>
+      <p class="img_centrada">
+         <iframe width="480" height="360" src="juegos/34-SpaceInvaders.html"></iframe>
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
