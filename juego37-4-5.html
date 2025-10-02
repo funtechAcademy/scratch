@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Super Mario Bros</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Super Mario Bros</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Cuarta Fase</h2>
+      <h3>Puntos y Vidas</h3>
+      <br>
+      <p class="texto">
+         Ahora vamos a ponerle puntos y vidas. Lo primero será crear las variables "Vidas" y "Parar_Movimiento". Iremos al 
+         objeto Mario y las inicializaremos en "Inicializar Juego", vidas a "3" y parar movimiento a "0". 
+         <br><br>
+         Para ir acumulando puntos, iremos añadiendo a la variable "Monedas" un punto por cada moneda que cojamos y 5 
+         por cada Goomba que aplastemos.
+         <br><br>
+         Además, el bloque "Inicializar Juego" lo vamos a dividir en 2, una parte con las variablesa que solo tenemos 
+         que inicializar al empezar el juego y otra con las que tenemos que inicializar cuando nos quitan una vida o 
+         pasamos de nivel, que también llamaremos desde "Inicializar Juego"
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-34.png" width="33%" alt=""></p>
+      <p class="texto">
+         A continuación, crearemos el mensaje "Quitar Vidas", donde le restaremos una vida a las que tenemos e 
+         inicializaremos a Mario para que vuelva a empezar el nivel. Haremos también un pequeño salto cada vez que nos 
+         quiten una vida.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-35.png" width="33%" alt=""></p>
+      <p class="texto">
+         Ahora llamaremos también a este mensaje cuando Mario se caiga del suelo. Para ello, en el bloque "MoverMario" 
+         controlaremos la posición en "Y" que tiene que sobrepasar para considerar que se cae del suelo y si nos 
+         estamos moviendo, parar ese movimiento y llamar al mensaje para quitarle una vida. Esto lo haremos en Mario 
+         en el bloque "MoverMario".
+         <br><br>
+         Aprovechamos para añadir también que no se mueva cuando pulsemos la flecha arriba ni la izquierda o derecha, 
+         verificando el valor de la variable "Parar Movimiento", que estará a "0" cuando todo pueda moverse y a "1" 
+         cuando no.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-36.png" width="38%" alt=""></p>
+      <p class="texto">
+         Ahora iremos al Goomba y las llamadas al mensaje "QuitarVidas" las haremos solo cuando estemos en movimiento, 
+         parándolo antes de la llamada.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-37.png" width="80%" alt=""></p>
+      <p class="texto">
+         Añadiremos a continuación los objetos con los que visualizaremos las vidas. Priemro el objeto "Mario_x", que 
+         colocaremos en la esquina superior derecha, y lo único que haremos con él es que si nos quedan vidas lo 
+         mostramos y si no, lo escondemos.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-38.png" width="25%" alt=""></p>
+      <p class="texto">
+         El siguiente objeto a añadir es el "Vidas Mario", que es el contador de visda que le quedan. Haremos lo mismo 
+         que el objeto anterior pero en el caso en el que haya que mostrarlo, le pondremos el disfraz correspondiente a 
+         las vidas que le quedan.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-39.png" width="25%" alt=""></p>
+      <p class="texto">
+         Para ver los puntos o monedas, vamos a añadir primero el literal de "Mario", que lo colocaremos en la esquina 
+         superior izquierda.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-40.png" width="18%" alt=""></p>
+      <p class="texto">
+         Luego añadiremos los números correspondiente a las unidades y las decenas y los colocaremos a la derecha del 
+         literal.
+         <br><br>
+         Lo que haremos con ambos será colocarles el disfraz del "0", posicionarlos y buscar las unidades y las decenas 
+         en cada uno de ellos.
+         <br><br>
+         Las unidades quedarían así, colocando el disfraz correspondiente a la última posición y escondiéndolo cuando 
+         no tengamos vidas.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-41.png" width="50%" alt=""></p>
+      <p class="texto">
+         Las decenas quedarían de esta forma, colocando el disfraz correspondiente a la penúltima posición y 
+         escondiéndolo también cuando no tengamos vidas.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-42.png" width="55%" alt=""></p>
+      <p class="texto">
+         Haremos ahora el game over cuando nos quedemos sin vidas. Para ello, añadiremos un fondo que nos indique que 
+         hemos terminado la partida.
+         <br><br>
+         Vamos ahora a Mario y separamos el contenido del bloque "InicializarJuego" donde dejaremos solo las variables 
+         que inicializaremos una sola vez y el resto lo pondremos en un nuevo bloque "InicializarVidaONivel", al que 
+         también llamaremos desde el anterior y que contendrá la inicialización de las variables necesarias para el 
+         cambio de nivel o cuando nos quitan una vida.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-43.png" width="35%" alt=""></p>
+      <p class="texto">
+         Modificaremos modificaremos el mensaje ""Quitar Vidas" para que al final compruebe si le quedan vidas. Si 
+         fuera así, llamamos al mensaje "InicializarVidaONivel" para seguir jugando y si no le quedan vidas, enviaremos 
+         el mensaje "GameOver" para ocultar o eliminar todos los objetos, cambiaremos el fondo al de fin de la partida 
+         y esconderemos a Mario.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-44.png" width="35%" alt=""></p>
+      <p class="texto">
+         Programaremos en el resto de objetos visibles que cuando recibamos el mensaje "Game Over" se esconda o se 
+         eliminen los clones.
+      </p>
+      <p class="texto">
+         El juego iría quedando así.
+      </p>
+      <p class="img_centrada">
+         <iframe width="480" height="360" src="juegos/37-SuperMarioBrosPuntosVidas.html"></iframe>
+      </p>
+      <p class="texto">
+         Podemos ver el juego terminado con los puntos y las vidas pulsando
+         <a class="link_s" href="https://scratch.mit.edu/projects/1205865330/editor" target="_blank">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>

@@ -65,6 +65,15 @@ div#contenido>h2
    color: rgba(68,117,255,1);
 }
 
+div#contenido>h20
+{
+   margin: 0px;
+   padding: 0px;
+   font-size: 2.5em;
+   font-family: 'Barlow Semi Condensed';
+   color: rgba(68,117,255,1);
+}
+
 div#contenido>h3
 {
    margin: 0px;
@@ -75,10 +84,30 @@ div#contenido>h3
    color: rgba(68,117,255,1);
 }
 
+div#contenido>h30
+{
+   margin: 0px;
+   padding: 0px;
+   margin-left: 15px;
+   font-size: 2em;
+   font-family: 'Barlow Semi Condensed';
+   color: rgba(68,117,255,1);
+}
+
 div#contenido>h4
 {
    margin: 0px;
    padding: 30px;
+   margin-left: 15px;
+   font-size: 1.5em;
+   font-family: 'Barlow Semi Condensed';
+   color: rgba(68,117,255,1);
+}
+
+div#contenido>h40
+{
+   margin: 0px;
+   padding: 0px;
    margin-left: 15px;
    font-size: 1.5em;
    font-family: 'Barlow Semi Condensed';

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Super Mario Bros</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Super Mario Bros</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Cuarta Fase</h2>
+      <h3>Palo y Bandera</h3>
+      <br>
+      <p class="texto">
+         Continuamos poniendo el palo de la bandera. Añadimos el objeto y copiamos, como en el resto de objetos, la
+         programación de la plataforma. 
+         <br><br>
+         Le asignamos el alto y el ancho y para poder colocarlo, crearemos un bloque más de suelo. Le quitaremos toda 
+         la programación excepto el scroll en "Al Comenzar Como Clon"
+         <br><br>
+         También le añadimos que al recibir "Game Over" elimine el clon, como en el resto de objetos.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-45.png" width="45%" alt=""></p>
+      <p class="texto">
+         Ahora añadimos la bandera. También copiamos la programación de la plataforma. 
+         <br><br>
+         Le asignamos el alto y el ancho y lo colocamos en la parte alta del palo. 
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-46.png" width="45%" alt=""></p>
+      <p class="texto">
+         Borraremos también de "Al Comenzar Como Clon" la parte donde activa las variables "Toco Objeto Por Debajo", 
+         "Toco Objeto Por Derecha" y "Toco Objeto Por Izquierda" (podemos borrarlas o dejarlas), pero en este caso 
+         añadiremos varias cosas.
+         <br><br>
+         Primero crearemos dos variables, "Posición Bandera", que dendrá la posición "X" en la pantalla de la bandera 
+         en el momento que Mario se suba a ella, y "Tocando Bandera", que nos dirá si Mario se ha conseguido subir a 
+         la bandera o no.
+         <br><br>
+         Despues añadiremos en "Al Comenzar Como Clon", antes del scroll, que si la bandera toca a Mario, la variable 
+         "Tocando Bandera" es "0" y estamos encima de la bandera ("Toco Objeto Por Encima" es "1"), significa que 
+         estamos sobre la bandera y tendremos que bajar tanto a Mario como a la bandera hasta abajo.
+         <br><br>
+         En el caso de que así sea, marcaremos la variable "Tocando Bandera" para saber que la estamos encima y le 
+         damos a la "Posición Bandera" la posición relativa de la bandera en ese momento. 
+         <br><br>
+         Además, llamaremos al mensaje "Bajar Bandera y Mario" para que bajen los dos hasta el suelo.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-47.png" width="80%" alt=""></p>
+      <p class="texto">
+         Programaremos ahora en la bandera que baje hasta el suelo y le añadimos que al recibir "Game Over" elimine el 
+         clon.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-48.png" width="40%" alt=""></p>
+      <p class="texto">
+         Ahora nos vamos a Mario para incluir la gestión de la bandera. Lo primero que haremos será incluir la 
+         inicialización a "0" de la variable "Tocando Bandera" en el bloque "InicializarVidaONivel".
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-49.png" width="33%" alt=""></p>
+      <p class="texto">
+         En el bloque "MoverMario" incluimos en la parte del movimiento izquierda/derecha que además de preguntar si 
+         la variable "Parar Movimiento" es "0", añadimos que también "Tocando Bandera" tiene que estar a "0".
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-50.png" width="55%" alt=""></p>
+      <p class="texto">
+         Tendremos también que añadir en el objeto "CambiarDisfrazMario" cuando hemos verificado si hemos pulsado 
+         alguna tecla izquierda/derecha que si la variable "Parar_Movimiento" está a "1", tendremos que poner el 
+         disfraz de "MarioHit", quie es el disfraz de Mario cuando muere, que nos quedaba de cuando añadimos las vidas.
+         <br><br>
+         A continuación estamos preguntando si "Toco Objeto Por Encima" es "0". Si es así, tenemos que añadir si 
+         "Tocando Bandera" es "0". Si lo es, continuamos verificando "_Dirección Mario" y demás. Si no, Cambiamos el 
+         disfraz a "Mario Bandera".
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-51.png" width="40%" alt=""></p>
+      <p class="texto">
+         Por últimi nos queda programar el mensaje "Bajar Bandera y Mario" en Mario. Colocaremos a Mario en la posición 
+         que hemos guardado de la bandera para cuadrarlo, lo deslizamos hasta el suelo y damos un pequeño salto para 
+         que se vuelva a poner de pie.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-52.png" width="40%" alt=""></p>
+      <p class="texto">
+         El juego iría quedando así.
+      </p>
+      <p class="img_centrada">
+         <iframe width="480" height="360" src="juegos/37-SuperMarioBrosBandera.html"></iframe>
+      </p>
+      <p class="texto">
+         Podemos ver el juego terminado con el palo y la bandera pulsando
+         <a class="link_s" href="https://scratch.mit.edu/projects/1205867241/editor" target="_blank">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>

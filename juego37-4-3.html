@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Super Mario Bros</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Super Mario Bros</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Cuarta Fase</h2>
+      <h3>Bloque Moneda</h3>
+      <br>
+      <p class="texto">
+         Vamos con el bloque moneda. Copiamos como en el suelo toda la programación de la plataforma. 
+         <br><br>
+         En el bloque "Al Hacer Clic En La Bandera" le ponemos al bloque moneda el primer disfraz, le damos los valores 
+         de alto y ancho y creamos el bloque antes de la primera plataforma.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-23.png" width="30%" alt=""></p>
+      <p class="texto">
+         En cuanto al bloque de "Al Comenzar Como Clon", lo único que hacemos es añadir donde ponemos a "1" la variable 
+         "Toco Objeto Por Debajo", hacer una llamada a un nuevo bloque que llamaremos "CrearMoneda".
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-24.png" width="80%" alt=""></p>
+      <p class="texto">
+         Haremos ahora la gestión de los disfraces. Cambiaremos el disfraz cada medio segundo y siembre que no tenga el 
+         cuarto disfraz que es el fijo, una vez golpeado el bloque.     
+         <br><br>
+         Crearemos una nueva variable "_Numero_Disfraz" donde guardaremos el disfraz que le queremos poner y veremos 
+         qué disfraz tiene para ponerle el siguiente (entre el 1 y el 3).
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-25.png" width="40%" alt=""></p>
+      <p class="texto">
+         Programaremos ahora el nuevo bloque "CrearMoneda". Controlaremos que no se haya golpeado ya el bloque con el 
+         número de disfraz que tiene.
+         <br><br>
+         Si no tiene el cuarto disfraz, llamaremos a un nuevo bloque "MoverBloque" donde haremos el efecto de subir y 
+         bajar el bloque.
+         <br><br>
+         Después, cambiaremos al cuarto disfraz y guardaremos la posición del bloque en unas nuevas variables "Posicion 
+         X Nueva Moneda" y "Posicion Y Nueva Moneda"
+         <br><br>
+         Daremos el valor "1" a la nueva variable "Nueva Moneda" y crearemos el clon de la moneda.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-26.png" width="45%" alt=""></p>
+      <p class="texto">
+         Ahora nos iremos a la moneda donde programaremos que aparezca la moneda en su sitio.
+         <br><br>
+         En el bloque "Al Hacer Clic En La Bandera", le añadiremos que inicialice las nuevas variables "Posicion X 
+         Nueva Moneda", "Posicion Y Nueva Moneda" y "Nueva Moneda".
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-27.png" width="35%" alt=""></p>
+      <p class="texto">
+         Además, en el bloque "Al Comenzar Como Clon", le añadimos que si la moneda que estamos creando es una moneda 
+         que hemos creado desde el bloque (el valor de "Nueva Moneda" es "1") la colocamos en su posición (detrás del 
+         cubo) y la deslizamos encima.
+      </p>
+      <p class="nota">
+         Ojo con las posiciones ya que siempre que queramos mover un objeto tenemos que actualizar sus posiciones 
+         iniciales.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-28.png" width="50%" alt=""></p>
+      <p class="texto">
+         El juego iría quedando así.
+      </p>
+      <p class="img_centrada">
+         <iframe width="480" height="360" src="juegos/37-SuperMarioBrosBloqueMoneda.html"></iframe>
+      </p>
+      <p class="texto">
+         Podemos ver el juego terminado con el bloque moneda pulsando
+         <a class="link_s" href="https://scratch.mit.edu/projects/1205860671/editor" target="_blank">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>

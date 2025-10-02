@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Super Mario Bros</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Super Mario Bros</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Super Mario Bros</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Para este juego vamos a necesitar varios objetos. Para el escenario y la creación de niveles, el suelo y las 
+         plataformas.
+         <br><br>
+         Para la decoración y el funcionamiento de cada uno de los niveles, el bloque moneda, la moneda, la planta y 
+         el tubo.
+         <br><br>
+         Para el cambio de nivel, el palo de la bandera, la bandera y el literal de siguiente nivel.
+         <br><br>
+         Para la gestión de las vidas y número de monedas conseguidos, los dígitos, el indicador de vidas de Mario y el 
+         contador del numero monedas.
+         <br><br>
+         Además, le pondremos un logo de inicio y unas barras laterales para que el juego se vea correctamente y le 
+         quitemos el mal funcionamiento de Scratch con el scroll.
+         <br><br>
+         También pondremos al enemigo por escelencia de Mario que es el Goomba.
+         <br><br>
+         Y como no, al personaje principal del juego, Mario.
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Vamos a necesitar un único escenario de color azul para el fondo del juego.
+      </p>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/37-SuperMarioBros.zip" download="Super Mario Bros"> link</a>. Es un archivo comprimido con 16 
+         objetos y 1 escenario. Lo descargaremos y lo descomprimimos en el directorio del alumno.
+      </p>
+      <h3>Objetivo Del Juego</h3>
+      <p class="texto">
+         El objetivo del juego es llegar al final de la pantalla y subirte a la bandera para pasar al siguiente nivel.
+         <br><br>
+
+
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         Este juego, al ser el último que vamos ha hacer de una forma guiada, lo dividiremos en cuatro fases:
+         <br><br>
+         &emsp;- Una primera fase en la que el alumno tiene que poner el suelo (varios clones), a Mario y una 
+         plataforma, y programar que Mario se pueda mover a la derecha e izquierda y poder saltar sobre la plataforma.
+         <br><br>
+         &emsp;- Una segunda fase en la que le daremos un documento donde tiene las especificaciones para que Mario 
+         pueda subirse a esa plataforma  y las tiene que implementar, siguiendo los pasos.
+         <br><br>
+         &emsp;- Una tercera fase en la que partimos de un juego en el que el suelo, la plataforma y Mario, funcionan
+         perfectamente. Les explicamos el funcionamiento de lo que les hemos dado para que puedan seguir desarrollando 
+         de la misma forma.
+         <br><br>
+         &emsp;- Y una cuarta fase en la que tienen que ir añadiendo el resto de objetos.
+      </p>
+      <h3>Primera Fase</h3>
+      <p class="texto">
+         En esta fase el alumno tiene que conseguir que Mario sea capaz de subirse a una plataforma y "hacerla dura" 
+         tanto por arriba, por abajo, por la izquierda y por la derecha.
+         <br><br>
+         Además, tienen que implementar que en lugar de moverse Mario al pulsar las teclas derecha o izquierda, lo que 
+         se mueva sea el escenario, simulando el scroling a traves de la pantalla. Mario siempre estará en la posicion 
+         0 del eje "X".
+         <br><br>
+         Lo que queremos conseguir es lo siguiente:
+      </p>
+      <p class="img_centrada">
+         <iframe width="480" height="360" src="juegos/37-SuperMarioBrosBase.html"></iframe>
+      </p>
+      <p class="texto">
+         Se puede hacer de múltiples formas y le dejaremos al alumno que sea creativo.
+         <br><br>
+         Habrá una serie de bloques que no podrán utilizar para hacer esta fase, como "Mover Pasos", "Deslizar", "Si 
+         Toca Un Borde Rebotar", "Tocando El Color" y "Color Tocando".
+         <br><br>
+         Debemos conseguir un movimiento fluido y que se pueda subir a la plataforma independiente de donde esté 
+         colocada en la pantalla.
+         <br><br>
+         Todos los alumnos tendrán que pasar por esta fase aunque les sea costoso. El tiempo dependerá de lo que 
+         considere el monitor, teniendo en cuenta que el plazo máximo para dsarrollar esta parte sería de tres clases. 
+         Este plazo se puede ampliar si el alumno lo solicita para terminarlo correctamente. 
+      </p>
+      <h3>Segunda Fase</h3>
+      <p class="texto">
+         En esta segunda fase, se le dará al alumno un documento para que haga otra versión del juego siguiendo las 
+         instrucciones dadas.
+         <br><br>
+         Estas instrucciones se seguirán completamente, teniendo las siguientes consideraciones de buenas prácticas:
+         <br><br>
+         &emsp;- Las variables locales al objeto, se identificarán con un guión bajo delante del nombre. 
+         <br><br>
+         &emsp;- Todas las variables, mensajes, bloques y demás, deberán tener un nombre que identifiquen el contenido 
+                 o la acción que prependen realizar.
+         <br><br>
+         &emsp;- Los bloques de instrucciones (pilas de instrucciones) se colocarán por orden de ejecución para una 
+                 mejor lectura del código.
+         <br><br>
+         El documento podemos descargarlo de 
+         <a href="instrucciones/37-InstruccionesSuperMarioBros.pdf" download="Instrucciones Super Mario Bros" target="_blank">
+         aquí
+         </a>. Es un archivo pdf con las  instrucciones a seguir.
+      </p>
+      <h3>Tercera Fase</h3>
+      <p class="texto">
+         En esta fase, le proporcionaremos al alumno la versión terminada del Mario con el suelo y la plataforma 
+         funcionando perfectamente.
+         <br><br>
+         Este juego lo pueden descargar pinchando
+         <a href="juegos/37-SuperMarioBrosBase.sb3" download="Super Mario Bros Base"> aquí</a>.
+         <br><br>
+         Le explicamos el funcionamiento del juego que le hemos pasado teniendo en cuenta lo siguiente.
+      </p>
+      <h4>Plataforma y suelo</h4>
+      <p class="texto">
+         A estos objetos, lo que hacemos al empezar es definir dos variables locales "_Alto" y "_Ancho" donde guardaremos 
+         las dimensiones de los objetos. Estas dimensiones podemos verlas en la pantalla de los disfraces del objeto.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-1.png" width="60%" alt=""></p>
+      <p class="texto">
+         A continuación crearemos el objeto en la pantalla. Para ello, vamos a utilizar un nuevo bloque "Crear Objeto"
+         al que pasaremos como argumento las posiciones "X" e "Y" donde queremos crear el objeto, pero referenciadas a 
+         una matríz de 32 posiciones, para que sea más sencillo ubicar los objetos en la pantalla. La matriz sería de 
+         32 posiciones porque la mayoría de los objetos tienen un tamaño de 32 o múltipo de 32, incluido Mario.
+         <br><br>
+         En el objeto "Crear Objeto", lo que haremos será guardar las posiciones "X" e "Y" del objeto en dos variables 
+         locales, le damos las coordenadas al objeto y creamos el clon.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-2.png" width="40%" alt=""></p>
+      <p class="texto">
+         La pantalla nos quedaría así.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-3.png" width="50%" alt=""></p>
+      <p class="texto">
+         Si quisiéramos crear otra plataforma, bastaría con llamar al bloque "Crear Objeto" con las nuevas coordenadas 
+         y se crearía automáticamente.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-4.png" width="23%" alt=""></p>
+      <p class="texto">
+         La pantalla con dos plataformas nos quedaría así.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-5.png" width="50%" alt=""></p>
+      <p class="texto">
+
+
+
+
+
+
+
+
+         <br><br>
+         &emsp;- 
+
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-.png" width="30%" alt=""></p>
+      <p class="texto">
+
+
+
+
+
+
+
+
+
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada">
+         <iframe width="480" height="360" src="juegos/36-DonkeyKong.html"></iframe>
+      </p>
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/1095162263/editor/" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/36-DonkeyKong.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>

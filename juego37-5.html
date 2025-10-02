@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Super Mario Bros</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Super Mario Bros</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Super Mario Bros</h2>
+      <h3>Scroll Vertical</h3>
+      <br>
+      <p class="texto">
+         Tomamos como referencia la versión con el suelo, la plataforma y Mario.
+         <br><br>
+         Lo primero que haremos será crear la variable "Scroll Y" que inicializaremos a "0" en el bloque 
+         "Inicializar Juego" de Mario, junto a la variable "Scroll".
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-62.png" width="35%" alt=""></p>
+      <p class="texto">
+         Ahora vamos a colocar el suelo. Lo pondremos a la altura de siempre pero añadiremos un bloque en la altura 
+         "-5" que luego veremos para qué nos sirve.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-63.png" width="25%" alt=""></p>
+      <p class="texto">
+         Además, añadiremos la colocación automática del objeto en el eje "Y" con referencia al scroll igual que 
+         hacemos con el eje "X", pero con la variable "Scroll Y".
+         <br><br>
+         También tendremos en cuenbta que en el bloque "Al Comenzar Como Clon" donde tenemos "_Posición Objeto Y" 
+         tenemos que cambiarlo por "_Posición Objeto Y" menos "Scroll Y" para colocarlo en base a ese scroll.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-64.png" width="80%" alt=""></p>
+      <p class="texto">
+         Esto lo haremos tanto en el suelo como en la plataforma (y el resto de objetos que vayamos añadiendo).
+         <br><br>
+         Ahora vamos a Mario. En el bloque "MoverMario", tendremnos que cambiar en todos los sitios donde damos valor 
+         a la coordenada "Y" por asignar ese valor a la variable "Scroll Y".
+         <br><br>
+         Lo haremos cuando se controla si el valor de "Toco Objeto Por Debajo" es "1", cuando se controla si el valor 
+         de "Toco Objeto Por Encima" es "1", en caso de que sea "0" la variable "Toco Objeto Por Encima", 
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-65.png" width="45%" alt=""></p>
+      <p class="texto">
+         Si probamos ahora el juego, podremos saltar del primer suelo al segundo, pero si saltamos desde el final del 
+         segundo caeremos sobre el tercer suelo que colocamos con la "Y" en negativo. Para eso lo pusimos.
+         <br><br>
+         Vamos a colocar las barras laterales y la superior e inferior para que no se nos vean partes de objetos que 
+         tenemos fuera de la pantalla.
+         <br><br>
+         En ambas barras lo único que haremos será colocarlas en la posición central.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-66.png" width="17%" alt=""></p>
+      <p class="texto">
+         Ahora colocaremos la plataforma donde queramos y tendremos una versión de Mario con Scoll "X e "Y".
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-67.png" width="25%" alt=""></p>
+      <p class="nota">
+         Si no te funcionan las plataformas, revisa que hayas colocado la plataforma en la posición "Y" igual que se 
+         hace en la poasición "X".
+         <br><br>
+         Recuerda también revisar que en el bloque "Al Comenzar Como Clon" donde tenemos "_Posición Objeto Y" tenemos 
+         que cambiarlo por "_Posición Objeto Y" menos "Scroll Y" para colocarlo en base a ese scroll.
+      </p>
+      <p class="texto">
+         El juego quedaría de esta forma.
+      </p>
+      <p class="img_centrada">
+         <iframe width="480" height="360" src="juegos/37-Super Mario Bros Base Scroll X e Y.html"></iframe>
+      </p>
+      <p class="texto">
+         Podemos ver el juego terminado con el scroll horizontal y el vertical pulsando
+         <a class="link_s" href="https://scratch.mit.edu/projects/1206147894/editor" target="_blank">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>

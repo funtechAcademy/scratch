@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Super Mario Bros</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Super Mario Bros</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Cuarta Fase</h2>
+      <h3>Niveles</h3>
+      <br>
+      <p class="texto">
+         Vamos a ponernos con los niveles. Para ello, lo primero que haremos será programar el escenario. En él 
+         pondremos que "Al Hacer Clic En La Bandera" envíe el mensaje "Nivel 1" para que pinte el primer nivel y 
+         "Jugar" para empezar a jugar con Mario. 
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-53.png" width="20%" alt=""></p>
+      <p class="texto">
+         Ahora, en los bloques "Al Hacer Clic En La Bandera" de todos los objetos de los que hacemos clones, vamos a 
+         separar en un mensaje las llamadas a la creación de objetos, metiéndolas en el mensaje "Nivel 1" para que al 
+         llamarlo, pinte el primer nivel.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-54.png" width="25%" alt=""></p>
+      <p class="texto">
+         En el Mario, lo que haremos será cambiar el bloque "Al Hacer Clic En La Bandera" por recibir el mensaje 
+         "Jugar".
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-55.png" width="35%" alt=""></p>
+      <p class="texto">
+         Y en el mensaje "Bajar Bandera y Mario" añadimos enviar el mensaje "Siguiente Nivel", para hacer todo lo 
+         necesario para pasar al nivel siguiente, esperamos un poco y bloqueamos los movimientos de Mario.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-56.png" width="40%" alt=""></p>
+      <p class="texto">
+         Este nuevo mensaje "Siguiente Nivel" lo programaremos en el objeto "Siguiente Nivel". Antes, crearemos la 
+         variable "Nivel" que nos indicará el nivel por el que vamos e inicializaremos a "1" en el objeto 
+         "Inicializar Juego" de Mario.
+         <br><br>
+         Al empezar el juego esconderemos el objeto y lo colocamos en el centro. 
+         <br><br>
+         El resto de la programación irá en el Mensaje "Siguiente Nivel", donde enviaremos el mensaje "Limpiar Nivel" 
+         para eliminar los clones o esconder los objetos del anterior nivel, que luego programaremos.
+         <br><br>
+         Lo colocamos en el centro y mostraremos el objeto con el mensaje durante 1 segundo, sumamos "1" al nivel y 
+         dependiendo del nivel en el que estemos, llamaremos a su mensaje correspondiente.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-57.png" width="30%" alt=""></p>
+      <p class="texto">
+         Vamos a programar ahora el mensaje "Limpiar Nivel". Lo haremos en cada objeto (excepto en los números de la 
+         parte de arriba) y dependiendo de si creamos clones o no, eliminamos los clones o lo escondemos.
+         <br><br>
+         En Mario, lo que haremos será esperar 1 segundo y llamar al bloque "InicializarVidaONivel" para resetear el 
+         nuevo nivel.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-58.png" width="23%" alt=""></p>
+      <p class="texto">
+         Finalmente crearemos el mensaje "Nivel 2" y el resto de niveles que queramos hacer, en cada uno de los objetos 
+         del juego, colocándolos para formar un nuevo nivel. En nuestro caso vamos a programar 2 niveles.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-59.png" width="20%" alt=""></p>
+      <p class="texto">
+         El juego iría quedando así.
+      </p>
+      <p class="img_centrada">
+         <iframe width="480" height="360" src="juegos/37-SuperMarioBrosNiveles.html"></iframe>
+      </p>
+      <p class="texto">
+         Podemos ver el juego terminado con los niveles pulsando
+         <a class="link_s" href="https://scratch.mit.edu/projects/1205869914/editor" target="_blank">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>

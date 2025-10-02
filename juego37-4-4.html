@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Super Mario Bros</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Super Mario Bros</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Cuarta Fase</h2>
+      <h3>Goomba</h3>
+      <br>
+      <p class="texto">
+         Uno de los últimos objetos que vamos a añadir es el Goomba. Copiamos como en el suelo toda la programación de 
+         la plataforma. 
+         <br><br>
+         Crearemos una serie de variables para el control del movimiento y demás de Goomba. Crearemos 
+         "_Posición_Goomba" que nos indicará el número de posiciones que movemos a Goomba, "_Dirección_Goomba", que nos 
+         indicará su dirección, y "_Matar_Goomba" que nos indicará cuando lo tenemos que matar.
+         <br><br>
+         En el bloque "Al Hacer Clic En La Bandera" le damos los valores de alto y ancho, inicializamos estas variables 
+         que hemos creado y creamos al Goomba debajo de la primera plataforma.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-29.png" width="30%" alt=""></p>
+      <p class="texto">
+         En cuanto al bloque de "Al Comenzar Como Clon", añadimos donde ponemos a "1" la variable 
+         "Toco Objetoo Por Encima", hacer una llamada a un nuevo bloque que llamaremos "MatarGoomba".
+         <br><br>
+         También añadiremos que donde ponemos a "1" la variable "Toco Objeto Por Derecha" y "Toco Objeto Por Izquierda", 
+         llamar al mensaje "Quitar Vidas", que programaremos más adelante.
+         <br><br>
+         Al final del bloque haremos que Goomba se mueva de un lado para el otro, actualizando la variable 
+         "_Dirección_Goomba" con la dirección que queremos que se mueva dependiendo del número de posiciones que 
+         queremos que se mueva, que controlaremos con "_Posicion_Goomba".
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-30.png" width="80%" alt=""></p>
+      <p class="texto">
+         A continuación crearemos un nuevo bloque "Al Comenzar Como Clon" donde haremos la gestión de los disfraces de
+         Goomba para que parezca que se mueve. Esto solo lo haremos si no está muerto Goomba.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-31.png" width="55%" alt=""></p>
+      <p class="texto">
+         Finalmente, crearemos el bloque "MatarGoomba" donde haremos que Goomba desaparezca cuando se le pisa por 
+         encima.
+         <br><br>
+         Lo primero será cambiar el disfraz al de Goomba aplastado, marcamos la variable "_Matar_Goomba" con "1" para 
+         indicar que nos lo hemos aplastado y eliminaremos el clon. 
+         <br><br>
+         También incluiremos que Mario haga un pequeño salto al aplastar a Goomba, dándole a la variable "Toco Objeto 
+         Por Encima" el valor "0" para simular que no toca ningún objeto por encima y poder saltar, y asignándole el 
+         valor "8" a "Velociodad Caida" para que salte un poco.
+      </p>
+      <p class="img_centrada"><img src="img/juego37/37-32.png" width="32%" alt=""></p>
+      <p class="texto">
+         El juego iría quedando así.
+      </p>
+      <p class="img_centrada">
+         <iframe width="480" height="360" src="juegos/37-SuperMarioBrosGoomba.html"></iframe>
+      </p>
+      <p class="texto">
+         Podemos ver el juego terminado con el Goomba pulsando
+         <a class="link_s" href="https://scratch.mit.edu/projects/1205863450/editor" target="_blank">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
