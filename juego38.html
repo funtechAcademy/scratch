@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+   <script src="js/scripts.js"></script>
+   <title>Regalos Papá Noel</title>
+</head>
+<body>
+   <div id="cabecera">
+      <h1>Regalos Papá Noel</h1>
+   </div>
+   <!-- INICIO_LOADER -->
+   <div id="pageloader">
+      <img src="img/LogoOjo_FTA.png" class="spining" width="100px">
+   </div>
+   <!-- FIN_LOADER -->
+   <div id="contenido">
+      <h2>Regalos Papá Noel</h2>
+      <h3>Objetos Necesarios</h3>
+      <h4>Personajes</h4>
+      <p class="texto">
+         Necesitaremos la música navideña y también a Papá Noel, que será el que tire los regalos, una puntuación 
+         completa para ponerla de fondo y translúcida y la puntuación que vamos obteniendo (ambas en forma de regalo), 
+         los regalos que va lanzando Papá Noel y los edificios.
+      </p>
+      <h4>Escenarios</h4>
+      <p class="texto">
+         Vamos a necesitar un único escenario de estrellas para el fondo del juego.
+      </p>
+      <p class="nota">
+         Para descargar los objetos necesarios para el juego, lo haremos desde este 
+         <a href="sprites/38-RegalosSantaClaus.zip" download="Regalos Papa Noel"> link</a>. Es un archivo comprimido 
+         con 5 objetos, 1 sonido y 1 escenario. Lo descargaremos y lo descomprimimos en el directorio del alumno.
+      </p>
+      <h3>Objetivo Del Juego</h3>
+      <p class="texto">
+         El objetivo del juego es que Papá Noel acierte, metiendo los regalos por las chimeneas.
+      </p>
+      <h3>Paso a Paso</h3>
+      <p class="texto">
+         Este juego, es el primero de una serie de juegos para días especiales, que iremos haciendo según lleguen estos 
+         días.
+         <br><br>
+         Vamos a empezar por poner el fondo de estrellas. En este fondo pondremos que esté continuamente sonando la 
+         música navideña de fondo.
+      </p>
+      <p class="img_centrada"><img src="img/juego38/38-1.png" width="40%" alt=""></p>      
+      <p class="texto">
+         Ahora pondremos a Papá Noel en su trineo preparado para lanzar los regalos. Le pondremos en la esquina 
+         superior izquierda, pero sin tocar los bordes.
+         <br><br>
+         Vamos a crear una variable "Nivel" para ir guardando el nivel de dificultad de nuestro juego y que 
+         inicializaremos con "1".
+         <br><br>
+         Lo mostrremos y lo orientaremos a la derecha.
+         <br><br>
+         A continuación, haremos una rutina en la que cuanto mayor sea el nivel, mayor será la velocidad de nuestro 
+         trineo.
+         <br><br>
+         También añadiremos a esa rutina que al tocar en el borde lateral, cambiemos la dirección al otro lado.
+      </p>
+      <p class="img_centrada"><img src="img/juego38/38-2.png" width="38%" alt=""></p>      
+      <p class="texto">
+         Vamos a poner a continuación los edificios, que simplemente los colocaremos en la parte baja de nuestro 
+         escenario.
+      </p>
+      <p class="img_centrada"><img src="img/juego38/38-3.png" width="17%" alt=""></p>      
+      <p class="texto">
+         Colocaremos ahora la barra de regalos donde iremos poniendo la puntuación conseguida. Lo mandaremos a la capa 
+         delantera, le daremos el efecto desvanecer para que luego se vean bien los puntos conseguidos y lo mostraremos.
+      </p>
+      <p class="img_centrada"><img src="img/juego38/38-4.png" width="30%" alt=""></p>      
+      <p class="texto">
+         Vamos a lanzar ahora los regalos. Para ello, esconderemos el regalo y haremos una rutina donde estaremos 
+         preguntando si hemos pinchado en el escenario para soltar el regalo.
+         <br><br>
+         En el caso de hacer clic en la pantalla, mandaremos el regalo a Papá Noel, le pondremos uno de los disfraces 
+         aleatoriamente, y lo mostraremos.
+         <br><br>
+         Ahora lo haremos caer hasta que toque las casas o las chimeneas mediante el color de las mismas.
+         <br><br>
+         A continuación, y una vez haya llegado abajo, veremos si ha tocado las chimeneas. 
+         <br><br>
+         Si es así, haremos un sonido, esconderemos el regalo, enviaremos el mensaje "AcumularPuntos" para ir mostrando 
+         la puntuación y esperaremos hasta que la puntuación no sea 10 para que cuando lo sea, dé tiempo de hacer el 
+         efecto oportuno.
+         <br><br>
+         En el caso de quer no toquemos la chimenea, lo esconderemos y haremos el sonido de un tambor.
+      </p>
+      <p class="nota">
+         Para poder hacer el sonido del tambor, tendremos que añadir los bloques de código de música
+      </p>
+      <p class="img_centrada"><img src="img/juego38/38-5.png" width="60%" alt=""></p>      
+      <p class="texto">
+         Terminaremos programando el objeto puntuación. Para ello, crearemos una variable "Puntuación" en la que iremos 
+         acumulando los puntos.
+         <br><br>
+         Al hacer clic en la bandera, lo que haremos será esconderlo y poner el primer disfraz. También inicializaremos 
+         la variable "Puntuación" a "0".
+      </p>
+      <p class="img_centrada"><img src="img/juego38/38-6.png" width="28%" alt=""></p>      
+      <p class="texto">
+         Finalmente, programaremos el mensaje "AcumularPuntos". Lo primero será sumar "1" a la variable "Puntuación".
+         <br><br>
+         Ahora controlaremos si la puntuación es mayor que "1". Si es así, pondremos el siguiente disfraz y si no, 
+         mostraremos el objeto.
+         <br><br>
+         Después, evaluaremos si hemos llegado a 10 puntos. Si lo hemos conseguido, repetiremos 2 veces poner en blanco 
+         los regalos y poner todos los regalos, para ver que hemos pasado de nivel.
+         <br><br>
+         Después de estas dos repeticiones al llegar a los 10 puntos, sumaremos 1 a la variable "Nivel", volveremos a 
+         inicializar la variable "Puntuación" a "0", Pondremos el primer disfraz y lo esconderemos.
+      </p>
+      <p class="img_centrada"><img src="img/juego38/38-7.png" width="32%" alt=""></p>      
+      <p class="texto"> 
+         Y el juego quedaría así.   
+      </p>
+      <p class="img_centrada">
+         <iframe width="480" height="360" src="juegos/38-RegalosPapaNoel.html"></iframe>
+      </p>
+      <p class="texto"> 
+         Para ver el juego terminado pulsa
+         <a class="link_s" href="https://scratch.mit.edu/projects/1224543732/editor" target="_blank">aquí</a>.
+         <br><br>
+         Para descargarte el juego terminado pulsa
+         <a class="link_s" download href="juegos/38-RegalosPapaNoel.sb3">aquí</a>.
+      </p>
+      <br><br>
+      <a class="texto volver" href="javascript:history.back(-1);">Volver al índice</a>
+   </div>
+   <div id="pie">
+      <h1> Fun Tech Academy - Calle Alcobendas, 23 Leganés 28914 Madrid - www.funtech.academy </h1>
+   </div>
+</body>
+</html>
