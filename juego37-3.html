@@ -39,10 +39,10 @@
       </p>
       <p class="img_centrada"><img src="img/juego37/37-1.png" width="60%" alt=""></p>
       <p class="texto">
-         A continuación crearemos el objeto en la pantalla. Para ello, vamos a utilizar un nuevo bloque "Crear Objeto"
+         A continuación, crearemos el objeto en la pantalla. Para ello, vamos a utilizar un nuevo bloque "Crear Objeto"
          al que pasaremos como argumento las posiciones "X" e "Y" donde queremos crear el objeto, pero referenciadas a 
-         una matríz de 32 posiciones, para que sea más sencillo ubicar los objetos en la pantalla. La matriz sería de 
-         32 posiciones porque la mayoría de los objetos tienen un tamaño de 32 o múltipo de 32, incluido Mario.
+         una matriz de 32 posiciones, para que sea más sencillo ubicar los objetos en la pantalla. La matriz sería de 
+         32 posiciones porque la mayoría de los objetos tienen un tamaño de 32 o múltiplo de 32, incluido Mario.
          <br><br>
          En el objeto "Crear Objeto", lo que haremos será guardar las posiciones "X" e "Y" del objeto en dos variables 
          locales, le damos las coordenadas al objeto y creamos el clon.
@@ -63,12 +63,12 @@
       <p class="img_centrada"><img src="img/juego37/37-5.png" width="50%" alt=""></p>
       <p class="texto">
       <p class="texto">
-         Añadiremos ahora el código necesrio para saber si Mario toca el objeto por encima, por debajo, por la 
+         Añadiremos ahora el código necesario para saber si Mario toca el objeto por encima, por debajo, por la 
          izquierda o por la derecha. Como resultado de este código, tendremos en las variables globales "Toco Objeto 
          Por Encima", "Toco Objeto Por Debajo", "Toco Objeto Por Derecha" y "Toco Objeto Por Izquierda" el valor "1" 
          cuando esté tocando al objeto por ese lado.
          <br><br>
-         Además, le añadiremos la parte del scroll, para simular que al mover a Mario, lo que se mueva es el resto de 
+         Además, le añadiremos la parte del scroll, para simular que, al mover a Mario, lo que se mueva es el resto de 
          objetos y no Mario. Posteriormente, veremos como guardar en la variable "Scroll" lo que movemos a la derecha 
          o la izquierda a Mario. Esta variable la utilizaremos para recolocar cada uno de los objetos (excepto a Mario) 
          en nuestro escenario.
@@ -92,7 +92,7 @@
       <h4>Mario</h4>
       <p class="texto">
          Es la hora de programar a Mario. Lo primero que haremos será llamar a un nuevo bloque que tendremos que crear 
-         para darle un valor inicial a todas las variables que afectan al juego además de prepara el juego para empezar. 
+         para darle un valor inicial a todas las variables que afectan al juego además de preparar el juego para empezar. 
          Le llamaremos "Inicializar Juego".
          <br><br>
          Las variables que inicializaremos son:
@@ -100,7 +100,7 @@
          &emsp;- "Gravedad": Una variable con valor -1 que será lo que restaremos de las posiciones "Y" para hacer el 
                  efecto de la gravedad.
          <br><br>
-         &emsp;- "Velocidad Caida": La utilizaremos para hacer el salto de Mario y hacer el efecto de un salto real 
+         &emsp;- "Velocidad Caída": La utilizaremos para hacer el salto de Mario y hacer el efecto de un salto real 
                  (al subir y bajar).
          <br><br>
          &emsp;- "Scroll": La utilizaremos para guardar lo que Mario se mueve en el eje "X".
@@ -112,7 +112,7 @@
                  momento.
          <br><br>
          &emsp;- "_Dirección Mario": Esta variable local es para saber en qué dirección se mueve Mario. Las variables 
-                 locales las creamos con el simbolo "_" delante del nombre para poder identificarlas rápidamente.
+                 locales las creamos con el símbolo "_" delante del nombre para poder identificarlas rápidamente.
          <br><br>
          &emsp;- "Mario Se Mueve": Nos indica si Mario se está moviendo o no".
       </p>
@@ -128,14 +128,14 @@
       <p class="texto">
          Ahora, si estamos tocando encima de algún objeto ("Toco Objeto Por Encima" = 1) no seguimos bajando para que 
          se quede encima y cuadramos a Mario en nuestra cuadrícula de 32 posiciones. Además, solamente en este caso, 
-         si pulsamos la tecla arriba, saltaremos (le daremos valor a la variable "Velocidad De Caida").
+         si pulsamos la tecla arriba, saltaremos (le daremos valor a la variable "Velocidad De Caída").
          <br><br>
          En el caso en el que no estemos tocando encima de ningún objeto, seguiremos cayendo más rápido, siempre y cuando
-         la variable "Velocidad De Caida" no supere el valor "-8", que será la velocidad máxima a la que caiga Mario.
+         la variable "Velocidad De Caída" no supere el valor "-8", que será la velocidad máxima a la que caiga Mario.
       </p>
       <p class="img_centrada"><img src="img/juego37/37-11.png" width="36%" alt=""></p>
       <p class="texto">
-         Finalmente controlaremos que si no estamos tocando el objeto por la izquierda, si hemos pulsado la tecla 
+         Finalmente controlaremos que, si no estamos tocando el objeto por la izquierda, si hemos pulsado la tecla 
          izquierda, haciendo que se mueva (con la variable "Scroll") y activando la variable "Mario Se Mueve".
          <br><br>
          Lo mismo haremos hacia la derecha.
@@ -147,7 +147,7 @@
          Le llamaremos "CambiarDisfrazMario" y lo primero que controlaremos será si tenemos la flecha derecha o la 
          izquierda pulsada para asignarle la dirección correcta.
          <br><br>
-         A continuación evaluaremos si estoy encima de un objeto o no. Si no lo estoy, le pongo el disfraz del salto 
+         A continuación, evaluaremos si estoy encima de un objeto o no. Si no lo estoy, le pongo el disfraz del salto 
          dependiendo de la dirección.
          <br><br>
          Si estoy sobre un objeto, controlo si me estoy moviendo o no. Si no me muevo, pongo el disfraz de quieto 

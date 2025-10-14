@@ -31,7 +31,7 @@
          Para ir acumulando puntos, iremos añadiendo a la variable "Monedas" un punto por cada moneda que cojamos y 5 
          por cada Goomba que aplastemos.
          <br><br>
-         Además, el bloque "Inicializar Juego" lo vamos a dividir en 2, una parte con las variablesa que solo tenemos 
+         Además, el bloque "Inicializar Juego" lo vamos a dividir en 2, una parte con las variables que solo tenemos 
          que inicializar al empezar el juego y otra con las que tenemos que inicializar cuando nos quitan una vida o 
          pasamos de nivel, que también llamaremos desde "Inicializar Juego"
       </p>
@@ -59,14 +59,14 @@
       </p>
       <p class="img_centrada"><img src="img/juego37/37-37.png" width="80%" alt=""></p>
       <p class="texto">
-         Añadiremos a continuación los objetos con los que visualizaremos las vidas. Priemro el objeto "Mario_x", que 
+         Añadiremos a continuación los objetos con los que visualizaremos las vidas. Primero el objeto "Mario_x", que 
          colocaremos en la esquina superior derecha, y lo único que haremos con él es que si nos quedan vidas lo 
          mostramos y si no, lo escondemos.
       </p>
       <p class="img_centrada"><img src="img/juego37/37-38.png" width="25%" alt=""></p>
       <p class="texto">
-         El siguiente objeto a añadir es el "Vidas Mario", que es el contador de visda que le quedan. Haremos lo mismo 
-         que el objeto anterior pero en el caso en el que haya que mostrarlo, le pondremos el disfraz correspondiente a 
+         El siguiente objeto a añadir es el "Vidas Mario", que es el contador de vidas que le quedan. Haremos lo mismo 
+         que el objeto anterior, pero en el caso en el que haya que mostrarlo, le pondremos el disfraz correspondiente a 
          las vidas que le quedan.
       </p>
       <p class="img_centrada"><img src="img/juego37/37-39.png" width="25%" alt=""></p>
@@ -102,7 +102,7 @@
       </p>
       <p class="img_centrada"><img src="img/juego37/37-43.png" width="35%" alt=""></p>
       <p class="texto">
-         Modificaremos modificaremos el mensaje ""Quitar Vidas" para que al final compruebe si le quedan vidas. Si 
+         Modificaremos el mensaje ""Quitar Vidas" para que al final compruebe si le quedan vidas. Si 
          fuera así, llamamos al mensaje "InicializarVidaONivel" para seguir jugando y si no le quedan vidas, enviaremos 
          el mensaje "GameOver" para ocultar o eliminar todos los objetos, cambiaremos el fondo al de fin de la partida 
          y esconderemos a Mario.

@@ -45,11 +45,11 @@
          "Toco Objeto Por Derecha" y "Toco Objeto Por Izquierda" (podemos borrarlas o dejarlas), pero en este caso 
          añadiremos varias cosas.
          <br><br>
-         Primero crearemos dos variables, "Posición Bandera", que dendrá la posición "X" en la pantalla de la bandera 
+         Primero crearemos dos variables, "Posición Bandera", que tendrá la posición "X" en la pantalla de la bandera 
          en el momento que Mario se suba a ella, y "Tocando Bandera", que nos dirá si Mario se ha conseguido subir a 
          la bandera o no.
          <br><br>
-         Despues añadiremos en "Al Comenzar Como Clon", antes del scroll, que si la bandera toca a Mario, la variable 
+         Después añadiremos en "Al Comenzar Como Clon", antes del scroll, que si la bandera toca a Mario, la variable 
          "Tocando Bandera" es "0" y estamos encima de la bandera ("Toco Objeto Por Encima" es "1"), significa que 
          estamos sobre la bandera y tendremos que bajar tanto a Mario como a la bandera hasta abajo.
          <br><br>
@@ -77,15 +77,15 @@
       <p class="texto">
          Tendremos también que añadir en el objeto "CambiarDisfrazMario" cuando hemos verificado si hemos pulsado 
          alguna tecla izquierda/derecha que si la variable "Parar_Movimiento" está a "1", tendremos que poner el 
-         disfraz de "MarioHit", quie es el disfraz de Mario cuando muere, que nos quedaba de cuando añadimos las vidas.
+         disfraz de "MarioHit", que es el disfraz de Mario cuando muere, que nos quedaba de cuando añadimos las vidas.
          <br><br>
-         A continuación estamos preguntando si "Toco Objeto Por Encima" es "0". Si es así, tenemos que añadir si 
+         A continuación, estamos preguntando si "Toco Objeto Por Encima" es "0". Si es así, tenemos que añadir si 
          "Tocando Bandera" es "0". Si lo es, continuamos verificando "_Dirección Mario" y demás. Si no, Cambiamos el 
          disfraz a "Mario Bandera".
       </p>
       <p class="img_centrada"><img src="img/juego37/37-51.png" width="40%" alt=""></p>
       <p class="texto">
-         Por últimi nos queda programar el mensaje "Bajar Bandera y Mario" en Mario. Colocaremos a Mario en la posición 
+         Por último nos queda programar el mensaje "Bajar Bandera y Mario" en Mario. Colocaremos a Mario en la posición 
          que hemos guardado de la bandera para cuadrarlo, lo deslizamos hasta el suelo y damos un pequeño salto para 
          que se vuelva a poner de pie.
       </p>
