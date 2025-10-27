@@ -33,7 +33,10 @@
          <br><br>
          Además, el bloque "Inicializar Juego" lo vamos a dividir en 2, una parte con las variables que solo tenemos 
          que inicializar al empezar el juego y otra con las que tenemos que inicializar cuando nos quitan una vida o 
-         pasamos de nivel, que también llamaremos desde "Inicializar Juego"
+         pasamos de nivel, que también llamaremos desde "Inicializar Juego".
+         <br><br>
+         Este segundo bloque lo llamaremos "InicializarVidaONivel", al que también llamaremos desde el anterior y que 
+         contendrá la inicialización de las variables necesarias para el cambio de nivel o cuando nos quitan una vida.
       </p>
       <p class="img_centrada"><img src="img/juego37/37-34.png" width="33%" alt=""></p>
       <p class="texto">
@@ -95,19 +98,12 @@
          Haremos ahora el game over cuando nos quedemos sin vidas. Para ello, añadiremos un fondo que nos indique que 
          hemos terminado la partida.
          <br><br>
-         Vamos ahora a Mario y separamos el contenido del bloque "InicializarJuego" donde dejaremos solo las variables 
-         que inicializaremos una sola vez y el resto lo pondremos en un nuevo bloque "InicializarVidaONivel", al que 
-         también llamaremos desde el anterior y que contendrá la inicialización de las variables necesarias para el 
-         cambio de nivel o cuando nos quitan una vida.
-      </p>
-      <p class="img_centrada"><img src="img/juego37/37-43.png" width="35%" alt=""></p>
-      <p class="texto">
-         Modificaremos el mensaje ""Quitar Vidas" para que al final compruebe si le quedan vidas. Si 
+         Modificaremos el mensaje "Quitar Vidas" para que al final compruebe si le quedan vidas. Si 
          fuera así, llamamos al mensaje "InicializarVidaONivel" para seguir jugando y si no le quedan vidas, enviaremos 
          el mensaje "GameOver" para ocultar o eliminar todos los objetos, cambiaremos el fondo al de fin de la partida 
          y esconderemos a Mario.
       </p>
-      <p class="img_centrada"><img src="img/juego37/37-44.png" width="35%" alt=""></p>
+      <p class="img_centrada"><img src="img/juego37/37-43.png" width="35%" alt=""></p>
       <p class="texto">
          Programaremos en el resto de objetos visibles que cuando recibamos el mensaje "Game Over" se esconda o se 
          eliminen los clones.
